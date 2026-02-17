@@ -27,16 +27,10 @@
         h2 { font-size: clamp(2rem, 4vw, 3rem); }
         h3 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; }
         
-        .language-selector { position: fixed; top: 90px; right: 2rem; z-index: 999; display: flex; gap: 0.5rem; background: var(--bg-card); padding: 0.5rem; border-radius: 8px; border: 1px solid var(--border-color); }
-        .language-selector button { padding: 0.5rem 1rem; background: transparent; color: var(--text-secondary); border: none; border-radius: 4px; cursor: pointer; font-weight: 500; transition: all 0.3s; }
-        .language-selector button:hover { background: var(--bg-card-hover); color: var(--text-primary); }
-        .language-selector button.active { background: var(--primary-blue); color: var(--text-primary); }
         
         header { background: var(--bg-dark); padding: 1rem 0; position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid var(--border-color); }
         nav { max-width: 1400px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo-container { display: flex; align-items: center; gap: 1rem; }
-        .logo-container img { height: 50px; width: auto; filter: brightness(0) invert(1); }
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
         .nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 500; transition: color 0.3s; }
         .nav-links a:hover { color: var(--primary-blue); }
         .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-primary); }
@@ -120,20 +114,8 @@
         .entity-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
         .entities-note { text-align: center; margin-top: 2rem; color: var(--text-secondary); font-style: italic; }
         
-        .contact-form { max-width: 700px; margin: 3rem auto; background: var(--bg-card); padding: 2.5rem; border-radius: 15px; border: 1px solid var(--border-color); }
-        .form-group { margin-bottom: 1.5rem; }
-        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-primary); }
-        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.8rem; border: 1px solid var(--border-color); border-radius: 8px; font-family: inherit; font-size: 1rem; background: var(--bg-dark); color: var(--text-primary); transition: border-color 0.3s; }
-        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--primary-blue); }
-        .checkbox-group { display: flex; flex-direction: column; gap: 0.8rem; }
-        .checkbox-item { display: flex; align-items: flex-start; gap: 0.5rem; }
-        .checkbox-item input[type="checkbox"] { margin-top: 0.3rem; width: auto; accent-color: var(--primary-blue); }
-        .checkbox-item label { margin: 0; font-weight: 400; color: var(--text-secondary); }
-        .required-field { color: #ff6b6b; }
         .privacy-link { color: var(--primary-blue); text-decoration: none; cursor: pointer; border-bottom: 1px solid transparent; transition: border-color 0.3s; }
         .privacy-link:hover { border-bottom-color: var(--primary-blue); }
-        .submit-button { width: 100%; padding: 1rem; background: var(--primary-blue); color: var(--text-primary); border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.3s; }
-        .submit-button:hover { background: #4a6fa0; transform: translateY(-2px); }
         
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); overflow: auto; }
         .modal-content { background-color: var(--bg-card); margin: 3% auto; padding: 2.5rem; border: 1px solid var(--border-color); border-radius: 15px; width: 90%; max-width: 900px; max-height: 80vh; overflow-y: auto; position: relative; }
@@ -152,15 +134,10 @@
         .footer-content { max-width: 1400px; margin: 0 auto; }
         .footer-organizers { display: flex; justify-content: center; gap: 3rem; margin-bottom: 2rem; flex-wrap: wrap; align-items: center; }
         .footer-organizers img { height: 50px; width: auto; filter: brightness(0) invert(1); }
-        .footer-links { display: flex; justify-content: center; gap: 2rem; margin: 2rem 0; flex-wrap: wrap; }
-        .footer-links a { color: var(--text-secondary); text-decoration: none; transition: color 0.3s; }
-        .footer-links a:hover { color: var(--text-primary); }
-        .footer-social { display: flex; justify-content: center; gap: 1.5rem; margin: 2rem 0; }
+.footer-social { display: flex; justify-content: center; gap: 1.5rem; margin: 2rem 0; }
         .footer-social a { color: var(--text-secondary); font-size: 1.5rem; transition: color 0.3s; text-decoration: none; }
         .footer-social a:hover { color: var(--primary-blue); }
-        .footer-bottom { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color); text-align: center; font-size: 0.9rem; }
-        .footer-bottom p { margin: 0.5rem 0; }
-        .footer-legal { margin-top: 1rem; font-size: 0.85rem; opacity: 0.7; }
+.footer-legal { margin-top: 1rem; font-size: 0.85rem; opacity: 0.7; }
         
         @media (max-width: 1024px) { .benefits-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 768px) {
@@ -174,7 +151,7 @@
             .topics-grid, .benefits-grid { grid-template-columns: 1fr; }
             .agenda-item { flex-direction: column; gap: 1rem; }
             .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
-            .footer-links, .footer-organizers { flex-direction: column; gap: 1rem; }
+            .footer-organizers { flex-direction: column; gap: 1rem; }
             .funding-banner { flex-direction: column; gap: 1.5rem; }
             .modal-content { width: 95%; padding: 1.5rem; margin: 10% auto; }
         }
@@ -221,7 +198,7 @@
     <header>
         <nav>
             <div class="header-logo">
-                <img src="assets/images/logos/spri-logo-white.png" alt="SPRI">
+                <img src="assets/images/logos/spri-taldea-logo-white.png" alt="SPRI">
             </div>
             <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
             <ul class="nav-links" id="navLinks">
@@ -231,27 +208,21 @@
                 <li><a href="#contact" data-lang="es">Contacto</a><a href="#contact" data-lang="eu">Kontaktua</a><a href="#contact" data-lang="en">Contact</a></li>
             </ul>
             <div class="language-selector">
-                <button class="lang-btn active" onclick="changeLanguageWithFlag('es', 'Español', 'assets/images/flags/es.png')" id="lang-es">
+                <button class="lang-btn active" onclick="changeLanguage('es')" id="lang-es">
                     <img src="assets/images/flags/es.png" alt="ES" class="flag-icon">
                     <span>ES</span>
                 </button>
-                <button class="lang-btn" onclick="changeLanguageWithFlag('eu', 'Euskara', 'assets/images/flags/eu.png')" id="lang-eu">
+                <button class="lang-btn" onclick="changeLanguage('eu')" id="lang-eu">
                     <img src="assets/images/flags/eu.png" alt="EU" class="flag-icon">
                     <span>EU</span>
                 </button>
-                <button class="lang-btn" onclick="changeLanguageWithFlag('en', 'English', 'assets/images/flags/en.png')" id="lang-en">
+                <button class="lang-btn" onclick="changeLanguage('en')" id="lang-en">
                     <img src="assets/images/flags/en.png" alt="EN" class="flag-icon">
                     <span>EN</span>
                 </button>
             </div>
         </nav>
     </header>
-
-    <div class="language-selector">
-        <button onclick="changeLanguage('es')" class="active" id="lang-es">ES</button>
-        <button onclick="changeLanguage('eu')" id="lang-eu">EU</button>
-        <button onclick="changeLanguage('en')" id="lang-en">EN</button>
-    </div>
 
     <section class="hero">
         <div class="hero-content fade-in">
@@ -263,15 +234,22 @@
             <p class="hero-date" data-lang="eu">2026ko martxoaren 25a, asteazkena</p>
             <p class="hero-date" data-lang="en">Wednesday, March 25, 2026</p>
             <p class="hero-venue">
-                <a href="https://www.google.com/maps/search/?api=1&query=NH+Collection+San+Sebastián+Aránzazu" target="_blank" rel="noopener">
+                <a href="https://maps.app.goo.gl/a4SyRxYCniDf835H6" target="_blank" rel="noopener">
                     <span data-lang="es">NH Collection San Sebastián Aránzazu</span>
                     <span data-lang="eu">NH Collection Donostia Aránzazu</span>
                     <span data-lang="en">NH Collection San Sebastián Aránzazu</span>
                 </a>
             </p>
-            <button class="cta-button disabled" disabled><span data-lang="es">Regístrate Ahora</span></button>
-            <button class="cta-button disabled" disabled><span data-lang="eu">Eman Izena Orain</span></button>
-            <button class="cta-button disabled" disabled><span data-lang="en">Register Now</span></button>
+            <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <button class="cta-button disabled" disabled>
+                    <span data-lang="es">Regístrate en Eventbrite</span>
+                    <span data-lang="eu">Eman izena Eventbrite-n</span>
+                    <span data-lang="en">Register on Eventbrite</span>
+                </button>
+                <p class="registration-notice" data-lang="es">La inscripción al evento se abrirá próximamente</p>
+                <p class="registration-notice" data-lang="eu">Ekitaldirako erregistroa laster irekiko da</p>
+                <p class="registration-notice" data-lang="en">Event registration will open soon</p>
+            </div>
         </div>
     </section>
 
@@ -436,7 +414,7 @@
             <div class="stat-item">
                 <span class="stat-number">20+</span>
                 <span class="stat-label" data-lang="es">Ponentes Internacionales</span>
-                <span class="stat-label" data-lang="eu">Hizlari Nazionalak</span>
+                <span class="stat-label" data-lang="eu">Hizlari Internazionalak</span>
                 <span class="stat-label" data-lang="en">International Speakers</span>
             </div>
             <div class="stat-item">
@@ -619,13 +597,6 @@
                         <div class="speaker-item">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
-                                <div class="speaker-name">Nombre (Moderador)</div>
-                                <div class="speaker-role">Cargo · Organización</div>
-                            </div>
-                        </div>
-                        <div class="speaker-item">
-                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
-                            <div class="speaker-info">
                                 <div class="speaker-name">Nombre del Ponente</div>
                                 <div class="speaker-role">Cargo · Organización</div>
                             </div>
@@ -647,7 +618,14 @@
                         <div class="speaker-item">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
-                                <div class="speaker-name">Nombre (Moderador)</div>
+                                <div class="speaker-name">Nombre del Ponente</div>
+                                <div class="speaker-role">Cargo · Organización</div>
+                            </div>
+                        </div>
+                        <div class="speaker-item">
+                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
+                            <div class="speaker-info">
+                                <div class="speaker-name">Nombre del Ponente</div>
                                 <div class="speaker-role">Cargo · Organización</div>
                             </div>
                         </div>
@@ -680,11 +658,29 @@
                 <div class="agenda-time">13:00 - 13:30</div>
                 <div class="agenda-content">
                     <h4 data-lang="es">Caso de éxito</h4>
-                    <h4 data-lang="eu">Arrakasta Kasuak</h4>
+                    <h4 data-lang="eu">Arrakasta Kasua</h4>
                     <h4 data-lang="en">Success Story</h4>
                     <p data-lang="es">Casos reales de uso de las tecnologías cuánticas en industria</p>
-                    <p data-lang="eu">Casos reales de uso de las tecnologías cuánticas en industria</p>
-                    <p data-lang="en">Real use cases in various sectors</p>
+                    <p data-lang="eu">Industrian teknologia kuantikoak erabiltzeko kasu errealak</p>
+                    <p data-lang="en">Real use cases of quantum technologies in industry</p>
+                    <div class="speakers-list">
+                        <div class="speaker-item">
+                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
+                            <div class="speaker-info">
+                                <div class="speaker-name">Nombre del Ponente</div>
+                                <div class="speaker-role">Cargo · Organización</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speakers-list">
+                        <div class="speaker-item">
+                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
+                            <div class="speaker-info">
+                                <div class="speaker-name">Nombre del Ponente</div>
+                                <div class="speaker-role">Cargo · Organización</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -692,11 +688,29 @@
                 <div class="agenda-time">13:30 - 14:00</div>
                 <div class="agenda-content">
                     <h4 data-lang="es">Caso de éxito</h4>
-                    <h4 data-lang="eu">Arrakasta Kasuak</h4>
+                    <h4 data-lang="eu">Arrakasta Kasua</h4>
                     <h4 data-lang="en">Success Story</h4>
                     <p data-lang="es">Casos reales de uso de las tecnologías cuánticas en industria</p>
-                    <p data-lang="eu">Casos reales de uso de las tecnologías cuánticas en industria</p>
-                    <p data-lang="en">Real use cases in various sectors</p>
+                    <p data-lang="eu">Industrian teknologia kuantikoak erabiltzeko kasu errealak</p>
+                    <p data-lang="en">Real use cases of quantum technologies in industry</p>
+                    <div class="speakers-list">
+                        <div class="speaker-item">
+                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
+                            <div class="speaker-info">
+                                <div class="speaker-name">Nombre del Ponente</div>
+                                <div class="speaker-role">Cargo · Organización</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speakers-list">
+                        <div class="speaker-item">
+                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
+                            <div class="speaker-info">
+                                <div class="speaker-name">Nombre del Ponente</div>
+                                <div class="speaker-role">Cargo · Organización</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -707,8 +721,8 @@
                     <h4 data-lang="eu">Bazkaria eta Networking + Bisita Teknikoa</h4>
                     <h4 data-lang="en">Lunch and Networking + Technical Visit</h4>
                     <p data-lang="es">Visita a Centro de Tecnologías Cuánticas</p>
-                    <p data-lang="eu">Visita a Centro de Tecnologías Cuánticas</p>
-                    <p data-lang="en">Visita a Centro de Tecnologías Cuánticas</p>
+                    <p data-lang="eu">Teknologia Kuantikoen Zentrora bisita</p>
+                    <p data-lang="en">Visit to Quantum Technologies Center</p>
                 </div>
             </div>
         </div>
@@ -721,7 +735,7 @@
         
         <div class="entities-grid">
             <div class="entity-logo">
-                <img src="assets/images/logos/spri-logo.png" alt="SPRI">
+                <img src="assets/images/logos/spri-taldea-logo.png" alt="SPRI">
             </div>
             <div class="entity-logo">
                 <img src="assets/images/logos/mondragon-logo.png" alt="Mondragón Universidad">
@@ -771,32 +785,17 @@
 
     <div class="funding-banner">
         <div class="funding-logo">
-            <img src="assets/images/funding.jpg" alt="Fuentes de financiación">
+            <img src="assets/images/funding.png" alt="Fuentes de financiación">
         </div>
     </div>
 
     <footer>
         <div class="footer-content">
             <div class="footer-organizers">
+                <img src="assets/images/logos/spri-taldea-logo-white.png" alt="SPRI">
                 <img src="assets/images/logos/entangle-logo-white.png" alt="Entangle">
                 <img src="assets/images/logos/mondragon-logo-white.png" alt="Mondragón">
-                <img src="assets/images/logos/spri-logo-white.png" alt="SPRI">
                 <img src="assets/images/logos/basq-logo-white.png" alt="BasQ">
-            </div>
-            
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/company/entangle-tech-hub" target="_blank" rel="noopener" title="LinkedIn">
-                    <img src="assets/images/social/linkedin.png" alt="LinkedIn">
-                </a>
-                <a href="https://x.com/EntangleTechHub" target="_blank" rel="noopener" title="X">
-                    <img src="assets/images/social/twitter.png" alt="X">
-                </a>
-                <a href="https://instagram.com/entangletechhub" target="_blank" rel="noopener" title="Instagram">
-                    <img src="assets/images/social/instagram.png" alt="Instagram">
-                </a>
-                <a href="mailto:info@entangle.es" title="Email">
-                    <img src="assets/images/social/email.png" alt="Email">
-                </a>
             </div>
             
             <div class="footer-divider"></div>
@@ -812,21 +811,35 @@
             <div class="footer-divider"></div>
             
             <div class="footer-legal">
-                <p><strong>Entangle Technology Hub</strong></p>
+                <p><strong>© 2026 Entangle Technology Hub</strong></p>
+            
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/company/entangle-tech-hub" target="_blank" rel="noopener" title="LinkedIn">
+                        <img src="assets/images/social/linkedin-logo.svg" alt="LinkedIn">
+                    </a>
+                    <a href="https://instagram.com/entangletechhub" target="_blank" rel="noopener" title="Instagram">
+                        <img src="assets/images/social/instagram-logo.svg" alt="Instagram">
+                    </a>
+                    <a href="https://x.com/EntangleTechHub" target="_blank" rel="noopener" title="X (Twitter)">
+                        <img src="assets/images/social/x-logo.svg" alt="X">
+                    </a>
+                    <a href="/cdn-cgi/l/email-protection#cca5a2aaa38ca9a2b8ada2aba0a9e2a9bf" title="Email">
+                        <img src="assets/images/social/envelope.svg" alt="Email">
+                    </a>
+                </div>
+
                 <p>Asociación sin ánimo de lucro dedicada a impulsar la innovación y transferencia tecnológica</p>
                 <p>Número Nacional: 632384 | NIF/CIF: G24878407</p>
             </div>
-            
-            <p style="margin-top: 2rem; opacity: 0.7;">© 2026 Quantum x AI Summit</p>
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         let currentLang = 'es';
 
         function changeLanguage(lang) {
             currentLang = lang;
-            localStorage.setItem('language', lang);
+            localStorage.setItem('preferredLanguage', lang);
             
             // Actualizar botones activos
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
@@ -842,10 +855,6 @@
                     el.style.display = 'none';
                 }
             });
-        }
-        
-        function changeLanguageWithFlag(lang, langName, flagSrc) {
-            changeLanguage(lang);
         }
         
         function detectLanguage() {
@@ -869,17 +878,6 @@
             document.getElementById('navLinks').classList.toggle('active');
         }
 
-        function toggleTransport() {
-            const visitChecked = document.getElementById('visit').checked;
-            document.getElementById('transportOutbound').disabled = !visitChecked;
-            document.getElementById('transportReturn').disabled = !visitChecked;
-            
-            if (!visitChecked) {
-                document.getElementById('transportOutbound').checked = false;
-                document.getElementById('transportReturn').checked = false;
-            }
-        }
-
         function openPrivacyModal() {
             document.getElementById('privacyModal').style.display = 'block';
         }
@@ -895,12 +893,7 @@
             }
         }
 
-        function handleSubmit(event) {
-            event.preventDefault();
-            const formData = new FormData(event.target);
-            
-            console.log('Form submitted:', Object.fromEntries(formData));
-            
-            alert(currentLang === 'es' ? 'Inscripción enviada correctamente' : 
-                  currentLang === 'eu' ? 'Izen-ematea ondo bidali da' : 
-            
+        window.addEventListener('DOMContentLoaded', detectLanguage);
+    </script>
+</body>
+</html>
