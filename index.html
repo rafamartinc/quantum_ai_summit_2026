@@ -11,9 +11,9 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --primary-dark: #292356;
+            --primary-dark: #5f82c1;
             --primary-blue: #5f82c1;
-            --bg-dark: #292356;
+            --bg-dark: #5f82c1;
             --bg-card: #1a1a1a;
             --bg-card-hover: #222222;
             --text-primary: #ffffff;
@@ -44,7 +44,20 @@
         .social-links a { color: var(--text-secondary); font-size: 1.3rem; transition: color 0.3s; text-decoration: none; }
         .social-links a:hover { color: var(--primary-blue); }
         
-        .hero { margin-top: 80px; min-height: 90vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; background: var(--accent-gradient); }
+        .hero { margin-top: 80px; min-height: 90vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; 
+            background: linear-gradient(135deg, 
+                rgba(95, 130, 193, 0.90) 0%, 
+                rgba(74, 88, 152, 0.85) 15%, 
+                rgba(109, 95, 158, 0.80) 30%, 
+                rgba(143, 95, 163, 0.80) 45%, 
+                rgba(168, 96, 135, 0.85) 60%, 
+                rgba(196, 114, 79, 0.90) 75%, 
+                rgba(224, 166, 58, 0.92) 90%, 
+                rgba(77, 189, 201, 0.88) 100%),
+            url('assets/images/hero-networking.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; }
         .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.05) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.08) 0%, transparent 50%); filter: blur(80px); }
         .hero-content { max-width: 1400px; margin: 0 auto; padding: 4rem 2rem; text-align: center; position: relative; z-index: 1; }
         .hero h1 { margin-bottom: 1rem; text-shadow: 2px 2px 8px rgba(0,0,0,0.5); }
@@ -170,12 +183,45 @@
         .fade-in { animation: fadeInUp 0.8s ease-out; }
         html { scroll-behavior: smooth; }
         [data-lang]:not(.active-lang) { display: none; }
+
+        /* Header logo */
+        .header-logo img { height: 45px; width: auto; }
+        
+        /* Selector idioma header */
+        .language-selector { display: flex; gap: 0.5rem; }
+        .lang-btn { padding: 0.4rem 0.8rem; background: transparent; border: 1px solid var(--border-color); border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; color: var(--text-secondary); transition: all 0.3s; }
+        .lang-btn:hover { background: var(--bg-card-hover); border-color: var(--primary-blue); }
+        .lang-btn.active { background: var(--primary-blue); color: #ffffff; border-color: var(--primary-blue); }
+        .flag-icon { width: 20px; height: 14px; object-fit: cover; border-radius: 2px; }
+        .lang-btn span { font-size: 0.85rem; font-weight: 500; }
+        
+        /* Hero venue */
+        .hero-venue { margin-top: 1.5rem; font-size: 1rem; opacity: 0.9; }
+        .hero-venue a { color: rgba(255,255,255,0.9); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); transition: all 0.3s; padding-bottom: 2px; }
+        .hero-venue a:hover { border-bottom-color: rgba(255,255,255,0.8); opacity: 1; }
+        
+        /* Botones disabled */
+        .cta-button.disabled { opacity: 0.6; cursor: not-allowed; background: rgba(255,255,255,0.4); }
+        .cta-button.disabled:hover { transform: none; box-shadow: 0 4px 15px rgba(255,255,255,0.2); background: rgba(255,255,255,0.4); }
+        .registration-notice { font-size: 0.9rem; font-style: italic; opacity: 0.8; margin-top: 1rem; }
+        
+        /* Footer mejorado */
+        .footer-divider { height: 1px; background: var(--border-color); margin: 2rem auto; max-width: 800px; }
+        .footer-privacy { text-align: center; margin: 1.5rem 0; }
+        .footer-privacy .privacy-link { color: var(--primary-blue); text-decoration: none; font-weight: 500; transition: opacity 0.3s; }
+        .footer-privacy .privacy-link:hover { opacity: 0.8; text-decoration: underline; }
+        .footer-legal { margin: 1.5rem auto; max-width: 900px; text-align: center; line-height: 1.7; }
+        .footer-legal p { margin: 0.4rem 0; font-size: 0.85rem; }
+        .footer-legal strong { color: var(--text-primary); }
+        .footer-legal a { color: var(--primary-blue); text-decoration: none; }
+        .footer-legal a:hover { text-decoration: underline; }
     </style>
 </head>
-<body>    <header>
+<body>
+    <header>
         <nav>
-            <div class="logo-container">
-                <img src="assets/images/logos/entangle-logo-white.png" alt="Entangle Tech Hub">
+            <div class="header-logo">
+                <img src="assets/images/logos/spri-logo-white.png" alt="SPRI">
             </div>
             <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
             <ul class="nav-links" id="navLinks">
@@ -184,11 +230,19 @@
                 <li><a href="#entities" data-lang="es">Entidades</a><a href="#entities" data-lang="eu">Erakundeak</a><a href="#entities" data-lang="en">Entities</a></li>
                 <li><a href="#contact" data-lang="es">Contacto</a><a href="#contact" data-lang="eu">Kontaktua</a><a href="#contact" data-lang="en">Contact</a></li>
             </ul>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/company/entangle-tech-hub" target="_blank" aria-label="LinkedIn">in</a>
-                <a href="https://x.com/EntangleTechHub" target="_blank" aria-label="X">𝕏</a>
-                <a href="https://instagram.com/entangletechhub" target="_blank" aria-label="Instagram">📷</a>
-                <a href="/cdn-cgi/l/email-protection#9cf5f2faf3dcf9f2e8fdf2fbf0f9b2f9ef" aria-label="Email">✉</a>
+            <div class="language-selector">
+                <button class="lang-btn active" onclick="changeLanguageWithFlag('es', 'Español', 'assets/images/flags/es.png')" id="lang-es">
+                    <img src="assets/images/flags/es.png" alt="ES" class="flag-icon">
+                    <span>ES</span>
+                </button>
+                <button class="lang-btn" onclick="changeLanguageWithFlag('eu', 'Euskara', 'assets/images/flags/eu.png')" id="lang-eu">
+                    <img src="assets/images/flags/eu.png" alt="EU" class="flag-icon">
+                    <span>EU</span>
+                </button>
+                <button class="lang-btn" onclick="changeLanguageWithFlag('en', 'English', 'assets/images/flags/en.png')" id="lang-en">
+                    <img src="assets/images/flags/en.png" alt="EN" class="flag-icon">
+                    <span>EN</span>
+                </button>
             </div>
         </nav>
     </header>
@@ -205,13 +259,19 @@
             <p class="hero-tagline" data-lang="es">Donde convergen las tecnologías del mañana</p>
             <p class="hero-tagline" data-lang="eu">Biharko teknologiak elkartzea</p>
             <p class="hero-tagline" data-lang="en">Where Tomorrow's Technologies Converge</p>
-            <p class="hero-date" data-lang="es">25 de marzo de 2026</p>
-            <p class="hero-date" data-lang="eu">2026ko martxoaren 25a</p>
-            <p class="hero-date" data-lang="en">March 25, 2026</p>
-            <p class="hero-tagline">Donostia / San Sebastián</p>
-            <a href="#contact" class="cta-button" data-lang="es">Regístrate Ahora</a>
-            <a href="#contact" class="cta-button" data-lang="eu">Eman Izena Orain</a>
-            <a href="#contact" class="cta-button" data-lang="en">Register Now</a>
+            <p class="hero-date" data-lang="es">Miércoles, 25 de marzo de 2026</p>
+            <p class="hero-date" data-lang="eu">2026ko martxoaren 25a, asteazkena</p>
+            <p class="hero-date" data-lang="en">Wednesday, March 25, 2026</p>
+            <p class="hero-venue">
+                <a href="https://www.google.com/maps/search/?api=1&query=NH+Collection+San+Sebastián+Aránzazu" target="_blank" rel="noopener">
+                    <span data-lang="es">NH Collection San Sebastián Aránzazu</span>
+                    <span data-lang="eu">NH Collection Donostia Aránzazu</span>
+                    <span data-lang="en">NH Collection San Sebastián Aránzazu</span>
+                </a>
+            </p>
+            <button class="cta-button disabled" disabled><span data-lang="es">Regístrate Ahora</span></button>
+            <button class="cta-button disabled" disabled><span data-lang="eu">Eman Izena Orain</span></button>
+            <button class="cta-button disabled" disabled><span data-lang="en">Register Now</span></button>
         </div>
     </section>
 
@@ -442,6 +502,13 @@
                     <h4 data-lang="en">Opening Ceremony</h4>
                     <div class="speakers-list">
                         <div class="speaker-item">
+                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
+                            <div class="speaker-info">
+                                <div class="speaker-name">Nombre del Ponente</div>
+                                <div class="speaker-role">Cargo · Organización</div>
+                            </div>
+                        </div>
+                        <div class="speaker-item">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker" class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Nombre del Ponente</div>
@@ -453,27 +520,35 @@
             </div>
 
             <div class="agenda-item session">
-                <div class="agenda-time">10:00 - 10:40</div>
+                <div class="agenda-time">10:00 - 10:20</div>
                 <div class="agenda-content">
-                    <h4 data-lang="es">Keynotes: BasQ e IBM</h4>
-                    <h4 data-lang="eu">Keynotes: BasQ eta IBM</h4>
-                    <h4 data-lang="en">Keynotes: BasQ and IBM</h4>
-                    <p data-lang="es">Basque Quantum (BasQ), un hub global de tecnologías cuánticas • IBM Quantum System Two</p>
-                    <p data-lang="eu">Basque Quantum (BasQ), teknologia kuantikoen mundu-mailako gunea • IBM Quantum System Two</p>
-                    <p data-lang="en">Basque Quantum (BasQ), a global hub for quantum technologies • IBM Quantum System Two</p>
+                    <h4 data-lang="es">Keynote: Basque Quantum (BasQ), un hub global de tecnologías cuánticas</h4>
+                    <h4 data-lang="eu">Keynote: Basque Quantum (BasQ), teknologia kuantikoen mundu-mailako gunea</h4>
+                    <h4 data-lang="en">Keynote: Basque Quantum (BasQ), a global hub for quantum technologies</h4>
                     <div class="speakers-list">
                         <div class="speaker-item">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
-                                <div class="speaker-name">Ponente BasQ</div>
-                                <div class="speaker-role">Cargo · BasQ</div>
+                                <div class="speaker-name">Nombre del Ponente</div>
+                                <div class="speaker-role">Cargo · Organización</div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="agenda-item session">
+                <div class="agenda-time">10:20 - 10:40</div>
+                <div class="agenda-content">
+                    <h4 data-lang="es">Keynote: BasQ-IBM Quantum System Two</h4>
+                    <h4 data-lang="eu">Keynote: BasQ-IBM Quantum System Two</h4>
+                    <h4 data-lang="en">Keynote: BasQ-IBM Quantum System Two</h4>
+                    <div class="speakers-list">
                         <div class="speaker-item">
-                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker IBM" class="speaker-photo">
+                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
-                                <div class="speaker-name">Ponente IBM</div>
-                                <div class="speaker-role">Cargo · IBM Quantum</div>
+                                <div class="speaker-name">Nombre del Ponente</div>
+                                <div class="speaker-role">Cargo · Organización</div>
                             </div>
                         </div>
                     </div>
@@ -489,6 +564,36 @@
                     <p data-lang="es">¿Qué problemas reales de la industria pueden resolverse mejor con cuántica + IA?</p>
                     <p data-lang="eu">Industriako ze arazo erreal konpon daitezke hobeto kuantika + AA-rekin?</p>
                     <p data-lang="en">What real industry problems can be better solved with quantum + AI?</p>
+                    <div class="speakers-list">
+                        <div class="speaker-item">
+                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
+                            <div class="speaker-info">
+                                <div class="speaker-name">Nombre (Moderador)</div>
+                                <div class="speaker-role">Cargo · Organización</div>
+                            </div>
+                        </div>
+                        <div class="speaker-item">
+                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
+                            <div class="speaker-info">
+                                <div class="speaker-name">Nombre del Ponente</div>
+                                <div class="speaker-role">Cargo · Organización</div>
+                            </div>
+                        </div>
+                        <div class="speaker-item">
+                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
+                            <div class="speaker-info">
+                                <div class="speaker-name">Nombre del Ponente</div>
+                                <div class="speaker-role">Cargo · Organización</div>
+                            </div>
+                        </div>
+                        <div class="speaker-item">
+                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
+                            <div class="speaker-info">
+                                <div class="speaker-name">Nombre del Ponente</div>
+                                <div class="speaker-role">Cargo · Organización</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -510,45 +615,100 @@
                     <p data-lang="es">El ecosistema cuántico vasco presenta sus innovaciones</p>
                     <p data-lang="eu">Euskal ekosistema kuantikoak bere berrikuntzak aurkezten ditu</p>
                     <p data-lang="en">The Basque quantum ecosystem presents its innovations</p>
+                    <div class="speakers-list">
+                        <div class="speaker-item">
+                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
+                            <div class="speaker-info">
+                                <div class="speaker-name">Nombre (Moderador)</div>
+                                <div class="speaker-role">Cargo · Organización</div>
+                            </div>
+                        </div>
+                        <div class="speaker-item">
+                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
+                            <div class="speaker-info">
+                                <div class="speaker-name">Nombre del Ponente</div>
+                                <div class="speaker-role">Cargo · Organización</div>
+                            </div>
+                        </div>
+                        <div class="speaker-item">
+                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
+                            <div class="speaker-info">
+                                <div class="speaker-name">Nombre del Ponente</div>
+                                <div class="speaker-role">Cargo · Organización</div>
+                            </div>
+                        </div>
+                        <div class="speaker-item">
+                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
+                            <div class="speaker-info">
+                                <div class="speaker-name">Nombre del Ponente</div>
+                                <div class="speaker-role">Cargo · Organización</div>
+                            </div>
+                        </div>
+                        <div class="speaker-item">
+                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
+                            <div class="speaker-info">
+                                <div class="speaker-name">Nombre (Moderador)</div>
+                                <div class="speaker-role">Cargo · Organización</div>
+                            </div>
+                        </div>
+                        <div class="speaker-item">
+                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
+                            <div class="speaker-info">
+                                <div class="speaker-name">Nombre del Ponente</div>
+                                <div class="speaker-role">Cargo · Organización</div>
+                            </div>
+                        </div>
+                        <div class="speaker-item">
+                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
+                            <div class="speaker-info">
+                                <div class="speaker-name">Nombre del Ponente</div>
+                                <div class="speaker-role">Cargo · Organización</div>
+                            </div>
+                        </div>
+                        <div class="speaker-item">
+                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
+                            <div class="speaker-info">
+                                <div class="speaker-name">Nombre del Ponente</div>
+                                <div class="speaker-role">Cargo · Organización</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="agenda-item session">
-                <div class="agenda-time">13:00 - 14:00</div>
+                <div class="agenda-time">13:00 - 13:30</div>
                 <div class="agenda-content">
-                    <h4 data-lang="es">Success Stories</h4>
+                    <h4 data-lang="es">Caso de éxito</h4>
                     <h4 data-lang="eu">Arrakasta Kasuak</h4>
-                    <h4 data-lang="en">Success Stories</h4>
-                    <p data-lang="es">Casos reales de uso en sector financiero y energético</p>
-                    <p data-lang="eu">Finantza eta energia sektoreetan erabilera kasu errealak</p>
-                    <p data-lang="en">Real use cases in financial and energy sectors</p>
+                    <h4 data-lang="en">Success Story</h4>
+                    <p data-lang="es">Casos reales de uso de las tecnologías cuánticas en industria</p>
+                    <p data-lang="eu">Casos reales de uso de las tecnologías cuánticas en industria</p>
+                    <p data-lang="en">Real use cases in various sectors</p>
                 </div>
             </div>
 
-            <div class="agenda-item break">
-                <div class="agenda-time">14:00 - 15:00</div>
+            <div class="agenda-item session">
+                <div class="agenda-time">13:30 - 14:00</div>
                 <div class="agenda-content">
-                    <h4 data-lang="es">Comida y Networking</h4>
-                    <h4 data-lang="eu">Bazkaria eta Networking</h4>
-                    <h4 data-lang="en">Lunch and Networking</h4>
+                    <h4 data-lang="es">Caso de éxito</h4>
+                    <h4 data-lang="eu">Arrakasta Kasuak</h4>
+                    <h4 data-lang="en">Success Story</h4>
+                    <p data-lang="es">Casos reales de uso de las tecnologías cuánticas en industria</p>
+                    <p data-lang="eu">Casos reales de uso de las tecnologías cuánticas en industria</p>
+                    <p data-lang="en">Real use cases in various sectors</p>
                 </div>
             </div>
 
             <div class="agenda-item visit">
-                <div class="agenda-time">15:00 - 17:30</div>
+                <div class="agenda-time">14:00 - 18:30</div>
                 <div class="agenda-content">
-                    <h4 data-lang="es">Visita Técnica</h4>
-                    <h4 data-lang="eu">Bisita Teknikoa</h4>
-                    <h4 data-lang="en">Technical Visit</h4>
-                </div>
-            </div>
-
-            <div class="agenda-item break">
-                <div class="agenda-time">19:00 - 22:00</div>
-                <div class="agenda-content">
-                    <h4 data-lang="es">Cóctel de Networking</h4>
-                    <h4 data-lang="eu">Networking Koktel</h4>
-                    <h4 data-lang="en">Networking Cocktail</h4>
+                    <h4 data-lang="es">Comida y Networking + Visita Técnica</h4>
+                    <h4 data-lang="eu">Bazkaria eta Networking + Bisita Teknikoa</h4>
+                    <h4 data-lang="en">Lunch and Networking + Technical Visit</h4>
+                    <p data-lang="es">Visita a Centro de Tecnologías Cuánticas</p>
+                    <p data-lang="eu">Visita a Centro de Tecnologías Cuánticas</p>
+                    <p data-lang="en">Visita a Centro de Tecnologías Cuánticas</p>
                 </div>
             </div>
         </div>
@@ -561,16 +721,16 @@
         
         <div class="entities-grid">
             <div class="entity-logo">
-                <img src="assets/images/logos/entangle-logo.png" alt="Entangle Tech Hub">
+                <img src="assets/images/logos/spri-logo.png" alt="SPRI">
             </div>
             <div class="entity-logo">
-                <img src="assets/images/logos/mondragon-logo.png" alt="Mondragon Unibertsitatea">
-            </div>
-            <div class="entity-logo">
-                <img src="assets/images/logos/spri-logo.png" alt="Grupo SPRI">
+                <img src="assets/images/logos/mondragon-logo.png" alt="Mondragón Universidad">
             </div>
             <div class="entity-logo">
                 <img src="assets/images/logos/basq-logo.png" alt="BasQ">
+            </div>
+            <div class="entity-logo">
+                <img src="assets/images/logos/entangle-logo.png" alt="Entangle Tech Hub">
             </div>
             <div class="entity-logo">
                 <img src="assets/images/logos/ibm-logo.png" alt="IBM">
@@ -586,247 +746,93 @@
     </section>
 
     <section id="contact">
-        <h2 class="section-title" data-lang="es">Inscripción al Evento</h2>
-        <h2 class="section-title" data-lang="eu">Ekitaldirako Izen-ematea</h2>
-        <h2 class="section-title" data-lang="en">Event Registration</h2>
+        <h2 class="section-title" data-lang="es">Registro</h2>
+        <h2 class="section-title" data-lang="eu">Erregistroa</h2>
+        <h2 class="section-title" data-lang="en">Registration</h2>
         
-        <form class="contact-form" onsubmit="handleSubmit(event)">
-            <div class="form-group">
-                <label data-lang="es">Nombre <span class="required-field">*</span></label>
-                <label data-lang="eu">Izena <span class="required-field">*</span></label>
-                <label data-lang="en">First Name <span class="required-field">*</span></label>
-                <input type="text" name="firstName" required>
-            </div>
-
-            <div class="form-group">
-                <label data-lang="es">Apellidos <span class="required-field">*</span></label>
-                <label data-lang="eu">Abizenak <span class="required-field">*</span></label>
-                <label data-lang="en">Last Name <span class="required-field">*</span></label>
-                <input type="text" name="lastName" required>
-            </div>
-
-            <div class="form-group">
-                <label data-lang="es">Email <span class="required-field">*</span></label>
-                <label data-lang="eu">Email <span class="required-field">*</span></label>
-                <label data-lang="en">Email <span class="required-field">*</span></label>
-                <input type="email" name="email" required>
-            </div>
-
-            <div class="form-group">
-                <label data-lang="es">Organización <span class="required-field">*</span></label>
-                <label data-lang="eu">Erakundea <span class="required-field">*</span></label>
-                <label data-lang="en">Organization <span class="required-field">*</span></label>
-                <input type="text" name="organization" required>
-            </div>
-
-            <div class="form-group">
-                <label data-lang="es">Cargo</label>
-                <label data-lang="eu">Kargua</label>
-                <label data-lang="en">Position</label>
-                <input type="text" name="position">
-            </div>
-
-            <div class="form-group">
-                <label data-lang="es">Alergias / Restricciones alimentarias</label>
-                <label data-lang="eu">Alergiak / Elikadura murrizketak</label>
-                <label data-lang="en">Allergies / Dietary restrictions</label>
-                <textarea name="dietary" rows="3"></textarea>
-            </div>
-
-            <div class="form-group">
-                <label style="font-weight: 700; margin-bottom: 1rem;" data-lang="es">Participación en actividades</label>
-                <label style="font-weight: 700; margin-bottom: 1rem;" data-lang="eu">Jardueren parte-hartzea</label>
-                <label style="font-weight: 700; margin-bottom: 1rem;" data-lang="en">Activity participation</label>
-                
-                <div class="checkbox-group">
-                    <div class="checkbox-item">
-                        <input type="checkbox" id="visit" name="visit" onchange="toggleTransport()">
-                        <label for="visit" data-lang="es">Asistiré a la visita técnica (15:00 - 17:30)</label>
-                        <label for="visit" data-lang="eu">Bisita teknikora joango naiz (15:00 - 17:30)</label>
-                        <label for="visit" data-lang="en">I will attend the technical visit (15:00 - 17:30)</label>
-                    </div>
-                    
-                    <div class="checkbox-item" style="margin-left: 2rem;">
-                        <input type="checkbox" id="transportOutbound" name="transportOutbound" disabled>
-                        <label for="transportOutbound" data-lang="es">Necesito transporte de ida</label>
-                        <label for="transportOutbound" data-lang="eu">Joan-etorrizko garraioa behar dut</label>
-                        <label for="transportOutbound" data-lang="en">I need outbound transport</label>
-                    </div>
-                    
-                    <div class="checkbox-item" style="margin-left: 2rem;">
-                        <input type="checkbox" id="transportReturn" name="transportReturn" disabled>
-                        <label for="transportReturn" data-lang="es">Necesito transporte de vuelta</label>
-                        <label for="transportReturn" data-lang="eu">Itzulerarako garraioa behar dut</label>
-                        <label for="transportReturn" data-lang="en">I need return transport</label>
-                    </div>
-
-                    <div class="checkbox-item">
-                        <input type="checkbox" id="cocktail" name="cocktail">
-                        <label for="cocktail" data-lang="es">Asistiré al cóctel de networking (19:00 - 22:00)</label>
-                        <label for="cocktail" data-lang="eu">Networking koktelera joango naiz (19:00 - 22:00)</label>
-                        <label for="cocktail" data-lang="en">I will attend the networking cocktail (19:00 - 22:00)</label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label style="font-weight: 700; margin-bottom: 1rem;" data-lang="es">Consentimientos <span class="required-field">*</span></label>
-                <label style="font-weight: 700; margin-bottom: 1rem;" data-lang="eu">Baimenei <span class="required-field">*</span></label>
-                <label style="font-weight: 700; margin-bottom: 1rem;" data-lang="en">Consents <span class="required-field">*</span></label>
-                
-                <div class="checkbox-group">
-                    <div class="checkbox-item">
-                        <input type="checkbox" id="privacy" name="privacy" required>
-                        <label for="privacy">
-                            <span data-lang="es">He leído y acepto la <a class="privacy-link" onclick="openPrivacyModal()">política de privacidad</a></span>
-                            <span data-lang="eu"><a class="privacy-link" onclick="openPrivacyModal()">Pribatutasun politika</a> irakurri eta onartzen dut</span>
-                            <span data-lang="en">I have read and accept the <a class="privacy-link" onclick="openPrivacyModal()">privacy policy</a></span>
-                        </label>
-                    </div>
-
-                    <div class="checkbox-item">
-                        <input type="checkbox" id="images" name="images" required>
-                        <label for="images" data-lang="es">Autorizo el uso de imágenes y vídeos tomados durante el evento con fines promocionales</label>
-                        <label for="images" data-lang="eu">Ekitaldian ateratako argazki eta bideoen erabilera baimentzen dut sustapen xedekin</label>
-                        <label for="images" data-lang="en">I authorize the use of images and videos taken during the event for promotional purposes</label>
-                    </div>
-                </div>
-            </div>
-
-            <button type="submit" class="submit-button" data-lang="es">Enviar Inscripción</button>
-            <button type="submit" class="submit-button" data-lang="eu">Izen-ematea Bidali</button>
-            <button type="submit" class="submit-button" data-lang="en">Submit Registration</button>
-        </form>
+        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+            <button class="cta-button disabled" disabled>
+                <span data-lang="es">Regístrate en Eventbrite</span>
+                <span data-lang="eu">Eman izena Eventbrite-n</span>
+                <span data-lang="en">Register on Eventbrite</span>
+            </button>
+            <p class="registration-notice" data-lang="es">La inscripción al evento se abrirá próximamente</p>
+            <p class="registration-notice" data-lang="eu">Ekitaldirako erregistroa laster irekiko da</p>
+            <p class="registration-notice" data-lang="en">Event registration will open soon</p>
+        </div>
     </section>
 
     <div id="privacyModal" class="modal">
         <div class="modal-content">
             <button class="modal-close" onclick="closePrivacyModal()">&times;</button>
             <h2>Política de Privacidad</h2>
-            
-            <p>Conforme a la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD), y al Reglamento (UE) 2016/679, del Parlamento Europeo y del Consejo, de 27 de abril ("Reglamento General de Protección de Datos" o "RGPD"), esta Política de Privacidad se aplica a los tratamientos de datos de carácter personal en relación con los datos de los usuarios/as (personas físicas) recabados en cualquiera de las secciones del sitio web.</p>
-
-            <p>Si no está usted de acuerdo con los términos de esta Política, no acceda ni utilice los Servicios. Esta Política de privacidad no es aplicable a ningún otro producto, servicio o actividad de terceros.</p>
-
-            <h3>RESPONSABLE DEL TRATAMIENTO DE SUS DATOS</h3>
-            <p>La entidad que conforma Enpresa Digitala y que es corresponsable en el tratamiento de datos personales es:</p>
-            <ul>
-                <li>Mondragon Goi Eskola Politeknikoa Jose María Arizmendiarrieta S.Coop. CIF F20560991. Loramendi 4, 20500 Arrasate/Mondragon. Registro Universidades Centros y Títulos del Ministerio de Educación n.º 601 · infogaraia@mondragon.edu · +34 943793700</li>
-            </ul>
-
-            <h3>FINALIDADES DEL TRATAMIENTO DE DATOS</h3>
-            <p>Sus datos personales se utilizarán por la entidad Mondragon Goi Eskola Politeknikoa con la finalidad genérica de la gestión y administración de eventos a través de la web y el envío de información sobre Enpresa Digitala. Y específicamente para:</p>
-            <ul>
-                <li>Gestionar y administrar los servicios e información puestos a disposición a través de la web.</li>
-                <li>Difundir las acciones realizadas.</li>
-                <li>Gestionar y administrar los cursos, eventos, talleres, formaciones, etc.</li>
-                <li>Comunicar con los usuarios/as en respuesta a solicitudes, inscripciones, comentarios y preguntas.</li>
-                <li>Envío de comunicaciones sobre el catálogo formativo y demás información de la iniciativa.</li>
-            </ul>
-            <p>No trataremos sus datos personales para ninguna otra finalidad más allá de las descritas anteriormente salvo que venga impuesto por ley o exista algún requerimiento judicial.</p>
-            <p>Las solicitudes de información que nos haga llegar requieren que el interesado nos facilite de forma voluntaria los datos necesarios para poder atenderle o prestarle los Servicios. La obligatoriedad o necesidad de facilitarnos esos datos se señalará con un asterisco (*) en los formularios o secciones correspondientes a cada servicio.</p>
-            <p>No obstante, el interesado puede libremente negarse a facilitarnos esos datos o, posteriormente, revocar el consentimiento previamente otorgado para tratar sus datos, si bien esa negativa implicará la imposibilidad de que podamos atender su petición o prestarle el servicio que se trate.</p>
-            <p>Enpresa Digitala entiende que, al facilitarnos esos datos, el interesado garantiza y se hace responsable de la veracidad, actualidad y exactitud de los mismos y que acepta y consiente expresamente en su tratamiento para las finalidades antes descritas.</p>
-
-
-            <h3>DURACIÓN DEL TRATAMIENTO DE DATOS</h3>
-            <p>La entidad conservará y tratará los datos personales recabados desde el momento que el usuario/a presta su consentimiento hasta que solicite ser dado de baja o retire su consentimiento para el tratamiento de datos.</p>
-            <p>En el caso de datos de administración y facturación se conservarán según la normativa de referencia.</p>
-
-            <h3>TOMA DE DECISONES AUTOMATIZADAS Y ELABORACIÓN DE PERFILES</h3>
-            <p>El tratamiento de datos personales no conlleva la toma de decisiones automatizadas ni la elaboración de perfiles de los usuarios.</p>
-
-            <h3>LEGITIMACIÓN DEL TRATAMIENTO DE LOS DATOS</h3>
-            <p>La base legal para el tratamiento de los datos es la legitimación basada en el consentimiento del interesado prestado para las finalidades anteriormente descritas, que se solicitará en el momento de:</p>
-            <ul>
-                <li>proceder a tratar sus datos</li>
-                <li>la inclusión de sus datos en nuestros formularios</li>
-            </ul>
-            <p>El alta en la web como las solicitudes de información que nos haga llegar requieren que el interesado nos facilite de forma voluntaria los datos necesarios para poder atenderle o prestarle los Servicios. No obstante, el interesado puede libremente negarse a facilitarnos esos datos o, posteriormente, revocar el consentimiento previamente otorgado para tratar sus datos, si bien esa negativa implicará la imposibilidad de que podamos atender su petición o continuar con el registro en nuestra plataforma.</p>
-            <p>Igualmente, podremos tratar sus datos en base a la relación contractual existente a la hora de la formalización de las inscripciones en lo referente a los servicios puestos a disposición en la web (formación online, inscripciones, matrículas, etc.)</p>
-            <p>Enpresa Digitala entiende que, al facilitarnos esos datos, el interesado garantiza y se hace responsable de la veracidad, actualidad y exactitud de los mismos y que acepta y consiente expresamente en su tratamiento para las finalidades antes descritas.</p>
-            <p>La entidad podrá enviar comunicaciones sobre los servicios, cursos, talleres, etc únicamente relacionados con Enpresa Digitala durante la vigencia de la relación con la misma e incluso una vez extinguida ésta a través de correo electrónico o medios de comunicación electrónica equivalentes.</p>
-            <p>Posibilidad de retirar el consentimiento: El usuario/a tiene derecho a retirar el consentimiento en cualquier momento, sin que ello afecte a la licitud del tratamiento basado en el consentimiento previo a su retirada. Asimismo, el usuario/a podrá oponerse en cualquier momento a la recepción de cualquier comunicación electrónica realizada por la entidad relacionada con la iniciativa Enpresa Digitala.</p>
-
-            <h3>DESTINATARIOS DE CESIONES O TRANSFERENCIAS</h3>
-            <p>Sus datos personales podrán ser cedidos a SPRI - Agencia Vasca de Desarrollo Empresarial (CIF Q4800789B), así como a Entangle Technology Hub (G24878407), con la única finalidad de la gestión y administración de la web, evento e inscripciones.</p>
-            <p>La entidad que conforma Enpresa Digitala no cederá sus datos personales a terceros salvo que estén obligados legalmente a ello (Hacienda Foral, Administración de Justicia, etc.) o usted nos lo haya autorizado expresamente.</p>
-            <p>Asimismo, la entidad que conforma Enpresa Digitala puede utilizar diferentes servicios o proveedores de tecnología considerados a tenor de la normativa de protección de datos como encargados de tratamiento firmando con ellos los correspondientes contratos exigidos por la normativa de referencia.</p>
-
-            <h3>REDES SOCIALES</h3>
-            <p>Enpresa Digitala dispone de distintas redes sociales (Facebook, Twitter, etc) para la difusión de contenidos relacionados con Enpresa Digitala así como para facilitar a los usuarios una vía de contacto. Enpresa Digitala es responsable del tratamiento de los datos de sus seguidores y contactos en las redes sociales. No obstante, en la medida en que el tratamiento de los datos personales se efectúa en el marco de las redes sociales cuyos proveedores imponen unas reglas de funcionamiento, las obligaciones de Enpresa Digitala se limitarán a aquellos aspectos en los que tiene libertad para actuar. En ningún caso Enpresa Digitala extraerá los datos de las redes sociales, realizará perfiles de sus usuarios o recabará datos personales adicionales relativos a gustos, aficiones o modo de utilización de las redes sociales, sin el consentimiento expreso de los afectados.</p>
-
-            <h3>DERECHOS DE LAS PERSONAS INTERESADAS</h3>
-            <p>Cualquier persona tiene derecho a obtener confirmación sobre si en Enpresa Digitala se tratan datos personales que le conciernan, o no. En particular, usted puede ejercer ante Enpresa Digitala los siguientes derechos:</p>
-            <ul>
-                <li>Derecho de acceso: permite al interesado conocer y obtener información sobre sus datos de carácter personal sometidos a tratamiento.</li>
-                <li>Derecho de rectificación: permite corregir errores, modificar los datos que resulten ser inexactos o incompletos y garantizar la certeza de la información objeto del tratamiento.</li>
-                <li>Derecho de supresión: permite solicitar la eliminación de los datos objeto de tratamiento cuando ya no sean necesarios.</li>
-                <li>Derecho de oposición: derecho del interesado a que no se lleve a cabo el tratamiento de sus datos de carácter personal o se cese en el mismo, salvo motivos legítimos o para el ejercicio o defensa de posibles reclamaciones, en cuyo caso los mantendremos bloqueados durante el plazo correspondiente mientras persistan las obligaciones legales.</li>
-                <li>Derecho de oposición al envío de publicidad: Los interesados podrán oponerse al envío de comunicaciones. En ese caso puede revocar en cualquier momento su consentimiento a recibir estas notificaciones utilizando el mecanismo implementado al efecto en las mismas, o bien, escribiendo directamente a la dirección estipulada para ello por cada entidad que participa en Enpresa Digitala.</li>
-                <li>Limitación del tratamiento: En determinadas circunstancias, los interesados podrán solicitar la limitación del tratamiento de sus datos, en cuyo caso únicamente se conservarán para el ejercicio o defensa de reclamaciones.</li>
-                <li>Portabilidad de los datos: las personas interesadas pueden solicitar recibir los datos que le incumban y que nos haya facilitado o que –siempre que técnicamente sea posible– se los enviemos a otro responsable de tratamiento de su elección, en un formato estructurado de uso común y lectura mecánica.</li>
-                <li>Derecho a no ser objeto de decisiones individuales automatizadas (incluida la elaboración de perfiles): derecho a no ser objeto de una decisión basada en el tratamiento automatizado que produzca efectos o afecte significativamente.</li>
-            </ul>
-            <p>Si desea ejercer alguno de los derechos expuestos, puede remitir una comunicación a la dirección establecida por la entidad que conforma Enpresa Digitala.</p>
-            <p>En relación con la posibilidad de reclamar ante la Autoridad de Control, Enpresa Digitala le informa igualmente del derecho que le asiste de presentar una reclamación ante la Autoridad Vasca de Protección de Datos  (<a href="https://www.avpd.euskadi.eus" target="_blank">www.avpd.euskadi.eus</a>) si considera que el tratamiento no se ajusta a la normativa vigente.</p>
-
-            <h3>TÉRMINOS Y CONDICIONES DE USO Y COMPRA</h3>
-            <ul>
-                <li>Política de envío. No procede.</li>
-                <li>El usuario no tiene derecho a cancelación en caso de no asistencia.</li>
-                <li>Tampoco a devolución ni reembolso.</li>
-            </ul>
         </div>
     </div>
 
     <div class="funding-banner">
         <div class="funding-logo">
-            <img src="assets/images/funding/eu-logo.jpg" alt="Unión Europea">
-        </div>
-        <div class="funding-logo">
-            <img src="assets/images/funding/spain-logo-spa.png" alt="Gobierno de España">
-        </div>
-        <div class="funding-logo">
-            <img src="assets/images/funding/euskadi-logo.png" alt="Gobierno Vasco">
+            <img src="assets/images/funding.jpg" alt="Fuentes de financiación">
         </div>
     </div>
 
     <footer>
         <div class="footer-content">
             <div class="footer-organizers">
-                <img src="assets/images/logos/entangle-logo-white.png" alt="Entangle Tech Hub">
-                <img src="assets/images/logos/mondragon-logo-white.png" alt="Mondragon Unibertsitatea">
-                <img src="assets/images/logos/spri-logo-white.png" alt="Grupo SPRI">
+                <img src="assets/images/logos/entangle-logo-white.png" alt="Entangle">
+                <img src="assets/images/logos/mondragon-logo-white.png" alt="Mondragón">
+                <img src="assets/images/logos/spri-logo-white.png" alt="SPRI">
                 <img src="assets/images/logos/basq-logo-white.png" alt="BasQ">
             </div>
-
+            
             <div class="footer-social">
-                <a href="https://www.linkedin.com/company/entangle-tech-hub" target="_blank">in</a>
-                <a href="https://x.com/EntangleTechHub" target="_blank">𝕏</a>
-                <a href="https://instagram.com/entangletechhub" target="_blank">📷</a>
-                <a href="mailto:info@entangle.es">✉</a>
+                <a href="https://www.linkedin.com/company/entangle-tech-hub" target="_blank" rel="noopener" title="LinkedIn">
+                    <img src="assets/images/social/linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://x.com/EntangleTechHub" target="_blank" rel="noopener" title="X">
+                    <img src="assets/images/social/twitter.png" alt="X">
+                </a>
+                <a href="https://instagram.com/entangletechhub" target="_blank" rel="noopener" title="Instagram">
+                    <img src="assets/images/social/instagram.png" alt="Instagram">
+                </a>
+                <a href="mailto:info@entangle.es" title="Email">
+                    <img src="assets/images/social/email.png" alt="Email">
+                </a>
             </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2026 Quantum x AI Summit. Todos los derechos reservados.</p>
-                <p class="footer-legal">Entangle Technology Hub. Asociación sin ánimo de lucro inscrita en el Registro Nacional de Asociaciones. Número Nacional: 632384 | NIF/CIF: G24878407</p>
+            
+            <div class="footer-divider"></div>
+            
+            <div class="footer-privacy">
+                <a href="#" onclick="openPrivacyModal(); return false;" class="privacy-link">
+                    <span data-lang="es">Política de Privacidad</span>
+                    <span data-lang="eu">Pribatutasun Politika</span>
+                    <span data-lang="en">Privacy Policy</span>
+                </a>
             </div>
+            
+            <div class="footer-divider"></div>
+            
+            <div class="footer-legal">
+                <p><strong>Entangle Technology Hub</strong></p>
+                <p>Asociación sin ánimo de lucro dedicada a impulsar la innovación y transferencia tecnológica</p>
+                <p>Número Nacional: 632384 | NIF/CIF: G24878407</p>
+            </div>
+            
+            <p style="margin-top: 2rem; opacity: 0.7;">© 2026 Quantum x AI Summit</p>
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         let currentLang = 'es';
 
         function changeLanguage(lang) {
             currentLang = lang;
-            localStorage.setItem('preferredLanguage', lang);
+            localStorage.setItem('language', lang);
             
-            document.querySelectorAll('.language-selector button').forEach(btn => {
-                btn.classList.remove('active');
-            });
+            // Actualizar botones activos
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
             document.getElementById('lang-' + lang).classList.add('active');
             
+            // Mostrar/ocultar elementos según idioma
             document.querySelectorAll('[data-lang]').forEach(el => {
                 if (el.getAttribute('data-lang') === lang) {
                     el.classList.add('active-lang');
@@ -837,7 +843,11 @@
                 }
             });
         }
-
+        
+        function changeLanguageWithFlag(lang, langName, flagSrc) {
+            changeLanguage(lang);
+        }
+        
         function detectLanguage() {
             const saved = localStorage.getItem('preferredLanguage');
             if (saved) {
@@ -893,15 +903,4 @@
             
             alert(currentLang === 'es' ? 'Inscripción enviada correctamente' : 
                   currentLang === 'eu' ? 'Izen-ematea ondo bidali da' : 
-                  'Registration submitted successfully');
             
-            event.target.reset();
-            toggleTransport();
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            detectLanguage();
-        });
-    </script>
-</body>
-</html>
