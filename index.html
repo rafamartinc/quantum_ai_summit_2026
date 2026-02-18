@@ -138,7 +138,8 @@
         footer { background: #292356; color: var(--text-secondary); padding: 3rem 2rem 1rem; border-top: 1px solid rgba(255,255,255,0.1); }
         .footer-content { max-width: 1400px; margin: 0 auto; }
         .footer-organizers { display: flex; justify-content: center; gap: 3rem; margin-bottom: 2rem; flex-wrap: wrap; align-items: center; }
-        .footer-organizers img { height: 50px; width: auto; }
+        .footer-organizers img { height: 50px; width: auto; max-width: 200px; }
+        .footer-organizers img[src$=".svg"] { height: 50px; width: 200px; object-fit: contain; }
         .footer-organizers img.logo-color-to-white { filter: brightness(0) invert(1); }
 .footer-social { display: flex; justify-content: center; gap: 1.5rem; margin: 2rem 0; }
         .footer-social a { display: flex; align-items: center; justify-content: center; transition: opacity 0.3s; text-decoration: none; }
@@ -196,7 +197,8 @@
         .hero-organizers-block { margin: 2rem auto; }
         .hero-organized-by { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.6); margin-bottom: 1rem; font-weight: 500; }
         .hero-organizers-logos { display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap; }
-        .hero-organizers-logos img { height: 36px; width: auto; opacity: 0.9; transition: opacity 0.3s; }
+        .hero-organizers-logos img { height: 36px; width: auto; max-width: 160px; opacity: 0.9; transition: opacity 0.3s; }
+        .hero-organizers-logos img[src$=".svg"] { height: 36px; width: 160px; object-fit: contain; }
         .hero-organizers-logos img:hover { opacity: 1; }
 
         /* Hero CTA */
@@ -318,9 +320,9 @@
                     <span data-lang="en">An event by</span>
                 </p>
                 <div class="hero-organizers-logos">
-                    <img src="assets/images/logos/spri-digitala-logo.png" alt="SPRI Digitala">
-                    <img src="assets/images/logos/mondragon-logo-white.png" alt="Mondragón">
-                    <img src="assets/images/logos/basq-logo-white.png" alt="BasQ">
+                    <img src="assets/images/logos/spri-digitala-logo-white.png" alt="SPRI Enpresa Digitala">
+                    <img src="assets/images/logos/mondragon-logo-white.png" alt="Mondragón Unibertsitatea">
+                    <img src="assets/images/logos/gobierno-vasco-logo-white.png" alt="Gobierno Vasco">
                     <img src="assets/images/logos/entangle-logo-white.png" alt="Entangle Tech Hub">
                 </div>
             </div>
@@ -726,22 +728,25 @@
             
             <div class="entities-grid">
                 <div class="entity-logo">
-                    <img src="assets/images/logos/spri-digitala-logo.png" alt="SPRI">
+                    <img src="assets/images/logos/spri-digitala-logo-color.png" alt="SPRI Enpresa Digitala">
                 </div>
                 <div class="entity-logo">
-                    <img src="assets/images/logos/mondragon-logo.png" alt="Mondragón Universidad">
+                    <img src="assets/images/logos/mondragon-logo-color.png" alt="Mondragon Unibertsitatea">
                 </div>
                 <div class="entity-logo">
-                    <img src="assets/images/logos/basq-logo.png" alt="BasQ">
+                    <img src="assets/images/logos/gobierno-vasco-logo-color.png" alt="Gobierno Vasco">
                 </div>
                 <div class="entity-logo">
-                    <img src="assets/images/logos/entangle-logo.png" alt="Entangle Tech Hub">
+                    <img src="assets/images/logos/entangle-logo-color.png" alt="Entangle Tech Hub">
                 </div>
                 <div class="entity-logo">
-                    <img src="assets/images/logos/ibm-logo.png" alt="IBM">
+                    <img src="assets/images/logos/basq-logo-color.png" alt="BasQ">
                 </div>
                 <div class="entity-logo">
-                    <img src="assets/images/logos/falcondale-logo.jpg" alt="Falcondale">
+                    <img src="assets/images/logos/ibm-logo-color.png" alt="IBM">
+                </div>
+                <div class="entity-logo">
+                    <img src="assets/images/logos/falcondale-logo-color.jpg" alt="Falcondale">
                 </div>
             </div>
             
@@ -912,9 +917,9 @@
     <footer>
         <div class="footer-content">
             <div class="footer-organizers">
-                <img src="assets/images/logos/spri-digitala-logo.png" alt="SPRI">
-                <img src="assets/images/logos/mondragon-logo-white.png" alt="Mondragón">
-                <img src="assets/images/logos/basq-logo-white.png" alt="BasQ">
+                <img src="assets/images/logos/spri-digitala-logo-white.png" alt="SPRI Enpresa Digitala">
+                <img src="assets/images/logos/mondragon-logo-white.png" alt="Mondragón Unibertsitatea">
+                <img src="assets/images/logos/gobierno-vasco-logo-white.png" alt="Gobierno Vasco">
                 <img src="assets/images/logos/entangle-logo-white.png" alt="Entangle Tech Hub">
             </div>
             
