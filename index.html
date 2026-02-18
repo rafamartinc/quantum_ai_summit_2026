@@ -28,8 +28,8 @@
         h3 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; }
         
         
-        header { background: #292356; padding: 1rem 0; position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        nav { max-width: 1400px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+        header { background: #292356; padding: 0; height: 70px; display: flex; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        nav { max-width: 1400px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; width: 100%; }
         .nav-links { display: flex; gap: 2rem; list-style: none; flex: 1; justify-content: center; }
         .nav-links a { text-decoration: none; color: #ffffff; font-weight: 500; transition: color 0.3s; }
         .nav-links a:hover { color: rgba(255,255,255,0.7); }
@@ -38,16 +38,16 @@
         .social-links a { color: var(--text-secondary); font-size: 1.3rem; transition: color 0.3s; text-decoration: none; }
         .social-links a:hover { color: var(--primary-blue); }
         
-        .hero { margin-top: 80px; min-height: 90vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; max-width: 100% !important; padding: 0 !important; width: 100%;
+        .hero { margin-top: 70px; min-height: 90vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; max-width: 100% !important; padding: 0 !important; width: 100%;
             background: linear-gradient(135deg, 
-                rgba(95, 130, 193, 0.90) 0%, 
-                rgba(74, 88, 152, 0.85) 15%, 
-                rgba(109, 95, 158, 0.80) 30%, 
-                rgba(143, 95, 163, 0.80) 45%, 
-                rgba(168, 96, 135, 0.85) 60%, 
-                rgba(196, 114, 79, 0.90) 75%, 
-                rgba(224, 166, 58, 0.92) 90%, 
-                rgba(77, 189, 201, 0.88) 100%),
+                rgba(61, 76, 143, 0.9) 0%, 
+                rgba(74, 88, 152, 0.9) 15%, 
+                rgba(109, 95, 158, 0.9) 30%, 
+                rgba(143, 95, 163, 0.9) 45%, 
+                rgba(168, 96, 135, 0.9) 60%, 
+                rgba(196, 114, 79, 0.9) 75%, 
+                rgba(224, 166, 58, 0.9) 90%, 
+                rgba(77, 189, 201, 0.9) 100%),
             url('assets/images/hero-networking.jpg');
             background-size: cover;
             background-position: center;
@@ -62,28 +62,20 @@
         
         section { padding: 5rem 2rem; max-width: 1400px; margin: 0 auto; }
         .section-title { text-align: center; margin-bottom: 3rem; color: var(--text-primary); }
-        .about-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-top: 3rem; }
-        .about-card { padding: 2rem; background: var(--bg-card); border-radius: 10px; border: 1px solid var(--border-color); transition: all 0.3s; }
-        .about-card:hover { transform: translateY(-5px); border-color: var(--primary-blue); background: var(--bg-card-hover); }
-        .about-card h3 { color: var(--primary-blue); margin-bottom: 1rem; }
-        .about-card p { color: var(--text-secondary); }
-        
-        .topics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 3rem; }
-        .topic-card { padding: 2.5rem; background: var(--bg-card); border-radius: 15px; border: 1px solid var(--border-color); position: relative; overflow: hidden; transition: all 0.3s; }
-        .topic-card:hover { border-color: var(--primary-blue); transform: translateY(-5px); }
-        .topic-card h3 { color: var(--primary-blue); margin-bottom: 1rem; }
-        .topic-card ul { list-style: none; }
-        .topic-card li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; color: var(--text-secondary); }
-        .topic-card li::before { content: '●'; position: absolute; left: 0; color: var(--primary-blue); }
         
         .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
-        .benefit-card { padding: 2rem; background: var(--bg-card); border-radius: 10px; border: 1px solid var(--border-color); transition: all 0.3s; }
-        .benefit-card:hover { border-color: var(--primary-blue); transform: translateY(-5px); }
-        .benefit-icon { font-size: 2.5rem; margin-bottom: 1rem; }
-        .benefit-card h3 { color: var(--text-primary); margin-bottom: 1rem; }
-        .benefit-card p { color: var(--text-secondary); }
+        .benefit-card { padding: 2rem; background: rgba(255,255,255,0.07); border-radius: 10px; border: 1px solid rgba(255,255,255,0.12); transition: all 0.3s; }
+        .benefit-card:hover { border-color: rgba(255,255,255,0.3); transform: translateY(-5px); background: rgba(255,255,255,0.11); }
+        .benefit-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+        .benefit-card h3 { color: var(--text-primary); margin-bottom: 0.75rem; font-size: clamp(0.95rem, 1.8vw, 1.2rem); }
+        .benefit-card p { color: rgba(255,255,255,0.75); }
+
+        /* Benefits full-width section */
+        .benefits-full-section { background: #292356; padding: 4rem 2rem; }
+        .benefits-full-section .section-title { color: #ffffff; }
+        .benefits-inner { max-width: 1400px; margin: 0 auto; }
         
-        .stats { background: var(--accent-gradient); margin: 5rem 0; padding: 4rem 2rem; position: relative; }
+        .stats { background: var(--accent-gradient); padding: 4rem 2rem; position: relative; }
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; max-width: 1400px; margin: 0 auto; }
         .stat-item { text-align: center; }
         .stat-number { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; display: block; margin-bottom: 0.5rem; }
@@ -93,11 +85,6 @@
         .agenda-legend { display: flex; gap: 2rem; justify-content: center; margin-bottom: 2rem; flex-wrap: wrap; }
         .legend-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--text-secondary); }
         .legend-color { width: 20px; height: 20px; border-radius: 4px; }
-        .agenda-item { display: flex; gap: 2rem; margin-bottom: 1.5rem; padding: 1.5rem; background: var(--bg-card); border-radius: 10px; border-left: 4px solid; transition: all 0.3s; }
-        .agenda-item:hover { transform: translateX(5px); background: var(--bg-card-hover); }
-        .agenda-item.session { border-left-color: #4dbdc9; }
-        .agenda-item.break { border-left-color: #e0a63a; }
-        .agenda-item.visit { border-left-color: #8f5fa3; }
         .agenda-time { font-weight: 700; color: var(--primary-blue); min-width: 130px; font-size: 1.1rem; }
         .agenda-content { flex: 1; }
         .agenda-content h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
@@ -109,6 +96,8 @@
         .speaker-name { font-weight: 600; color: var(--text-primary); font-size: 0.95rem; }
         .speaker-role { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.3; }
         
+        .entities-section { background: var(--accent-gradient); margin: 0; padding: 2.5rem 2rem; max-width: 100% !important; }
+        .entities-section-inner { max-width: 1400px; margin: 0 auto; }
         .entities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; align-items: center; justify-items: center; margin-top: 3rem; }
         .entity-logo { background: #ffffff; border-radius: 10px; width: 100%; max-width: 220px; height: 120px; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 1rem; }
         .entity-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
@@ -201,11 +190,16 @@
         .cta-button.disabled { opacity: 0.6; cursor: not-allowed; background: rgba(255,255,255,0.4); }
         .cta-button.disabled:hover { transform: none; box-shadow: 0 4px 15px rgba(255,255,255,0.2); background: rgba(255,255,255,0.4); }
         .registration-notice { font-size: 0.9rem; font-style: italic; opacity: 0.8; margin-top: 1rem; color: rgba(255,255,255,0.85); }
-        .contact-email-notice { margin-top: 1.5rem; font-size: 0.95rem; color: var(--text-secondary); }
-        .contact-email-link { color: var(--primary-blue); text-decoration: none; font-weight: 600; transition: opacity 0.2s; }
-        .contact-email-link:hover { opacity: 0.8; text-decoration: underline; }
+        .contact-email-notice { margin-top: 1.5rem; font-size: 0.95rem; color: #ffffff; }
+        .contact-email-link { color: rgba(255,255,255,0.85); text-decoration: none; font-weight: 600; transition: opacity 0.2s; border-bottom: 1px solid rgba(255,255,255,0.4); padding-bottom: 1px; }
+        .contact-email-link:hover { opacity: 0.8; }
         
-        /* Footer mejorado */
+        section.venue-section { max-width: 100%; margin: 0; padding: 0; }
+
+        /* Reduce contact section top padding */
+        #contact { padding-top: 2.5rem; }
+
+        /* Footer improved */
         .footer-divider { height: 1px; background: var(--border-color); margin: 2rem auto; max-width: 800px; }
         .footer-privacy { text-align: center; margin: 1.5rem 0; }
         .footer-privacy .privacy-link { color: var(--primary-blue); text-decoration: none; font-weight: 500; transition: opacity 0.3s; }
@@ -213,8 +207,36 @@
         .footer-legal { margin: 1.5rem auto; max-width: 900px; text-align: center; line-height: 1.7; }
         .footer-legal p { margin: 0.4rem 0; font-size: 0.85rem; }
         .footer-legal strong { color: var(--text-primary); }
-        .footer-legal a { color: var(--primary-blue); text-decoration: none; }
-        .footer-legal a:hover { text-decoration: underline; }
+        /* Agenda item tags */
+        .agenda-item { display: flex; gap: 2rem; margin-bottom: 1.5rem; padding: 1.5rem; background: var(--bg-card); border-radius: 10px; border-left: 4px solid; transition: all 0.3s; position: relative; }
+        .agenda-item:hover { transform: translateX(5px); background: var(--bg-card-hover); }
+        .agenda-item.session { border-left-color: #4dbdc9; }
+        .agenda-item.break { border-left-color: #e0a63a; }
+        .agenda-item.visit { border-left-color: #8f5fa3; }
+        .agenda-tag { position: absolute; top: 0.75rem; right: 0.75rem; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.72rem; font-weight: 700; color: #ffffff; letter-spacing: 0.02em; text-transform: uppercase; }
+        .agenda-item.session .agenda-tag { background: #4dbdc9; }
+        .agenda-item.break .agenda-tag { background: #e0a63a; }
+        .agenda-item.visit .agenda-tag { background: #8f5fa3; }
+
+        /* Reduce agenda section bottom padding */
+        #agenda { padding-bottom: 1rem; }
+
+        /* Venue section */
+        .venue-section { background: #ffffff; padding: 0; max-width: 100% !important; margin: 0; }
+        .venue-inner { max-width: 1400px; margin: 0 auto; padding: 4rem 2rem; }
+        .venue-section .section-title { color: #1a1a1a; }
+        .venue-name { text-align: center; font-size: 1.5rem; font-weight: 700; color: #292356; margin-bottom: 0.5rem; }
+        .venue-address { text-align: center; margin-bottom: 2.5rem; }
+        .venue-address a { color: #5f82c1; text-decoration: none; font-size: 1rem; border-bottom: 1px solid rgba(95,130,193,0.4); padding-bottom: 2px; transition: border-color 0.2s; }
+        .venue-address a:hover { border-color: #5f82c1; }
+        .venue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+        .venue-map-container { border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.12); height: 340px; }
+        .venue-map-container iframe { width: 100%; height: 100%; border: 0; display: block; }
+        .venue-photos { display: grid; grid-template-rows: 1fr 1fr; gap: 1rem; height: 340px; }
+        .venue-photo { border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.12); }
+        .venue-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+        .venue-photo:hover img { transform: scale(1.04); }
+        @media (max-width: 768px) { .venue-grid { grid-template-columns: 1fr; } .venue-map-container { height: 280px; } .venue-photos { height: auto; grid-template-rows: auto; } .venue-photo { height: 180px; } }
     </style>
 </head>
 <body>
@@ -224,9 +246,9 @@
                 <span class="header-title">Quantum x AI Summit</span>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#about" data-lang="es">Sobre el Evento</a><a href="#about" data-lang="eu">Ekitaldiaren Buruz</a><a href="#about" data-lang="en">About</a></li>
                 <li><a href="#agenda" data-lang="es">Agenda</a><a href="#agenda" data-lang="eu">Agenda</a><a href="#agenda" data-lang="en">Agenda</a></li>
                 <li><a href="#entities" data-lang="es">Entidades</a><a href="#entities" data-lang="eu">Erakundeak</a><a href="#entities" data-lang="en">Entities</a></li>
+                <li><a href="#venue" data-lang="es">Sede</a><a href="#venue" data-lang="eu">Egoitza</a><a href="#venue" data-lang="en">Venue</a></li>
                 <li><a href="#contact" data-lang="es">Contacto</a><a href="#contact" data-lang="eu">Kontaktua</a><a href="#contact" data-lang="en">Contact</a></li>
             </ul>
             <div class="nav-right">
@@ -299,93 +321,8 @@
         </div>
     </section>
 
-    <section id="about">
-        <h2 class="section-title" data-lang="es">Sobre el Evento</h2>
-        <h2 class="section-title" data-lang="eu">Ekitaldiaren Buruz</h2>
-        <h2 class="section-title" data-lang="en">About the Event</h2>
-        
-        <div class="about-content">
-            <div class="about-card">
-                <h3 data-lang="es">Evento de Referencia</h3>
-                <h3 data-lang="eu">Erreferentziazko Ekitaldia</h3>
-                <h3 data-lang="en">Leading Event</h3>
-                <p data-lang="es">El Quantum x AI Summit reúne a profesionales, investigadores y empresas líderes para explorar la convergencia entre computación cuántica e inteligencia artificial. Un espacio de conocimiento, colaboración y networking estratégico.</p>
-                <p data-lang="eu">Quantum x AI Summit-ek profesionalak, ikertzaileak eta enpresa nagusiak biltzen ditu konputazio kuantikoaren eta adimen artifizialaren arteko konbergentzia esploratzeko.</p>
-                <p data-lang="en">The Quantum x AI Summit brings together professionals, researchers, and leading companies to explore the convergence of quantum computing and artificial intelligence.</p>
-            </div>
-            <div class="about-card">
-                <h3 data-lang="es">Impacto Tecnológico</h3>
-                <h3 data-lang="eu">Teknologia Eragina</h3>
-                <h3 data-lang="en">Technological Impact</h3>
-                <p data-lang="es">La computación cuántica y la IA representan la próxima revolución tecnológica con aplicaciones directas en industria, finanzas, salud y energía.</p>
-                <p data-lang="eu">Konputazio kuantikoa eta AA hurrengo iraultza teknologikoa dira, aplikazio zuzenak dituztelarik industrian, finantzetan, osasunean eta energian.</p>
-                <p data-lang="en">Quantum computing and AI represent the next technological revolution with direct applications in industry, finance, healthcare, and energy.</p>
-            </div>
-            <div class="about-card">
-                <h3 data-lang="es">Hub Tecnológico</h3>
-                <h3 data-lang="eu">Teknologia Gunea</h3>
-                <h3 data-lang="en">Technology Hub</h3>
-                <p data-lang="es">Euskadi se posiciona como referente europeo en tecnologías cuánticas gracias a BasQ y al IBM Quantum System Two.</p>
-                <p data-lang="eu">Euskadi teknologia kuantikoetan Europako erreferentzia bihurtzen ari da BasQ-ri eta IBM Quantum System Two-ri esker.</p>
-                <p data-lang="en">The Basque Country is positioning itself as a European reference in quantum technologies thanks to BasQ and IBM Quantum System Two.</p>
-            </div>
-        </div>
-
-        <div class="topics-grid" style="margin-top: 5rem;">
-            <div class="topic-card">
-                <h3 data-lang="es">🔬 Tecnologías Cuánticas</h3>
-                <h3 data-lang="eu">🔬 Teknologia Kuantikoak</h3>
-                <h3 data-lang="en">🔬 Quantum Technologies</h3>
-                <ul data-lang="es">
-                    <li>Computación Cuántica</li>
-                    <li>Computación de Inspiración Cuántica</li>
-                    <li>Comunicaciones Cuánticas</li>
-                    <li>Sensórica Cuántica</li>
-                    <li>Criptografía Post-Cuántica</li>
-                </ul>
-                <ul data-lang="eu">
-                    <li>Konputazio Kuantikoa</li>
-                    <li>Inspiraziozko Konputazio Kuantikoa</li>
-                    <li>Komunikazio Kuantikoak</li>
-                    <li>Sentsore Kuantikoak</li>
-                    <li>Post-Kuantikoko Kriptografia</li>
-                </ul>
-                <ul data-lang="en">
-                    <li>Quantum Computing</li>
-                    <li>Quantum-Inspired Computing</li>
-                    <li>Quantum Communications</li>
-                    <li>Quantum Sensing</li>
-                    <li>Post-Quantum Cryptography</li>
-                </ul>
-            </div>
-            <div class="topic-card">
-                <h3 data-lang="es">🤖 Inteligencia Artificial</h3>
-                <h3 data-lang="eu">🤖 Adimen Artifiziala</h3>
-                <h3 data-lang="en">🤖 Artificial Intelligence</h3>
-                <ul data-lang="es">
-                    <li>Machine Learning</li>
-                    <li>IA Generativa</li>
-                    <li>Visión Artificial</li>
-                    <li>Explicabilidad de la IA</li>
-                    <li>Computación Neuromórfica</li>
-                </ul>
-                <ul data-lang="eu">
-                    <li>Machine Learning</li>
-                    <li>AA Sortzailea</li>
-                    <li>Ikusmen Artifiziala</li>
-                    <li>AA-ren Azalgarritasuna</li>
-                    <li>Konputazio Neuromorfiko</li>
-                </ul>
-                <ul data-lang="en">
-                    <li>Machine Learning</li>
-                    <li>Generative AI</li>
-                    <li>Computer Vision</li>
-                    <li>AI Explainability</li>
-                    <li>Neuromorphic Computing</li>
-                </ul>
-            </div>
-        </div>
-        <div style="margin-top: 5rem;">
+    <div class="benefits-full-section">
+        <div class="benefits-inner">
             <h2 class="section-title" data-lang="es">Beneficios Para los Asistentes</h2>
             <h2 class="section-title" data-lang="eu">Parte-hartzaileen Onurak</h2>
             <h2 class="section-title" data-lang="en">Benefits for Attendees</h2>
@@ -447,7 +384,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <div class="stats">
         <div class="stats-grid">
@@ -487,29 +424,10 @@
         <p style="text-align: center; color: #ffffff; margin-bottom: 1rem;" data-lang="eu">2026ko martxoaren 25a · <em>Behin-behineko agenda, baieztatzeke</em></p>
         <p style="text-align: center; color: #ffffff; margin-bottom: 1rem;" data-lang="en">March 25, 2026 · <em>Tentative agenda, subject to confirmation</em></p>
 
-        <div class="agenda-legend">
-            <div class="legend-item">
-                <div class="legend-color" style="background: #4dbdc9;"></div>
-                <span data-lang="es">Sesiones</span>
-                <span data-lang="eu">Saioak</span>
-                <span data-lang="en">Sessions</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background: #e0a63a;"></div>
-                <span data-lang="es">Descansos</span>
-                <span data-lang="eu">Atsedenaldiak</span>
-                <span data-lang="en">Breaks</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background: #8f5fa3;"></div>
-                <span data-lang="es">Visita</span>
-                <span data-lang="eu">Bisita</span>
-                <span data-lang="en">Visit</span>
-            </div>
-        </div>
         
         <div class="agenda-timeline">
             <div class="agenda-item break">
+                <div class="agenda-tag"><span data-lang="es">Descanso</span><span data-lang="eu">Atsedena</span><span data-lang="en">Break</span></div>
                 <div class="agenda-time">09:00 - 09:30</div>
                 <div class="agenda-content">
                     <h4 data-lang="es">Registro y Café de Bienvenida</h4>
@@ -519,6 +437,7 @@
             </div>
 
             <div class="agenda-item session">
+                <div class="agenda-tag"><span data-lang="es">Sesión</span><span data-lang="eu">Saioa</span><span data-lang="en">Session</span></div>
                 <div class="agenda-time">09:30 - 10:00</div>
                 <div class="agenda-content">
                     <h4 data-lang="es">Ceremonia de Apertura</h4>
@@ -544,6 +463,7 @@
             </div>
 
             <div class="agenda-item session">
+                <div class="agenda-tag"><span data-lang="es">Sesión</span><span data-lang="eu">Saioa</span><span data-lang="en">Session</span></div>
                 <div class="agenda-time">10:00 - 10:20</div>
                 <div class="agenda-content">
                     <h4 data-lang="es">Keynote: Basque Quantum (BasQ), un hub global de tecnologías cuánticas</h4>
@@ -562,6 +482,7 @@
             </div>
 
             <div class="agenda-item session">
+                <div class="agenda-tag"><span data-lang="es">Sesión</span><span data-lang="eu">Saioa</span><span data-lang="en">Session</span></div>
                 <div class="agenda-time">10:20 - 10:40</div>
                 <div class="agenda-content">
                     <h4 data-lang="es">Keynote: BasQ-IBM Quantum System Two</h4>
@@ -580,6 +501,7 @@
             </div>
 
             <div class="agenda-item session">
+                <div class="agenda-tag"><span data-lang="es">Sesión</span><span data-lang="eu">Saioa</span><span data-lang="en">Session</span></div>
                 <div class="agenda-time">10:40 - 11:30</div>
                 <div class="agenda-content">
                     <h4 data-lang="es">Mesa Redonda</h4>
@@ -622,6 +544,7 @@
             </div>
 
             <div class="agenda-item break">
+                <div class="agenda-tag"><span data-lang="es">Descanso</span><span data-lang="eu">Atsedena</span><span data-lang="en">Break</span></div>
                 <div class="agenda-time">11:30 - 12:00</div>
                 <div class="agenda-content">
                     <h4 data-lang="es">Café y Networking</h4>
@@ -631,6 +554,7 @@
             </div>
 
             <div class="agenda-item session">
+                <div class="agenda-tag"><span data-lang="es">Sesión</span><span data-lang="eu">Saioa</span><span data-lang="en">Session</span></div>
                 <div class="agenda-time">12:00 - 13:00</div>
                 <div class="agenda-content">
                     <h4 data-lang="es">Elevator Pitches</h4>
@@ -701,6 +625,7 @@
             </div>
 
             <div class="agenda-item session">
+                <div class="agenda-tag"><span data-lang="es">Sesión</span><span data-lang="eu">Saioa</span><span data-lang="en">Session</span></div>
                 <div class="agenda-time">13:00 - 13:30</div>
                 <div class="agenda-content">
                     <h4 data-lang="es">Caso de éxito</h4>
@@ -731,6 +656,7 @@
             </div>
 
             <div class="agenda-item session">
+                <div class="agenda-tag"><span data-lang="es">Sesión</span><span data-lang="eu">Saioa</span><span data-lang="en">Session</span></div>
                 <div class="agenda-time">13:30 - 14:00</div>
                 <div class="agenda-content">
                     <h4 data-lang="es">Caso de éxito</h4>
@@ -761,6 +687,7 @@
             </div>
 
             <div class="agenda-item visit">
+                <div class="agenda-tag"><span data-lang="es">Visita</span><span data-lang="eu">Bisita</span><span data-lang="en">Visit</span></div>
                 <div class="agenda-time">14:00 - 18:30</div>
                 <div class="agenda-content">
                     <h4 data-lang="es">Comida y Networking + Visita Técnica</h4>
@@ -774,35 +701,74 @@
         </div>
     </section>
 
-    <section id="entities">
-        <h2 class="section-title" data-lang="es">Entidades Participantes</h2>
-        <h2 class="section-title" data-lang="eu">Erakunde Parte-hartzaileak</h2>
-        <h2 class="section-title" data-lang="en">Participating Entities</h2>
-        
-        <div class="entities-grid">
-            <div class="entity-logo">
-                <img src="assets/images/logos/spri-digitala-logo.png" alt="SPRI">
+    <section class="entities-section" id="entities">
+        <div class="entities-section-inner">
+            <h2 class="section-title" data-lang="es">Entidades Participantes</h2>
+            <h2 class="section-title" data-lang="eu">Erakunde Parte-hartzaileak</h2>
+            <h2 class="section-title" data-lang="en">Participating Entities</h2>
+            
+            <div class="entities-grid">
+                <div class="entity-logo">
+                    <img src="assets/images/logos/spri-digitala-logo.png" alt="SPRI">
+                </div>
+                <div class="entity-logo">
+                    <img src="assets/images/logos/mondragon-logo.png" alt="Mondragón Universidad">
+                </div>
+                <div class="entity-logo">
+                    <img src="assets/images/logos/basq-logo.png" alt="BasQ">
+                </div>
+                <div class="entity-logo">
+                    <img src="assets/images/logos/entangle-logo.png" alt="Entangle Tech Hub">
+                </div>
+                <div class="entity-logo">
+                    <img src="assets/images/logos/ibm-logo.png" alt="IBM">
+                </div>
+                <div class="entity-logo">
+                    <img src="assets/images/logos/falcondale-logo.jpg" alt="Falcondale">
+                </div>
             </div>
-            <div class="entity-logo">
-                <img src="assets/images/logos/mondragon-logo.png" alt="Mondragón Universidad">
-            </div>
-            <div class="entity-logo">
-                <img src="assets/images/logos/basq-logo.png" alt="BasQ">
-            </div>
-            <div class="entity-logo">
-                <img src="assets/images/logos/entangle-logo.png" alt="Entangle Tech Hub">
-            </div>
-            <div class="entity-logo">
-                <img src="assets/images/logos/ibm-logo.png" alt="IBM">
-            </div>
-            <div class="entity-logo">
-                <img src="assets/images/logos/falcondale-logo.jpg" alt="Falcondale">
+            
+            <p class="entities-note" data-lang="es">Se confirmarán más entidades próximamente</p>
+            <p class="entities-note" data-lang="eu">Erakunde gehiago berresten joango dira laster</p>
+            <p class="entities-note" data-lang="en">More entities to be confirmed soon</p>
+        </div>
+    </section>
+
+    <section class="venue-section" id="venue">
+        <div class="venue-inner">
+            <h2 class="section-title" data-lang="es">Sede del Evento</h2>
+            <h2 class="section-title" data-lang="eu">Ekitaldiaren Egoitza</h2>
+            <h2 class="section-title" data-lang="en">Event Venue</h2>
+
+            <p class="venue-name">NH Collection San Sebastián Aránzazu</p>
+            <p class="venue-address">
+                <a href="https://maps.app.goo.gl/a4SyRxYCniDf835H6" target="_blank" rel="noopener">
+                    <span data-lang="es">📍 Calle Zubieta 2, 20007 Donostia / San Sebastián — Ver en Google Maps</span>
+                    <span data-lang="eu">📍 Zubieta kalea 2, 20007 Donostia / San Sebastián — Ikusi Google Maps-en</span>
+                    <span data-lang="en">📍 Calle Zubieta 2, 20007 Donostia / San Sebastián — View on Google Maps</span>
+                </a>
+            </p>
+
+            <div class="venue-grid">
+                <div class="venue-map-container">
+                    <iframe
+                        src="https://maps.google.com/maps?q=NH+Collection+San+Sebastian+Aranzazu,+Zubieta+2,+Donostia-San+Sebastian&hl=es&output=embed&z=16"
+                        allowfullscreen
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="NH Collection San Sebastián Aránzazu">
+                    </iframe>
+                </div>
+                <div class="venue-photos">
+                    <div class="venue-photo">
+                        <img src="assets/images/venue/nh-fachada.jpg" alt="NH Collection San Sebastián Aránzazu — Fachada">
+                    </div>
+                    <div class="venue-photo">
+                        <img src="assets/images/venue/nh-auditorio.jpg" alt="NH Collection San Sebastián Aránzazu — Auditorio">
+                    </div>
+                </div>
             </div>
         </div>
-        
-        <p class="entities-note" data-lang="es">Se confirmarán más entidades próximamente</p>
-        <p class="entities-note" data-lang="eu">Erakunde gehiago berresten joango dira laster</p>
-        <p class="entities-note" data-lang="en">More entities to be confirmed soon</p>
     </section>
 
     <section id="contact">
@@ -886,12 +852,12 @@
                 </div>
 
                 <p>Asociación sin ánimo de lucro dedicada a impulsar la innovación y transferencia tecnológica</p>
-                <p>Número Nacional: 632384 | NIF/CIF: G24878407</p>
+                <p>Número Nacional: 632384 | CIF: G24878407</p>
             </div>
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         let currentLang = 'es';
 
         const langMeta = {
@@ -965,7 +931,7 @@
             const modal = document.getElementById('privacyModal');
             if (event.target == modal) modal.style.display = 'none';
 
-            // Close lang dropdown if clicking outside
+            // Close lang dropdown if clicking
             const selector = document.querySelector('.language-selector');
             if (selector && !selector.contains(event.target)) closeLangDropdown();
         }
