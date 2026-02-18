@@ -173,8 +173,9 @@
         
         /* Hero venue */
         .hero-venue { margin-top: 0.5rem; margin-bottom: 0; font-size: 1rem; opacity: 0.9; }
-        .hero-venue a { color: rgba(255,255,255,0.9); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); transition: all 0.3s; padding-bottom: 2px; }
+        .hero-venue a { color: rgba(255,255,255,0.9); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); transition: all 0.3s; padding-bottom: 2px; display: inline-flex; align-items: center; gap: 0.4rem; }
         .hero-venue a:hover { border-bottom-color: rgba(255,255,255,0.8); opacity: 1; }
+        .venue-pin-icon { width: 16px; height: 16px; opacity: 0.9; flex-shrink: 0; filter: brightness(0) invert(1); }
 
         /* Hero organizers */
         .hero-organizers-block { margin: 2rem auto; }
@@ -229,14 +230,14 @@
         .venue-address { text-align: center; margin-bottom: 2.5rem; }
         .venue-address a { color: #5f82c1; text-decoration: none; font-size: 1rem; border-bottom: 1px solid rgba(95,130,193,0.4); padding-bottom: 2px; transition: border-color 0.2s; }
         .venue-address a:hover { border-color: #5f82c1; }
-        .venue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
-        .venue-map-container { border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.12); height: 340px; }
+        .venue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; align-items: start; }
+        .venue-map-container { border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.12); aspect-ratio: 4/3; }
         .venue-map-container iframe { width: 100%; height: 100%; border: 0; display: block; }
-        .venue-photos { display: grid; grid-template-rows: 1fr 1fr; gap: 1rem; height: 340px; }
-        .venue-photo { border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.12); }
+        .venue-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .venue-photo { border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.12); aspect-ratio: 4/3; }
         .venue-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
         .venue-photo:hover img { transform: scale(1.04); }
-        @media (max-width: 768px) { .venue-grid { grid-template-columns: 1fr; } .venue-map-container { height: 280px; } .venue-photos { height: auto; grid-template-rows: auto; } .venue-photo { height: 180px; } }
+        @media (max-width: 768px) { .venue-grid { grid-template-columns: 1fr; } .venue-photos { grid-template-columns: 1fr 1fr; } }
     </style>
 </head>
 <body>
@@ -288,6 +289,7 @@
 
             <p class="hero-venue">
                 <a href="https://maps.app.goo.gl/a4SyRxYCniDf835H6" target="_blank" rel="noopener">
+                    <img src="assets/images/location-pin.svg" alt="" class="venue-pin-icon">
                     <span data-lang="es">NH Collection San Sebastián Aránzazu</span>
                     <span data-lang="eu">NH Collection Donostia Aránzazu</span>
                     <span data-lang="en">NH Collection San Sebastián Aránzazu</span>
@@ -333,54 +335,54 @@
                     <h3 data-lang="es">Networking Global</h3>
                     <h3 data-lang="eu">Sare Globala</h3>
                     <h3 data-lang="en">Global Networking</h3>
-                    <p data-lang="es">Conecta con líderes internacionales, investigadores, empresas e inversores.</p>
-                    <p data-lang="eu">Konektatu nazioarteko liderekin, ikertzaileekin, enpresekin eta inbertitzaileekin.</p>
-                    <p data-lang="en">Connect with international leaders, researchers, companies, and investors.</p>
+                    <p data-lang="es">Conecta con líderes en computación cuántica, IA y tecnología aplicada provenientes de la industria, la academia y el sector público, con especial foco en las entidades del ecosistema vasco.</p>
+                    <p data-lang="eu">Konektatu konputazio kuantikoan, AA eta teknologi aplikatuan lider diren pertsonaiekin, industria, unibertsitate eta sektore publikotik datozenekin, bereziki Euskal ekosistemako erakundeetan arreta jarriz.</p>
+                    <p data-lang="en">Connect with leaders in quantum computing, AI and applied technology from industry, academia and the public sector, with a special focus on entities within the Basque ecosystem.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">⚡</div>
                     <h3 data-lang="es">Conocimiento Especializado</h3>
                     <h3 data-lang="eu">Ezagutza Espezializatua</h3>
                     <h3 data-lang="en">Specialized Knowledge</h3>
-                    <p data-lang="es">Casos de uso reales y conocimientos técnicos de expertos del sector.</p>
-                    <p data-lang="eu">Erabilera-kasu errealak eta sektoreko aditu nagusien ezagutza teknikoak.</p>
-                    <p data-lang="en">Real use cases and technical insights from leading sector experts.</p>
+                    <p data-lang="es">Asiste a sesiones sobre cómo Euskadi está construyendo un hub global de tecnologías cuánticas, de la mano de expertos de sectores de diversas industrias, para debatir qué problemas reales pueden resolverse hoy con cuántica + IA.</p>
+                    <p data-lang="eu">Attend sessions on how the Basque Country is building a global hub for quantum technologies, alongside experts from various industry sectors, to discuss what real-world problems can be solved today with quantum + AI.</p>
+                    <p data-lang="en">Partaide izan Euskadi teknologia kuantikoen hub global bat eraikitzen ari denari buruzko keynotetan, industria desberdinetako adituen eskutik, gaur egun kuantikoa + AArekin zein arazo erreali konpondu daitezkeen eztabaidatzeko.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">🤝</div>
                     <h3 data-lang="es">Colaboraciones Estratégicas</h3>
                     <h3 data-lang="eu">Lankidetza Estrategikoak</h3>
                     <h3 data-lang="en">Strategic Collaborations</h3>
-                    <p data-lang="es">Construye alianzas con actores clave para acelerar proyectos.</p>
-                    <p data-lang="eu">Eratu aliantzak aktore nagusiekin proiektuak azeleratzeko.</p>
-                    <p data-lang="en">Build alliances with key players to accelerate projects.</p>
+                    <p data-lang="es">El formato del evento — con sesiones de elevator pitches del ecosistema cuántico vasco, espacios de networking y una visita técnica — maximiza las oportunidades de crear alianzas concretas entre startups, corporaciones, centros de investigación e instituciones públicas.</p>
+                    <p data-lang="eu">Egunaren formatuak — Euskal ekosistema kuantikoko elevator pitch saioekin, networking guneekin eta bisita tekniko batekin — aukera maximizatzen ditu startupen, korporazioen, ikerketa-zentroen eta erakunde publikoen artean alianza zehatzak sortzeko.</p>
+                    <p data-lang="en">The event format — with elevator pitch sessions from the Basque quantum ecosystem, networking spaces and a technical visit — maximizes the opportunities to create concrete alliances between startups, corporations, research centers and public institutions.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">💰</div>
                     <h3 data-lang="es">Oportunidades de Financiación</h3>
                     <h3 data-lang="eu">Finantzaketa Aukerak</h3>
                     <h3 data-lang="en">Funding Opportunities</h3>
-                    <p data-lang="es">Explora subvenciones, capital riesgo y programas públicos.</p>
-                    <p data-lang="eu">Esploratu diru-laguntzak, arrisku-kapitala eta programa publikoak.</p>
-                    <p data-lang="en">Explore grants, venture capital, and public programs.</p>
+                    <p data-lang="es">Descubre los principales programas de apoyo a proyectos cuánticos y de IA, provenientes de fuentes regionales, nacionales y supranacionales, y conecta directamente con las instituciones que los gestionan.</p>
+                    <p data-lang="eu">Eskalatutako proiektu kuantiko eta AA proiektuetarako laguntza-programa nagusiak ezagutu, iturri eskualde, estatuko eta gainnazionaletatik datozenak, eta zuzenean konektatu horiek kudeatzen dituzten erakundeekin.</p>
+                    <p data-lang="en">Discover the main support programs for quantum and AI projects, coming from regional, national and supranational sources, and connect directly with the institutions that manage them.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">📊</div>
                     <h3 data-lang="es">Marco Regulatorio</h3>
                     <h3 data-lang="eu">Arau Markoa</h3>
                     <h3 data-lang="en">Regulatory Framework</h3>
-                    <p data-lang="es">Mantente informado sobre políticas y estándares del sector.</p>
-                    <p data-lang="eu">Egon informatuta sektorea definitzen ari diren politikei buruz.</p>
-                    <p data-lang="en">Stay informed about policies and standards shaping the sector.</p>
+                    <p data-lang="es">El marco regulatorio para la IA y las tecnologías cuánticas evoluciona rápidamente en Europa. El summit aborda estándares emergentes, la criptografía post-cuántica como respuesta a la amenaza cuántica sobre la seguridad actual, y el papel de las políticas públicas.</p>
+                    <p data-lang="eu">AA eta teknologia kuantikoetarako araudi-esparrua azkar eboluzionatzen ari da Europan. Summitak estandar emergenteak jorratzen ditu, kriptografia post-kuantikoa mehatxu kuantikoari erantzun gisa segurtasunaren aurrean dagoen arriskuari, eta politika publikoen rola.</p>
+                    <p data-lang="en">The regulatory framework for AI and quantum technologies is evolving rapidly in Europe. The summit addresses emerging standards, post-quantum cryptography as a response to the quantum threat to current security, and the role of public policies.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">🎯</div>
                     <h3 data-lang="es">Visibilidad Sectorial</h3>
                     <h3 data-lang="eu">Sektoreko Ikusgarritasuna</h3>
                     <h3 data-lang="en">Sector Visibility</h3>
-                    <p data-lang="es">Posiciona tu organización y refuerza tu liderazgo.</p>
-                    <p data-lang="eu">Posizionatu zure erakundea eta indartu zure lidergoa.</p>
-                    <p data-lang="en">Position your organization and strengthen your leadership.</p>
+                    <p data-lang="es">El Quantum x AI Summit es la plataforma ideal para que organizaciones, startups y centros de investigación den visibilidad a sus proyectos ante un público cualificado, conectando con el ecosistema desde un escenario directo ante la comunidad cuántica vasca, europea y global.</p>
+                    <p data-lang="eu">Quantum x AI Summit da plataforma ideala erakunde, startup eta ikerketa-zentroentzat beren proiektuei ikusgarritasuna emateko publiko kualifikatu baten aurrean, ekosistemarekin konektatuz Euskal, Europako eta munduko komunitate kuantikoaren aurrean zuzeneko eszenatokitik.</p>
+                    <p data-lang="en">The Quantum x AI Summit is the ideal platform for organizations, startups and research centers to give visibility to their projects before a qualified audience, connecting with the ecosystem from a direct stage in front of the Basque, European and global quantum community.</p>
                 </div>
             </div>
         </div>
@@ -395,7 +397,7 @@
                 <span class="stat-label" data-lang="en">Expected Attendees</span>
             </div>
             <div class="stat-item">
-                <span class="stat-number">20+</span>
+                <span class="stat-number">15+</span>
                 <span class="stat-label" data-lang="es">Ponentes Internacionales</span>
                 <span class="stat-label" data-lang="eu">Hizlari Internazionalak</span>
                 <span class="stat-label" data-lang="en">International Speakers</span>
@@ -407,7 +409,7 @@
                 <span class="stat-label" data-lang="en">Countries Represented</span>
             </div>
             <div class="stat-item">
-                <span class="stat-number">30+</span>
+                <span class="stat-number">20+</span>
                 <span class="stat-label" data-lang="es">Entidades Participantes</span>
                 <span class="stat-label" data-lang="eu">Erakunde Parte-hartzaileak</span>
                 <span class="stat-label" data-lang="en">Participating Entities</span>
@@ -761,10 +763,16 @@
                 </div>
                 <div class="venue-photos">
                     <div class="venue-photo">
-                        <img src="assets/images/venue/nh-fachada.jpg" alt="NH Collection San Sebastián Aránzazu — Fachada">
+                        <img src="assets/images/venue/nh-fachada.webp" alt="NH Collection San Sebastián Aránzazu — Fachada">
                     </div>
                     <div class="venue-photo">
                         <img src="assets/images/venue/nh-auditorio.jpg" alt="NH Collection San Sebastián Aránzazu — Auditorio">
+                    </div>
+                    <div class="venue-photo">
+                        <img src="assets/images/venue/nh-entrada.avif" alt="NH Collection San Sebastián Aránzazu — Entrada">
+                    </div>
+                    <div class="venue-photo">
+                        <img src="assets/images/venue/nh-entorno.avif" alt="NH Collection San Sebastián Aránzazu — Entorno">
                     </div>
                 </div>
             </div>
@@ -798,6 +806,80 @@
         <div class="modal-content">
             <button class="modal-close" onclick="closePrivacyModal()">&times;</button>
             <h2>Política de Privacidad</h2>
+            
+            <p>Conforme a la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD), y al Reglamento (UE) 2016/679, del Parlamento Europeo y del Consejo, de 27 de abril ("Reglamento General de Protección de Datos" o "RGPD"), esta Política de Privacidad se aplica a los tratamientos de datos de carácter personal en relación con los datos de los usuarios/as (personas físicas) recabados en cualquiera de las secciones del sitio web.</p>
+
+            <p>Si no está usted de acuerdo con los términos de esta Política, no acceda ni utilice los Servicios. Esta Política de privacidad no es aplicable a ningún otro producto, servicio o actividad de terceros.</p>
+
+            <h3>RESPONSABLE DEL TRATAMIENTO DE SUS DATOS</h3>
+            <p>La entidad que conforma Enpresa Digitala y que es corresponsable en el tratamiento de datos personales es:</p>
+            <ul>
+                <li>Mondragon Goi Eskola Politeknikoa Jose María Arizmendiarrieta S.Coop. CIF F20560991. Loramendi 4, 20500 Arrasate/Mondragon. Registro Universidades Centros y Títulos del Ministerio de Educación n.º 601 · <a href="mailto:infogaraia@mondragon.edu" style="color: var(--primary-blue)" target="_blank">infogaraia@mondragon.edu</a> · +34 943793700</li>
+            </ul>
+
+            <h3>FINALIDADES DEL TRATAMIENTO DE DATOS</h3>
+            <p>Sus datos personales se utilizarán por la entidad Mondragon Goi Eskola Politeknikoa con la finalidad genérica de la gestión y administración de eventos a través de la web y el envío de información sobre Enpresa Digitala. Y específicamente para:</p>
+            <ul>
+                <li>Gestionar y administrar los servicios e información puestos a disposición a través de la web.</li>
+                <li>Difundir las acciones realizadas.</li>
+                <li>Gestionar y administrar los cursos, eventos, talleres, formaciones, etc.</li>
+                <li>Comunicar con los usuarios/as en respuesta a solicitudes, inscripciones, comentarios y preguntas.</li>
+                <li>Envío de comunicaciones sobre el catálogo formativo y demás información de la iniciativa.</li>
+            </ul>
+            <p>No trataremos sus datos personales para ninguna otra finalidad más allá de las descritas anteriormente salvo que venga impuesto por ley o exista algún requerimiento judicial.</p>
+            <p>Las solicitudes de información que nos haga llegar requieren que el interesado nos facilite de forma voluntaria los datos necesarios para poder atenderle o prestarle los Servicios. La obligatoriedad o necesidad de facilitarnos esos datos se señalará con un asterisco (*) en los formularios o secciones correspondientes a cada servicio.</p>
+            <p>No obstante, el interesado puede libremente negarse a facilitarnos esos datos o, posteriormente, revocar el consentimiento previamente otorgado para tratar sus datos, si bien esa negativa implicará la imposibilidad de que podamos atender su petición o prestarle el servicio que se trate.</p>
+            <p>Enpresa Digitala entiende que, al facilitarnos esos datos, el interesado garantiza y se hace responsable de la veracidad, actualidad y exactitud de los mismos y que acepta y consiente expresamente en su tratamiento para las finalidades antes descritas.</p>
+
+
+            <h3>DURACIÓN DEL TRATAMIENTO DE DATOS</h3>
+            <p>La entidad conservará y tratará los datos personales recabados desde el momento que el usuario/a presta su consentimiento hasta que solicite ser dado de baja o retire su consentimiento para el tratamiento de datos.</p>
+            <p>En el caso de datos de administración y facturación se conservarán según la normativa de referencia.</p>
+
+            <h3>TOMA DE DECISONES AUTOMATIZADAS Y ELABORACIÓN DE PERFILES</h3>
+            <p>El tratamiento de datos personales no conlleva la toma de decisiones automatizadas ni la elaboración de perfiles de los usuarios.</p>
+
+            <h3>LEGITIMACIÓN DEL TRATAMIENTO DE LOS DATOS</h3>
+            <p>La base legal para el tratamiento de los datos es la legitimación basada en el consentimiento del interesado prestado para las finalidades anteriormente descritas, que se solicitará en el momento de:</p>
+            <ul>
+                <li>proceder a tratar sus datos</li>
+                <li>la inclusión de sus datos en nuestros formularios</li>
+            </ul>
+            <p>El alta en la web como las solicitudes de información que nos haga llegar requieren que el interesado nos facilite de forma voluntaria los datos necesarios para poder atenderle o prestarle los Servicios. No obstante, el interesado puede libremente negarse a facilitarnos esos datos o, posteriormente, revocar el consentimiento previamente otorgado para tratar sus datos, si bien esa negativa implicará la imposibilidad de que podamos atender su petición o continuar con el registro en nuestra plataforma.</p>
+            <p>Igualmente, podremos tratar sus datos en base a la relación contractual existente a la hora de la formalización de las inscripciones en lo referente a los servicios puestos a disposición en la web (formación online, inscripciones, matrículas, etc.)</p>
+            <p>Enpresa Digitala entiende que, al facilitarnos esos datos, el interesado garantiza y se hace responsable de la veracidad, actualidad y exactitud de los mismos y que acepta y consiente expresamente en su tratamiento para las finalidades antes descritas.</p>
+            <p>La entidad podrá enviar comunicaciones sobre los servicios, cursos, talleres, etc únicamente relacionados con Enpresa Digitala durante la vigencia de la relación con la misma e incluso una vez extinguida ésta a través de correo electrónico o medios de comunicación electrónica equivalentes.</p>
+            <p>Posibilidad de retirar el consentimiento: El usuario/a tiene derecho a retirar el consentimiento en cualquier momento, sin que ello afecte a la licitud del tratamiento basado en el consentimiento previo a su retirada. Asimismo, el usuario/a podrá oponerse en cualquier momento a la recepción de cualquier comunicación electrónica realizada por la entidad relacionada con la iniciativa Enpresa Digitala.</p>
+
+            <h3>DESTINATARIOS DE CESIONES O TRANSFERENCIAS</h3>
+            <p>Sus datos personales podrán ser cedidos a SPRI - Agencia Vasca de Desarrollo Empresarial (CIF Q4800789B), así como a Entangle Technology Hub (G24878407), con la única finalidad de la gestión y administración de la web, evento e inscripciones.</p>
+            <p>La entidad que conforma Enpresa Digitala no cederá sus datos personales a terceros salvo que estén obligados legalmente a ello (Hacienda Foral, Administración de Justicia, etc.) o usted nos lo haya autorizado expresamente.</p>
+            <p>Asimismo, la entidad que conforma Enpresa Digitala puede utilizar diferentes servicios o proveedores de tecnología considerados a tenor de la normativa de protección de datos como encargados de tratamiento firmando con ellos los correspondientes contratos exigidos por la normativa de referencia.</p>
+
+            <h3>REDES SOCIALES</h3>
+            <p>Enpresa Digitala dispone de distintas redes sociales (Facebook, Twitter, etc) para la difusión de contenidos relacionados con Enpresa Digitala así como para facilitar a los usuarios una vía de contacto. Enpresa Digitala es responsable del tratamiento de los datos de sus seguidores y contactos en las redes sociales. No obstante, en la medida en que el tratamiento de los datos personales se efectúa en el marco de las redes sociales cuyos proveedores imponen unas reglas de funcionamiento, las obligaciones de Enpresa Digitala se limitarán a aquellos aspectos en los que tiene libertad para actuar. En ningún caso Enpresa Digitala extraerá los datos de las redes sociales, realizará perfiles de sus usuarios o recabará datos personales adicionales relativos a gustos, aficiones o modo de utilización de las redes sociales, sin el consentimiento expreso de los afectados.</p>
+
+            <h3>DERECHOS DE LAS PERSONAS INTERESADAS</h3>
+            <p>Cualquier persona tiene derecho a obtener confirmación sobre si en Enpresa Digitala se tratan datos personales que le conciernan, o no. En particular, usted puede ejercer ante Enpresa Digitala los siguientes derechos:</p>
+            <ul>
+                <li>Derecho de acceso: permite al interesado conocer y obtener información sobre sus datos de carácter personal sometidos a tratamiento.</li>
+                <li>Derecho de rectificación: permite corregir errores, modificar los datos que resulten ser inexactos o incompletos y garantizar la certeza de la información objeto del tratamiento.</li>
+                <li>Derecho de supresión: permite solicitar la eliminación de los datos objeto de tratamiento cuando ya no sean necesarios.</li>
+                <li>Derecho de oposición: derecho del interesado a que no se lleve a cabo el tratamiento de sus datos de carácter personal o se cese en el mismo, salvo motivos legítimos o para el ejercicio o defensa de posibles reclamaciones, en cuyo caso los mantendremos bloqueados durante el plazo correspondiente mientras persistan las obligaciones legales.</li>
+                <li>Derecho de oposición al envío de publicidad: Los interesados podrán oponerse al envío de comunicaciones. En ese caso puede revocar en cualquier momento su consentimiento a recibir estas notificaciones utilizando el mecanismo implementado al efecto en las mismas, o bien, escribiendo directamente a la dirección estipulada para ello por cada entidad que participa en Enpresa Digitala.</li>
+                <li>Limitación del tratamiento: En determinadas circunstancias, los interesados podrán solicitar la limitación del tratamiento de sus datos, en cuyo caso únicamente se conservarán para el ejercicio o defensa de reclamaciones.</li>
+                <li>Portabilidad de los datos: las personas interesadas pueden solicitar recibir los datos que le incumban y que nos haya facilitado o que –siempre que técnicamente sea posible– se los enviemos a otro responsable de tratamiento de su elección, en un formato estructurado de uso común y lectura mecánica.</li>
+                <li>Derecho a no ser objeto de decisiones individuales automatizadas (incluida la elaboración de perfiles): derecho a no ser objeto de una decisión basada en el tratamiento automatizado que produzca efectos o afecte significativamente.</li>
+            </ul>
+            <p>Si desea ejercer alguno de los derechos expuestos, puede remitir una comunicación a la dirección establecida por la entidad que conforma Enpresa Digitala.</p>
+            <p>En relación con la posibilidad de reclamar ante la Autoridad de Control, Enpresa Digitala le informa igualmente del derecho que le asiste de presentar una reclamación ante la Autoridad Vasca de Protección de Datos  (<a href="https://www.avpd.euskadi.eus" style="color: var(--primary-blue)" target="_blank">www.avpd.euskadi.eus</a>) si considera que el tratamiento no se ajusta a la normativa vigente.</p>
+
+            <h3>TÉRMINOS Y CONDICIONES DE USO Y COMPRA</h3>
+            <ul>
+                <li>Política de envío. No procede.</li>
+                <li>El usuario no tiene derecho a cancelación en caso de no asistencia.</li>
+                <li>Tampoco a devolución ni reembolso.</li>
+            </ul>
         </div>
     </div>
 
@@ -857,7 +939,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         let currentLang = 'es';
 
         const langMeta = {
