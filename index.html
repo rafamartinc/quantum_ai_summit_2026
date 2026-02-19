@@ -116,6 +116,9 @@
         .entities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; align-items: center; justify-items: center; margin-top: 3rem; }
         .entity-logo { background: #ffffff; border-radius: 10px; width: 100%; max-width: 220px; height: 120px; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 1rem; }
         .entity-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+        /* Entity name card (sin logo) */
+        .entity-name-card { background: #ffffff; border: 1px solid var(--border-color); border-radius: 10px; width: 100%; max-width: 220px; height: 120px; display: flex; align-items: center; justify-content: center; padding: 1rem; text-align: center; }
+        .entity-name-card span { color: var(--primary-dark); font-weight: 600; font-size: 1rem; line-height: 1.35; letter-spacing: 0.01em; }
         .entities-note { text-align: center; margin-top: 2rem; color: #ffffff; font-style: italic; }
         
         .privacy-link { color: var(--primary-blue); text-decoration: none; cursor: pointer; border-bottom: 1px solid transparent; transition: border-color 0.3s; }
@@ -138,8 +141,8 @@
         footer { background: #292356; color: var(--text-secondary); padding: 3rem 2rem 1rem; border-top: 1px solid rgba(255,255,255,0.1); }
         .footer-content { max-width: 1400px; margin: 0 auto; }
         .footer-organizers { display: flex; justify-content: center; gap: 3rem; margin-bottom: 2rem; flex-wrap: wrap; align-items: center; }
-        .footer-organizers img { height: 50px; width: auto; max-width: 200px; }
-        .footer-organizers img[src$=".svg"] { height: 50px; width: 200px; object-fit: contain; }
+        .footer-organizers img { height: 75px; width: auto; max-width: 300px; }
+        .footer-organizers img[src$=".svg"] { height: 75px; width: 300px; object-fit: contain; }
         .footer-organizers img.logo-color-to-white { filter: brightness(0) invert(1); }
 .footer-social { display: flex; justify-content: center; gap: 1.5rem; margin: 2rem 0; }
         .footer-social a { display: flex; align-items: center; justify-content: center; transition: opacity 0.3s; text-decoration: none; }
@@ -197,8 +200,8 @@
         .hero-organizers-block { margin: 2rem auto; }
         .hero-organized-by { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.6); margin-bottom: 1rem; font-weight: 500; }
         .hero-organizers-logos { display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap; }
-        .hero-organizers-logos img { height: 36px; width: auto; max-width: 160px; opacity: 0.9; transition: opacity 0.3s; }
-        .hero-organizers-logos img[src$=".svg"] { height: 36px; width: 160px; object-fit: contain; }
+        .hero-organizers-logos img { height: 54px; width: auto; max-width: 240px; opacity: 0.9; transition: opacity 0.3s; }
+        .hero-organizers-logos img[src$=".svg"] { height: 54px; width: 240px; object-fit: contain; }
         .hero-organizers-logos img:hover { opacity: 1; }
 
         /* Hero CTA */
@@ -238,6 +241,26 @@
 
         /* Reduce agenda section bottom padding */
         #agenda { padding-bottom: 1rem; }
+
+        /* Agenda info button */
+        .agenda-info-btn { margin-top: 1rem; display: inline-flex; align-items: center; gap: 0.4rem; background: transparent; border: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.82rem; font-weight: 600; padding: 0.35rem 0.85rem; border-radius: 20px; cursor: pointer; transition: all 0.25s; letter-spacing: 0.03em; }
+        .agenda-info-btn:hover { border-color: var(--primary-blue); color: var(--primary-blue); background: rgba(77,189,201,0.08); }
+        .agenda-info-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+        /* Agenda session modal */
+        .agenda-modal .modal-content { max-width: 750px; }
+        .agenda-modal-header { margin-bottom: 1.5rem; }
+        .agenda-modal-header .agenda-tag { position: static; display: inline-block; margin-bottom: 0.75rem; }
+        .agenda-modal-time { color: var(--primary-blue); font-weight: 700; font-size: 1.05rem; margin-bottom: 0.4rem; }
+        .agenda-modal-title { font-size: 1.35rem; font-weight: 700; color: var(--text-primary); margin: 0; line-height: 1.3; }
+        .agenda-modal-desc { color: var(--text-secondary); line-height: 1.75; margin: 1.25rem 0 1.75rem; font-size: 0.97rem; }
+        .agenda-modal-speakers { display: flex; flex-direction: column; gap: 1.25rem; }
+        .agenda-modal-speaker { display: flex; gap: 1.25rem; align-items: flex-start; background: var(--bg-dark); border-radius: 10px; padding: 1rem; }
+        .agenda-modal-speaker img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid var(--border-color); }
+        .agenda-modal-speaker-info { flex: 1; }
+        .agenda-modal-speaker-name { font-weight: 700; color: var(--text-primary); font-size: 1rem; margin-bottom: 0.2rem; }
+        .agenda-modal-speaker-role { color: var(--primary-blue); font-size: 0.88rem; margin-bottom: 0.6rem; font-weight: 600; }
+        .agenda-modal-speaker-bio { color: var(--text-secondary); font-size: 0.88rem; line-height: 1.65; }
 
         /* Venue section */
         .venue-section { background: #ffffff; padding: 0; max-width: 100% !important; margin: 0; }
@@ -445,7 +468,7 @@
 
         
         <div class="agenda-timeline">
-            <div class="agenda-item break">
+            <div class="agenda-item break" data-session-id="1">
                 <div class="agenda-tag"><span data-lang="es">Descanso</span><span data-lang="eu">Atsedena</span><span data-lang="en">Break</span></div>
                 <div class="agenda-time">09:00 - 09:30</div>
                 <div class="agenda-content">
@@ -455,7 +478,7 @@
                 </div>
             </div>
 
-            <div class="agenda-item session">
+            <div class="agenda-item session" data-session-id="2">
                 <div class="agenda-tag"><span data-lang="es">Sesión</span><span data-lang="eu">Saioa</span><span data-lang="en">Session</span></div>
                 <div class="agenda-time">09:30 - 10:00</div>
                 <div class="agenda-content">
@@ -466,22 +489,30 @@
                         <div class="speaker-item">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
-                                <div class="speaker-name">Nombre del Ponente</div>
-                                <div class="speaker-role">Cargo · Organización</div>
+                                <div class="speaker-name">Eli García</div>
+                                <div class="speaker-role">Directora de Transformación Digital · Eusko Jaurlaritza – Gobierno Vasco</div>
                             </div>
                         </div>
                         <div class="speaker-item">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker" class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Nombre del Ponente</div>
-                                <div class="speaker-role">Cargo · Organización</div>
+                                <div class="speaker-role">Cargo · Mondragon Unibertsitatea</div>
+                            </div>
+                        </div>
+                        <div class="speaker-item">
+                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
+                            <div class="speaker-info">
+                                <div class="speaker-name">David Morcuende</div>
+                                <div class="speaker-role">Network Manager · European Quantum Industry Consortium (QuIC)</div>
                             </div>
                         </div>
                     </div>
+                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="8"/><line x1="12" y1="12" x2="12" y2="16"/></svg> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
                 </div>
             </div>
 
-            <div class="agenda-item session">
+            <div class="agenda-item session" data-session-id="3">
                 <div class="agenda-tag"><span data-lang="es">Sesión</span><span data-lang="eu">Saioa</span><span data-lang="en">Session</span></div>
                 <div class="agenda-time">10:00 - 10:20</div>
                 <div class="agenda-content">
@@ -492,15 +523,16 @@
                         <div class="speaker-item">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
-                                <div class="speaker-name">Nombre del Ponente</div>
-                                <div class="speaker-role">Cargo · Organización</div>
+                                <div class="speaker-name">Ander Barreiro</div>
+                                <div class="speaker-role">Responsable de Proyectos Estratégicos · BasQ</div>
                             </div>
                         </div>
                     </div>
+                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="8"/><line x1="12" y1="12" x2="12" y2="16"/></svg> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
                 </div>
             </div>
 
-            <div class="agenda-item session">
+            <div class="agenda-item session" data-session-id="4">
                 <div class="agenda-tag"><span data-lang="es">Sesión</span><span data-lang="eu">Saioa</span><span data-lang="en">Session</span></div>
                 <div class="agenda-time">10:20 - 10:40</div>
                 <div class="agenda-content">
@@ -512,14 +544,15 @@
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Nombre del Ponente</div>
-                                <div class="speaker-role">Cargo · Organización</div>
+                                <div class="speaker-role">Cargo · IBM</div>
                             </div>
                         </div>
                     </div>
+                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="8"/><line x1="12" y1="12" x2="12" y2="16"/></svg> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
                 </div>
             </div>
 
-            <div class="agenda-item session">
+            <div class="agenda-item session" data-session-id="5">
                 <div class="agenda-tag"><span data-lang="es">Sesión</span><span data-lang="eu">Saioa</span><span data-lang="en">Session</span></div>
                 <div class="agenda-time">10:40 - 11:30</div>
                 <div class="agenda-content">
@@ -533,15 +566,15 @@
                         <div class="speaker-item">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
-                                <div class="speaker-name">Nombre (Moderador)</div>
-                                <div class="speaker-role">Cargo · Organización</div>
+                                <div class="speaker-name">David Morcuende (Moderador)</div>
+                                <div class="speaker-role">Network Manager · European Quantum Industry Consortium (QuIC)</div>
                             </div>
                         </div>
                         <div class="speaker-item">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
-                                <div class="speaker-name">Nombre del Ponente</div>
-                                <div class="speaker-role">Cargo · Organización</div>
+                                <div class="speaker-name">Irene López de Vallejo</div>
+                                <div class="speaker-role">Head of Business Development · Tecnalia</div>
                             </div>
                         </div>
                         <div class="speaker-item">
@@ -559,10 +592,11 @@
                             </div>
                         </div>
                     </div>
+                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="8"/><line x1="12" y1="12" x2="12" y2="16"/></svg> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
                 </div>
             </div>
 
-            <div class="agenda-item break">
+            <div class="agenda-item break" data-session-id="6">
                 <div class="agenda-tag"><span data-lang="es">Descanso</span><span data-lang="eu">Atsedena</span><span data-lang="en">Break</span></div>
                 <div class="agenda-time">11:30 - 12:00</div>
                 <div class="agenda-content">
@@ -572,7 +606,7 @@
                 </div>
             </div>
 
-            <div class="agenda-item session">
+            <div class="agenda-item session" data-session-id="7">
                 <div class="agenda-tag"><span data-lang="es">Sesión</span><span data-lang="eu">Saioa</span><span data-lang="en">Session</span></div>
                 <div class="agenda-time">12:00 - 13:00</div>
                 <div class="agenda-content">
@@ -586,29 +620,29 @@
                         <div class="speaker-item">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
-                                <div class="speaker-name">Nombre del Ponente</div>
-                                <div class="speaker-role">Cargo · Organización</div>
+                                <div class="speaker-name">Jorge de la Herrán y Crespo</div>
+                                <div class="speaker-role">Presidente · Qubiz.team</div>
+                            </div>
+                        </div>
+                        <div class="speaker-item">
+                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
+                            <div class="speaker-info">
+                                <div class="speaker-name">Iraitz Montalbán</div>
+                                <div class="speaker-role">CTO · Falcondale</div>
                             </div>
                         </div>
                         <div class="speaker-item">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Nombre del Ponente</div>
-                                <div class="speaker-role">Cargo · Organización</div>
+                                <div class="speaker-role">Cargo · QCentroid</div>
                             </div>
                         </div>
                         <div class="speaker-item">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Nombre del Ponente</div>
-                                <div class="speaker-role">Cargo · Organización</div>
-                            </div>
-                        </div>
-                        <div class="speaker-item">
-                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
-                            <div class="speaker-info">
-                                <div class="speaker-name">Nombre del Ponente</div>
-                                <div class="speaker-role">Cargo · Organización</div>
+                                <div class="speaker-role">Cargo · Global Data Quantum</div>
                             </div>
                         </div>
                         <div class="speaker-item">
@@ -640,10 +674,11 @@
                             </div>
                         </div>
                     </div>
+                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="8"/><line x1="12" y1="12" x2="12" y2="16"/></svg> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
                 </div>
             </div>
 
-            <div class="agenda-item session">
+            <div class="agenda-item session" data-session-id="8">
                 <div class="agenda-tag"><span data-lang="es">Sesión</span><span data-lang="eu">Saioa</span><span data-lang="en">Session</span></div>
                 <div class="agenda-time">13:00 - 13:30</div>
                 <div class="agenda-content">
@@ -657,24 +692,16 @@
                         <div class="speaker-item">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
-                                <div class="speaker-name">Nombre del Ponente</div>
-                                <div class="speaker-role">Cargo · Organización</div>
+                                <div class="speaker-name">Román Orús</div>
+                                <div class="speaker-role">Co-Founder & CSO · Multiverse Computing</div>
                             </div>
                         </div>
                     </div>
-                    <div class="speakers-list">
-                        <div class="speaker-item">
-                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
-                            <div class="speaker-info">
-                                <div class="speaker-name">Nombre del Ponente</div>
-                                <div class="speaker-role">Cargo · Organización</div>
-                            </div>
-                        </div>
-                    </div>
+                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="8"/><line x1="12" y1="12" x2="12" y2="16"/></svg> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
                 </div>
             </div>
 
-            <div class="agenda-item session">
+            <div class="agenda-item session" data-session-id="9">
                 <div class="agenda-tag"><span data-lang="es">Sesión</span><span data-lang="eu">Saioa</span><span data-lang="en">Session</span></div>
                 <div class="agenda-time">13:30 - 14:00</div>
                 <div class="agenda-content">
@@ -702,10 +729,11 @@
                             </div>
                         </div>
                     </div>
+                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="8"/><line x1="12" y1="12" x2="12" y2="16"/></svg> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
                 </div>
             </div>
 
-            <div class="agenda-item visit">
+            <div class="agenda-item visit" data-session-id="10">
                 <div class="agenda-tag"><span data-lang="es">Visita</span><span data-lang="eu">Bisita</span><span data-lang="en">Visit</span></div>
                 <div class="agenda-time">14:00 - 18:30</div>
                 <div class="agenda-content">
@@ -715,6 +743,7 @@
                     <p data-lang="es">Visita a Centro de Tecnologías Cuánticas</p>
                     <p data-lang="eu">Teknologia Kuantikoen Zentrora bisita</p>
                     <p data-lang="en">Visit to Quantum Technologies Center</p>
+                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="8"/><line x1="12" y1="12" x2="12" y2="16"/></svg> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
                 </div>
             </div>
         </div>
@@ -747,6 +776,24 @@
                 </div>
                 <div class="entity-logo">
                     <img src="assets/images/logos/falcondale-logo-color.jpg" alt="Falcondale">
+                </div>
+                <div class="entity-name-card">
+                    <span>Tecnalia</span>
+                </div>
+                <div class="entity-name-card">
+                    <span>Qubiz.team</span>
+                </div>
+                <div class="entity-name-card">
+                    <span>Fujitsu / Fsas Technologies</span>
+                </div>
+                <div class="entity-name-card">
+                    <span>QCentroid</span>
+                </div>
+                <div class="entity-name-card">
+                    <span>Multiverse Computing</span>
+                </div>
+                <div class="entity-name-card">
+                    <span>Global Data Quantum</span>
                 </div>
             </div>
             
@@ -821,6 +868,20 @@
             </p>
         </div>
     </section>
+
+    <!-- Modal Sesión de Agenda -->
+    <div id="agendaModal" class="modal agenda-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeAgendaModal()">&times;</button>
+            <div class="agenda-modal-header">
+                <div class="agenda-tag" id="agendaModalTag"></div>
+                <div class="agenda-modal-time" id="agendaModalTime"></div>
+                <h2 class="agenda-modal-title" id="agendaModalTitle"></h2>
+            </div>
+            <div class="agenda-modal-desc" id="agendaModalDesc"></div>
+            <div class="agenda-modal-speakers" id="agendaModalSpeakers"></div>
+        </div>
+    </div>
 
     <div id="privacyModal" class="modal">
         <div class="modal-content">
@@ -959,7 +1020,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         let currentLang = 'es';
 
         const langMeta = {
@@ -1029,16 +1090,82 @@
             document.getElementById('privacyModal').style.display = 'none';
         }
 
-        window.onclick = function(event) {
-            const modal = document.getElementById('privacyModal');
-            if (event.target == modal) modal.style.display = 'none';
+        // ---- Agenda Session Modal ----
+        const agendaSessions = {};
+        document.querySelectorAll('[data-session-id]').forEach(item => {
+            const id = item.dataset.sessionId;
+            const type = item.classList.contains('session') ? 'session' : item.classList.contains('break') ? 'break' : 'visit';
+            const time = item.querySelector('.agenda-time')?.textContent.trim() || '';
+            const tagEl = item.querySelector('.agenda-tag');
+            const tagText = { es: '', eu: '', en: '' };
+            tagEl?.querySelectorAll('[data-lang]').forEach(el => { tagText[el.dataset.lang] = el.textContent; });
+            const titles = { es: '', eu: '', en: '' };
+            item.querySelectorAll('.agenda-content h4[data-lang]').forEach(el => { titles[el.dataset.lang] = el.textContent; });
+            const descs = { es: '', eu: '', en: '' };
+            item.querySelectorAll('.agenda-content p[data-lang]').forEach(el => { descs[el.dataset.lang] = el.textContent; });
+            const speakers = [];
+            item.querySelectorAll('.speaker-item').forEach(sp => {
+                const img = sp.querySelector('img')?.src || '';
+                const name = sp.querySelector('.speaker-name')?.textContent || '';
+                const role = sp.querySelector('.speaker-role')?.textContent || '';
+                speakers.push({ img, name, role, bio: '' });
+            });
+            agendaSessions[id] = { type, time, tagText, titles, descs, speakers };
+        });
 
-            // Close lang dropdown if clicking
-            const selector = document.querySelector('.language-selector');
-            if (selector && !selector.contains(event.target)) closeLangDropdown();
+        function openAgendaModal(id) {
+            const s = agendaSessions[id];
+            if (!s) return;
+            const currentLang = window.currentLang || 'es';
+            const modal = document.getElementById('agendaModal');
+            const tagEl = document.getElementById('agendaModalTag');
+            tagEl.textContent = s.tagText[currentLang] || s.tagText['es'];
+            tagEl.className = 'agenda-tag';
+            const colorMap = { session: '#4dbdc9', break: '#e0a63a', visit: '#8f5fa3' };
+            tagEl.style.background = colorMap[s.type] || '#4dbdc9';
+            document.getElementById('agendaModalTime').textContent = s.time;
+            document.getElementById('agendaModalTitle').textContent = s.titles[currentLang] || s.titles['es'];
+            const descEl = document.getElementById('agendaModalDesc');
+            const descText = s.descs[currentLang] || s.descs['es'] || '';
+            descEl.style.display = descText ? '' : 'none';
+            descEl.textContent = descText;
+            const speakersEl = document.getElementById('agendaModalSpeakers');
+            speakersEl.innerHTML = '';
+            s.speakers.forEach(sp => {
+                const div = document.createElement('div');
+                div.className = 'agenda-modal-speaker';
+                div.innerHTML = `
+                    <img src="${sp.img}" alt="${sp.name}" onerror="this.style.display='none'">
+                    <div class="agenda-modal-speaker-info">
+                        <div class="agenda-modal-speaker-name">${sp.name}</div>
+                        <div class="agenda-modal-speaker-role">${sp.role}</div>
+                        ${sp.bio ? `<div class="agenda-modal-speaker-bio">${sp.bio}</div>` : '<div class="agenda-modal-speaker-bio" style="color:var(--text-secondary);font-style:italic;font-size:0.85rem;">Biografía pendiente de confirmación</div>'}
+                    </div>`;
+                speakersEl.appendChild(div);
+            });
+            modal.style.display = 'block';
+        }
+
+        function closeAgendaModal() {
+            document.getElementById('agendaModal').style.display = 'none';
         }
 
         window.addEventListener('DOMContentLoaded', detectLanguage);
+
+        window.onclick = function(event) {
+            const privacyModal = document.getElementById('privacyModal');
+            const agendaModal = document.getElementById('agendaModal');
+            if (event.target === privacyModal) privacyModal.style.display = 'none';
+            if (event.target === agendaModal) agendaModal.style.display = 'none';
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.getElementById('privacyModal').style.display = 'none';
+                document.getElementById('agendaModal').style.display = 'none';
+            }
+        });
+
     </script>
 </body>
 </html>
