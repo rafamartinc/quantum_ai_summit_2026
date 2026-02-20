@@ -422,8 +422,8 @@
                     <h3 data-lang="eu">Ezagutza Espezializatua</h3>
                     <h3 data-lang="en">Specialized Knowledge</h3>
                     <p data-lang="es">Asiste a sesiones sobre cómo Euskadi está construyendo un hub global de tecnologías cuánticas, de la mano de expertos de sectores de diversas industrias, para debatir qué problemas reales pueden resolverse hoy con cuántica + IA.</p>
-                    <p data-lang="eu">Attend sessions on how the Basque Country is building a global hub for quantum technologies, alongside experts from various industry sectors, to discuss what real-world problems can be solved today with quantum + AI.</p>
-                    <p data-lang="en">Partaide izan Euskadi teknologia kuantikoen hub global bat eraikitzen ari denari buruzko keynotetan, industria desberdinetako adituen eskutik, gaur egun kuantikoa + AArekin zein arazo erreali konpondu daitezkeen eztabaidatzeko.</p>
+                    <p data-lang="eu">Partaide izan Euskadi teknologia kuantikoen hub global bat eraikitzen ari denari buruzko keynotetan, industria desberdinetako adituen eskutik, gaur egun kuantikoa + AArekin zein arazo erreali konpondu daitezkeen eztabaidatzeko.</p>
+                    <p data-lang="en">Attend sessions on how the Basque Country is building a global hub for quantum technologies, alongside experts from various industry sectors, to discuss what real-world problems can be solved today with quantum + AI.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">🤝</div>
@@ -1275,7 +1275,7 @@
         function openAgendaModal(id) {
             const s = agendaSessions[id];
             if (!s) return;
-            const lang = window.currentLang || 'es';
+            const lang = currentLang || 'es';
             const modal = document.getElementById('agendaModal');
             const tagEl = document.getElementById('agendaModalTag');
             tagEl.textContent = s.tagText[lang] || s.tagText['es'];
@@ -1320,6 +1320,7 @@
         window.onclick = function(event) {
             const privacyModal = document.getElementById('privacyModal');
             const agendaModal = document.getElementById('agendaModal');
+            if (event.target === privacyModal) privacyModal.style.display = 'none';
             if (event.target === privacyModal) privacyModal.style.display = 'none';
             if (event.target === agendaModal) agendaModal.style.display = 'none';
         }
