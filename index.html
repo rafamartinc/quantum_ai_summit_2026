@@ -81,7 +81,28 @@
         .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
         .benefit-card { padding: 2rem; background: rgba(255,255,255,0.07); border-radius: 10px; border: 1px solid rgba(255,255,255,0.12); transition: all 0.3s; }
         .benefit-card:hover { border-color: rgba(255,255,255,0.3); transform: translateY(-5px); background: rgba(255,255,255,0.11); }
-        .benefit-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+
+        .benefit-icon {
+            width: 2.8rem;
+            height: 2.8rem;
+            margin-bottom: 0.9rem;
+            display: block;
+            border-radius: 10px;
+            padding: 0.55rem;
+        }
+        .benefit-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+        .benefit-card:nth-child(1) .benefit-icon { background: rgba(77, 189, 201, 0.2); }
+        .benefit-card:nth-child(2) .benefit-icon { background: rgba(224, 166, 58, 0.2); }
+        .benefit-card:nth-child(3) .benefit-icon { background: rgba(143, 95, 163, 0.2); }
+        .benefit-card:nth-child(4) .benefit-icon { background: rgba(168, 96, 135, 0.2); }
+        .benefit-card:nth-child(5) .benefit-icon { background: rgba(61, 76, 143, 0.2); }
+        .benefit-card:nth-child(6) .benefit-icon { background: rgba(196, 114, 79, 0.2); }
+
         .benefit-card h3 { color: var(--text-primary); margin-bottom: 0.75rem; font-size: clamp(0.95rem, 1.8vw, 1.2rem); }
         .benefit-card p { color: rgba(255,255,255,0.75); }
 
@@ -277,7 +298,7 @@
         /* Agenda info button */
         .agenda-info-btn { margin-top: 1rem; display: inline-flex; align-items: center; gap: 0.4rem; background: transparent; border: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.82rem; font-weight: 600; padding: 0.35rem 0.85rem; border-radius: 20px; cursor: pointer; transition: all 0.25s; letter-spacing: 0.03em; }
         .agenda-info-btn:hover { border-color: var(--primary-blue); color: var(--primary-blue); background: rgba(77,189,201,0.08); }
-        .agenda-info-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+        .agenda-info-btn .agenda-info-icon { width: 14px; height: 14px; flex-shrink: 0; filter: brightness(0) invert(1); }
 
         /* Agenda session modal */
         .agenda-modal .modal-content { max-width: 750px; }
@@ -322,24 +343,24 @@
                 <li><a href="#agenda" data-lang="es">Agenda</a><a href="#agenda" data-lang="eu">Agenda</a><a href="#agenda" data-lang="en">Agenda</a></li>
                 <li><a href="#entities" data-lang="es">Entidades</a><a href="#entities" data-lang="eu">Erakundeak</a><a href="#entities" data-lang="en">Entities</a></li>
                 <li><a href="#venue" data-lang="es">Sede</a><a href="#venue" data-lang="eu">Egoitza</a><a href="#venue" data-lang="en">Venue</a></li>
-                <li><a href="#contact" data-lang="es">Contacto</a><a href="#contact" data-lang="eu">Kontaktua</a><a href="#contact" data-lang="en">Contact</a></li>
+                <li><a href="#registro" data-lang="es">Registro</a><a href="#registro" data-lang="eu">Erregistroa</a><a href="#registro" data-lang="en">Registration</a></li>
             </ul>
             <div class="nav-right">
                 <div class="language-selector">
                     <button class="lang-active-btn" onclick="toggleLangDropdown()" id="langActiveBtn">
-                        <img src="assets/images/flags/es.svg" alt="" class="flag-icon" id="activeFlagImg">
+                        <img src="assets/icons/flags/es.svg" alt="" class="flag-icon" id="activeFlagImg">
                         <span id="activeLangLabel">ES</span>
                         <span class="lang-chevron">▾</span>
                     </button>
                     <div class="lang-dropdown" id="langDropdown">
                         <button onclick="selectLang('es')" id="lang-es" class="lang-option active">
-                            <img src="assets/images/flags/es.svg" alt="" class="flag-icon"> ES
+                            <img src="assets/icons/flags/es.svg" alt="" class="flag-icon"> ES
                         </button>
                         <button onclick="selectLang('eu')" id="lang-eu" class="lang-option">
-                            <img src="assets/images/flags/es-pv.svg" alt="" class="flag-icon"> EU
+                            <img src="assets/icons/flags/es-pv.svg" alt="" class="flag-icon"> EU
                         </button>
                         <button onclick="selectLang('en')" id="lang-en" class="lang-option">
-                            <img src="assets/images/flags/gb.svg" alt="" class="flag-icon"> EN
+                            <img src="assets/icons/flags/gb.svg" alt="" class="flag-icon"> EN
                         </button>
                     </div>
                 </div>
@@ -361,7 +382,7 @@
 
             <p class="hero-venue">
                 <a href="https://maps.app.goo.gl/a4SyRxYCniDf835H6" target="_blank" rel="noopener">
-                    <img src="assets/images/map-pin.svg" alt="" class="venue-pin-icon">
+                    <img src="assets/icons/other/map-pin.svg" alt="" class="venue-pin-icon">
                     <span data-lang="es">NH Collection San Sebastián Aránzazu</span>
                     <span data-lang="eu">NH Collection Donostia Aránzazu</span>
                     <span data-lang="en">NH Collection San Sebastián Aránzazu</span>
@@ -408,7 +429,7 @@
             
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <div class="benefit-icon">🌐</div>
+                    <div class="benefit-icon"><img src="assets/icons/other/globe-duotone.svg" alt=""></div>
                     <h3 data-lang="es">Networking Global</h3>
                     <h3 data-lang="eu">Sare Globala</h3>
                     <h3 data-lang="en">Global Networking</h3>
@@ -417,7 +438,7 @@
                     <p data-lang="en">Connect with leaders in quantum computing, AI and applied technology from industry, academia and the public sector, with a special focus on entities within the Basque ecosystem.</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">⚡</div>
+                    <div class="benefit-icon"><img src="assets/icons/other/lightning-duotone.svg" alt=""></div>
                     <h3 data-lang="es">Conocimiento Especializado</h3>
                     <h3 data-lang="eu">Ezagutza Espezializatua</h3>
                     <h3 data-lang="en">Specialized Knowledge</h3>
@@ -426,7 +447,7 @@
                     <p data-lang="en">Attend sessions on how the Basque Country is building a global hub for quantum technologies, alongside experts from various industry sectors, to discuss what real-world problems can be solved today with quantum + AI.</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">🤝</div>
+                    <div class="benefit-icon"><img src="assets/icons/other/handshake-duotone.svg" alt=""></div>
                     <h3 data-lang="es">Colaboraciones Estratégicas</h3>
                     <h3 data-lang="eu">Lankidetza Estrategikoak</h3>
                     <h3 data-lang="en">Strategic Collaborations</h3>
@@ -435,7 +456,7 @@
                     <p data-lang="en">The event format — with elevator pitch sessions from the Basque quantum ecosystem, networking spaces and a technical visit — maximizes the opportunities to create concrete alliances between startups, corporations, research centers and public institutions.</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">💰</div>
+                    <div class="benefit-icon"><img src="assets/icons/other/money-wavy-duotone.svg" alt=""></div>
                     <h3 data-lang="es">Oportunidades de Financiación</h3>
                     <h3 data-lang="eu">Finantzaketa Aukerak</h3>
                     <h3 data-lang="en">Funding Opportunities</h3>
@@ -444,7 +465,7 @@
                     <p data-lang="en">Discover the main support programs for quantum and AI projects, coming from regional, national and supranational sources, and connect directly with the institutions that manage them.</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">📊</div>
+                    <div class="benefit-icon"><img src="assets/icons/other/scales-duotone.svg" alt=""></div>
                     <h3 data-lang="es">Marco Regulatorio</h3>
                     <h3 data-lang="eu">Arau Markoa</h3>
                     <h3 data-lang="en">Regulatory Framework</h3>
@@ -453,7 +474,7 @@
                     <p data-lang="en">The regulatory framework for AI and quantum technologies is evolving rapidly in Europe. The summit addresses emerging standards, post-quantum cryptography as a response to the quantum threat to current security, and the role of public policies.</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">🎯</div>
+                    <div class="benefit-icon"><img src="assets/icons/other/target-duotone.svg" alt=""></div>
                     <h3 data-lang="es">Visibilidad Sectorial</h3>
                     <h3 data-lang="eu">Sektoreko Ikusgarritasuna</h3>
                     <h3 data-lang="en">Sector Visibility</h3>
@@ -560,7 +581,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="8"/><line x1="12" y1="12" x2="12" y2="16"/></svg> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
+                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><img src="assets/icons/other/info-duotone.svg" alt="" class="agenda-info-icon"> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
                 </div>
             </div>
 
@@ -589,7 +610,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="8"/><line x1="12" y1="12" x2="12" y2="16"/></svg> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
+                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><img src="assets/icons/other/info-duotone.svg" alt="" class="agenda-info-icon"> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
                 </div>
             </div>
 
@@ -618,7 +639,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="8"/><line x1="12" y1="12" x2="12" y2="16"/></svg> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
+                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><img src="assets/icons/other/info-duotone.svg" alt="" class="agenda-info-icon"> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
                 </div>
             </div>
 
@@ -680,7 +701,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="8"/><line x1="12" y1="12" x2="12" y2="16"/></svg> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
+                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><img src="assets/icons/other/info-duotone.svg" alt="" class="agenda-info-icon"> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
                 </div>
             </div>
 
@@ -792,7 +813,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="8"/><line x1="12" y1="12" x2="12" y2="16"/></svg> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
+                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><img src="assets/icons/other/info-duotone.svg" alt="" class="agenda-info-icon"> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
                 </div>
             </div>
 
@@ -824,7 +845,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="8"/><line x1="12" y1="12" x2="12" y2="16"/></svg> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
+                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><img src="assets/icons/other/info-duotone.svg" alt="" class="agenda-info-icon"> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
                 </div>
             </div>
 
@@ -866,7 +887,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="8"/><line x1="12" y1="12" x2="12" y2="16"/></svg> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
+                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><img src="assets/icons/other/info-duotone.svg" alt="" class="agenda-info-icon"> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
                 </div>
             </div>
 
@@ -886,7 +907,7 @@
                     <p data-lang="es">Visita a Centro de Tecnologías Cuánticas</p>
                     <p data-lang="eu">Teknologia Kuantikoen Zentrora bisita</p>
                     <p data-lang="en">Visit to Quantum Technologies Center</p>
-                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="8"/><line x1="12" y1="12" x2="12" y2="16"/></svg> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
+                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><img src="assets/icons/other/info-duotone.svg" alt="" class="agenda-info-icon"> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
                 </div>
             </div>
         </div>
@@ -995,7 +1016,7 @@
         </div>
     </section>
 
-    <section id="contact">
+    <section id="registro">
         <h2 class="section-title" data-lang="es">Registro</h2>
         <h2 class="section-title" data-lang="eu">Erregistroa</h2>
         <h2 class="section-title" data-lang="en">Registration</h2>
@@ -1155,16 +1176,16 @@
             
                 <div class="footer-social">
                     <a href="https://www.linkedin.com/company/entangle-tech-hub" target="_blank" rel="noopener" title="LinkedIn">
-                        <img src="assets/images/social/linkedin-logo.svg" alt="LinkedIn">
+                        <img src="assets/icons/social/linkedin-logo.svg" alt="LinkedIn">
                     </a>
                     <a href="https://instagram.com/entangletechhub" target="_blank" rel="noopener" title="Instagram">
-                        <img src="assets/images/social/instagram-logo.svg" alt="Instagram">
+                        <img src="assets/icons/social/instagram-logo.svg" alt="Instagram">
                     </a>
                     <a href="https://x.com/EntangleTechHub" target="_blank" rel="noopener" title="X (Twitter)">
-                        <img src="assets/images/social/x-logo.svg" alt="X">
+                        <img src="assets/icons/social/x-logo.svg" alt="X">
                     </a>
                     <a href="mailto:info@entangle.es" title="Email">
-                        <img src="assets/images/social/envelope.svg" alt="Email">
+                        <img src="assets/icons/social/envelope.svg" alt="Email">
                     </a>
                 </div>
 
@@ -1178,9 +1199,9 @@
         let currentLang = 'es';
 
         const langMeta = {
-            es: { label: 'ES', flag: 'assets/images/flags/es.svg' },
-            eu: { label: 'EU', flag: 'assets/images/flags/es-pv.svg' },
-            en: { label: 'EN', flag: 'assets/images/flags/gb.svg' }
+            es: { label: 'ES', flag: 'assets/icons/flags/es.svg' },
+            eu: { label: 'EU', flag: 'assets/icons/flags/es-pv.svg' },
+            en: { label: 'EN', flag: 'assets/icons/flags/gb.svg' }
         };
 
         function changeLanguage(lang) {
@@ -1326,7 +1347,6 @@
         window.onclick = function(event) {
             const privacyModal = document.getElementById('privacyModal');
             const agendaModal = document.getElementById('agendaModal');
-            if (event.target === privacyModal) privacyModal.style.display = 'none';
             if (event.target === privacyModal) privacyModal.style.display = 'none';
             if (event.target === agendaModal) agendaModal.style.display = 'none';
         }
