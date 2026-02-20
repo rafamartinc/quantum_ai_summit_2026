@@ -257,6 +257,23 @@
         /* Reduce agenda section bottom padding */
         #agenda { padding-bottom: 1rem; }
 
+        /* Extended descriptions — only visible inside modal, hidden in agenda list */
+        .modal-extended-desc { display: none; }
+
+        /* Speaker bio inside modal */
+        .agenda-modal-speaker-bio { 
+            color: var(--text-secondary); 
+            font-size: 0.88rem; 
+            line-height: 1.65; 
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+        .agenda-modal-speaker-bio.pending { 
+            font-style: italic; 
+            opacity: 0.55; 
+        }
+
         /* Agenda info button */
         .agenda-info-btn { margin-top: 1rem; display: inline-flex; align-items: center; gap: 0.4rem; background: transparent; border: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.82rem; font-weight: 600; padding: 0.35rem 0.85rem; border-radius: 20px; cursor: pointer; transition: all 0.25s; letter-spacing: 0.03em; }
         .agenda-info-btn:hover { border-color: var(--primary-blue); color: var(--primary-blue); background: rgba(77,189,201,0.08); }
@@ -501,26 +518,41 @@
             <div class="agenda-item session" data-session-id="2">
                 <div class="agenda-tag"><span data-lang="es">Sesión</span><span data-lang="eu">Saioa</span><span data-lang="en">Session</span></div>
                 <div class="agenda-time">09:30 - 10:00</div>
+                <!-- DESCRIPCIÓN EXTENDIDA (solo visible en el modal) -->
+                <div class="modal-extended-desc">
+                    <span data-lang="es">Ceremonia de Apertura.</span>
+                    <span data-lang="eu">Irekiera Zeremonia.</span>
+                    <span data-lang="en">Opening Ceremony.</span>
+                </div>
                 <div class="agenda-content">
                     <h4 data-lang="es">Ceremonia de Apertura</h4>
                     <h4 data-lang="eu">Irekiera Zeremonia</h4>
                     <h4 data-lang="en">Opening Ceremony</h4>
                     <div class="speakers-list">
-                        <div class="speaker-item">
+                        <div class="speaker-item"
+                             data-bio-es="Eli García es la Directora de Transformación Digital en Eusko Jaurlaritza - Gobierno Vasco, donde guía a las organizaciones en la mejora de sus procesos digitales y en el fomento de las relaciones entre marketing y ventas. Desde 2010 ejerce como profesora en Mondragon Unibertsitatea, compartiendo su experiencia en marketing digital basado en datos y en la adopción de tecnología. Eli posee diversas certificaciones, entre ellas ITIL Foundations y Citrix XenApp 5.0, lo que demuestra su compromiso con el aprendizaje continuo en el sector tecnológico. Anteriormente trabajó como Consultora Tecnológica en HP y participó en experiencias previas que contribuyeron a su amplio conocimiento en estrategia digital y coordinación de eventos."
+                             data-bio-eu="Eli García Eusko Jaurlaritza - Gobernu Baskoko Transformazio Digitaleko Zuzendaria da, non erakundeak beren prozesu digitalak hobetzen eta marketinaren eta salmenten arteko harremanak sustatzen gidatzen dituen. 2010etik Mondragon Unibertsitatean irakasle lan egin du, datuetan oinarritutako marketin digitalean eta teknologiaren adopzioan duen esperientzia partekatuz. Eli-k hainbat ziurtagiri ditu, besteak beste ITIL Foundations eta Citrix XenApp 5.0, sektore teknologikoan etengabeko ikaskuntzarekiko duen konpromisoa erakutsiz. Aurretik, HP-n Teknologia Kontsultore gisa lan egin zuen eta estrategia digitalean eta ekitaldien koordinazioan duen ezagutza zabala lagundu zuten esperientzia goiztiarrak izan zituen."
+                             data-bio-en="Eli Garcia is the Director of Digital Transformation at Eusko Jaurlaritza - Gobierno Vasco, where they guide organizations in improving their digital processes and fostering relationships between marketing and sales. They have served as a professor at Mondragon Unibertsitatea since 2010, sharing their expertise in data-driven digital marketing and technology adoption. Eli holds several certifications, including ITIL Foundations and Citrix's XenApp 5.0, demonstrating their commitment to lifelong learning in the tech sector. Previously, they worked as a Technology Consultant at HP and were involved in earlier experiences that contributed to their extensive knowledge in digital strategy and event coordination.">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Eli García</div>
                                 <div class="speaker-role">Directora de Transformación Digital · Eusko Jaurlaritza – Gobierno Vasco</div>
                             </div>
                         </div>
-                        <div class="speaker-item">
+                        <div class="speaker-item"
+                             data-bio-es="Biografía pendiente de confirmación."
+                             data-bio-eu="Biografia baieztatzeke dago."
+                             data-bio-en="Biography pending confirmation.">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker" class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Nombre del Ponente</div>
                                 <div class="speaker-role">Cargo · Mondragon Unibertsitatea</div>
                             </div>
                         </div>
-                        <div class="speaker-item">
+                        <div class="speaker-item"
+                             data-bio-es="Biografía de David Morcuende pendiente de redacción."
+                             data-bio-eu="David Morcuenderen biografia idazteke dago."
+                             data-bio-en="David Morcuende's biography pending drafting.">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">David Morcuende</div>
@@ -535,12 +567,21 @@
             <div class="agenda-item session" data-session-id="3">
                 <div class="agenda-tag"><span data-lang="es">Sesión</span><span data-lang="eu">Saioa</span><span data-lang="en">Session</span></div>
                 <div class="agenda-time">10:00 - 10:20</div>
+                <!-- DESCRIPCIÓN EXTENDIDA (solo visible en el modal) -->
+                <div class="modal-extended-desc">
+                    <span data-lang="es">Descripción extendida del keynote de BasQ pendiente de redacción.</span>
+                    <span data-lang="eu">BasQen keynotearen deskribapen hedatua idazteke dago.</span>
+                    <span data-lang="en">Extended description of the BasQ keynote pending drafting.</span>
+                </div>
                 <div class="agenda-content">
                     <h4 data-lang="es">Keynote: Basque Quantum (BasQ), un hub global de tecnologías cuánticas</h4>
                     <h4 data-lang="eu">Keynote: Basque Quantum (BasQ), teknologia kuantikoen mundu-mailako gunea</h4>
                     <h4 data-lang="en">Keynote: Basque Quantum (BasQ), a global hub for quantum technologies</h4>
                     <div class="speakers-list">
-                        <div class="speaker-item">
+                        <div class="speaker-item"
+                             data-bio-es="Biografía de Ander Barreiro pendiente de redacción."
+                             data-bio-eu="Ander Barreiroren biografia idazteke dago."
+                             data-bio-en="Ander Barreiro's biography pending drafting.">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Ander Barreiro</div>
@@ -555,12 +596,21 @@
             <div class="agenda-item session" data-session-id="4">
                 <div class="agenda-tag"><span data-lang="es">Sesión</span><span data-lang="eu">Saioa</span><span data-lang="en">Session</span></div>
                 <div class="agenda-time">10:20 - 10:40</div>
+                <!-- DESCRIPCIÓN EXTENDIDA (solo visible en el modal) -->
+                <div class="modal-extended-desc">
+                    <span data-lang="es">Descripción extendida del keynote IBM Quantum System Two pendiente de redacción.</span>
+                    <span data-lang="eu">IBM Quantum System Two keynotearen deskribapen hedatua idazteke dago.</span>
+                    <span data-lang="en">Extended description of the IBM Quantum System Two keynote pending drafting.</span>
+                </div>
                 <div class="agenda-content">
                     <h4 data-lang="es">Keynote: BasQ-IBM Quantum System Two</h4>
                     <h4 data-lang="eu">Keynote: BasQ-IBM Quantum System Two</h4>
                     <h4 data-lang="en">Keynote: BasQ-IBM Quantum System Two</h4>
                     <div class="speakers-list">
-                        <div class="speaker-item">
+                        <div class="speaker-item"
+                             data-bio-es="Biografía pendiente de confirmación."
+                             data-bio-eu="Biografia baieztatzeke dago."
+                             data-bio-en="Biography pending confirmation.">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Nombre del Ponente</div>
@@ -575,6 +625,12 @@
             <div class="agenda-item session" data-session-id="5">
                 <div class="agenda-tag"><span data-lang="es">Sesión</span><span data-lang="eu">Saioa</span><span data-lang="en">Session</span></div>
                 <div class="agenda-time">10:40 - 11:30</div>
+                <!-- DESCRIPCIÓN EXTENDIDA (solo visible en el modal) -->
+                <div class="modal-extended-desc">
+                    <span data-lang="es">Descripción extendida de la Mesa Redonda pendiente de redacción.</span>
+                    <span data-lang="eu">Mahai Inguruaren deskribapen hedatua idazteke dago.</span>
+                    <span data-lang="en">Extended description of the Panel Discussion pending drafting.</span>
+                </div>
                 <div class="agenda-content">
                     <h4 data-lang="es">Mesa Redonda</h4>
                     <h4 data-lang="eu">Mahai Ingurua</h4>
@@ -583,28 +639,40 @@
                     <p data-lang="eu">Industriako ze arazo erreal konpon daitezke hobeto kuantika + AA-rekin?</p>
                     <p data-lang="en">What real industry problems can be better solved with quantum + AI?</p>
                     <div class="speakers-list">
-                        <div class="speaker-item">
+                        <div class="speaker-item"
+                             data-bio-es="Biografía de David Morcuende pendiente de redacción."
+                             data-bio-eu="David Morcuenderen biografia idazteke dago."
+                             data-bio-en="David Morcuende's biography pending drafting.">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">David Morcuende (Moderador)</div>
                                 <div class="speaker-role">Network Manager · European Quantum Industry Consortium (QuIC)</div>
                             </div>
                         </div>
-                        <div class="speaker-item">
+                        <div class="speaker-item"
+                             data-bio-es="Biografía de Irene López de Vallejo pendiente de redacción."
+                             data-bio-eu="Irene López de Vallejoren biografia idazteke dago."
+                             data-bio-en="Irene López de Vallejo's biography pending drafting.">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Irene López de Vallejo</div>
                                 <div class="speaker-role">Head of Business Development · Tecnalia</div>
                             </div>
                         </div>
-                        <div class="speaker-item">
+                        <div class="speaker-item"
+                             data-bio-es="Biografía pendiente de confirmación."
+                             data-bio-eu="Biografia baieztatzeke dago."
+                             data-bio-en="Biography pending confirmation.">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Nombre del Ponente</div>
                                 <div class="speaker-role">Cargo · Organización</div>
                             </div>
                         </div>
-                        <div class="speaker-item">
+                        <div class="speaker-item"
+                             data-bio-es="Biografía pendiente de confirmación."
+                             data-bio-eu="Biografia baieztatzeke dago."
+                             data-bio-en="Biography pending confirmation.">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Nombre del Ponente</div>
@@ -629,6 +697,12 @@
             <div class="agenda-item session" data-session-id="7">
                 <div class="agenda-tag"><span data-lang="es">Sesión</span><span data-lang="eu">Saioa</span><span data-lang="en">Session</span></div>
                 <div class="agenda-time">12:00 - 13:00</div>
+                <!-- DESCRIPCIÓN EXTENDIDA (solo visible en el modal) -->
+                <div class="modal-extended-desc">
+                    <span data-lang="es">Descripción extendida de los Elevator Pitches pendiente de redacción.</span>
+                    <span data-lang="eu">Elevator Pitchen deskribapen hedatua idazteke dago.</span>
+                    <span data-lang="en">Extended description of the Elevator Pitches pending drafting.</span>
+                </div>
                 <div class="agenda-content">
                     <h4 data-lang="es">Elevator Pitches</h4>
                     <h4 data-lang="eu">Elevator Pitches</h4>
@@ -637,56 +711,80 @@
                     <p data-lang="eu">Euskal ekosistema kuantikoak bere berrikuntzak aurkezten ditu</p>
                     <p data-lang="en">The Basque quantum ecosystem presents its innovations</p>
                     <div class="speakers-list">
-                        <div class="speaker-item">
+                        <div class="speaker-item"
+                             data-bio-es="Biografía de Jorge de la Herrán y Crespo pendiente de redacción."
+                             data-bio-eu="Jorge de la Herrán y Cresperson biografia idazteke dago."
+                             data-bio-en="Jorge de la Herrán y Crespo's biography pending drafting.">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Jorge de la Herrán y Crespo</div>
                                 <div class="speaker-role">Presidente · Qubiz.team</div>
                             </div>
                         </div>
-                        <div class="speaker-item">
+                        <div class="speaker-item"
+                             data-bio-es="Biografía de Iraitz Montalbán pendiente de redacción."
+                             data-bio-eu="Iraitz Montalvánen biografia idazteke dago."
+                             data-bio-en="Iraitz Montalbán's biography pending drafting.">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Iraitz Montalbán</div>
                                 <div class="speaker-role">CTO · Falcondale</div>
                             </div>
                         </div>
-                        <div class="speaker-item">
+                        <div class="speaker-item"
+                             data-bio-es="Biografía pendiente de confirmación."
+                             data-bio-eu="Biografia baieztatzeke dago."
+                             data-bio-en="Biography pending confirmation.">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Nombre del Ponente</div>
                                 <div class="speaker-role">Cargo · QCentroid</div>
                             </div>
                         </div>
-                        <div class="speaker-item">
+                        <div class="speaker-item"
+                             data-bio-es="Biografía pendiente de confirmación."
+                             data-bio-eu="Biografia baieztatzeke dago."
+                             data-bio-en="Biography pending confirmation.">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Nombre del Ponente</div>
                                 <div class="speaker-role">Cargo · Global Data Quantum</div>
                             </div>
                         </div>
-                        <div class="speaker-item">
+                        <div class="speaker-item"
+                             data-bio-es="Biografía pendiente de confirmación."
+                             data-bio-eu="Biografia baieztatzeke dago."
+                             data-bio-en="Biography pending confirmation.">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Nombre del Ponente</div>
                                 <div class="speaker-role">Cargo · Organización</div>
                             </div>
                         </div>
-                        <div class="speaker-item">
+                        <div class="speaker-item"
+                             data-bio-es="Biografía pendiente de confirmación."
+                             data-bio-eu="Biografia baieztatzeke dago."
+                             data-bio-en="Biography pending confirmation.">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Nombre del Ponente</div>
                                 <div class="speaker-role">Cargo · Organización</div>
                             </div>
                         </div>
-                        <div class="speaker-item">
+                        <div class="speaker-item"
+                             data-bio-es="Biografía pendiente de confirmación."
+                             data-bio-eu="Biografia baieztatzeke dago."
+                             data-bio-en="Biography pending confirmation.">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Nombre del Ponente</div>
                                 <div class="speaker-role">Cargo · Organización</div>
                             </div>
                         </div>
-                        <div class="speaker-item">
+                        <div class="speaker-item"
+                             data-bio-es="Biografía pendiente de confirmación."
+                             data-bio-eu="Biografia baieztatzeke dago."
+                             data-bio-en="Biography pending confirmation.">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Nombre del Ponente</div>
@@ -701,6 +799,12 @@
             <div class="agenda-item session" data-session-id="8">
                 <div class="agenda-tag"><span data-lang="es">Sesión</span><span data-lang="eu">Saioa</span><span data-lang="en">Session</span></div>
                 <div class="agenda-time">13:00 - 13:30</div>
+                <!-- DESCRIPCIÓN EXTENDIDA (solo visible en el modal) -->
+                <div class="modal-extended-desc">
+                    <span data-lang="es">Descripción extendida del caso de éxito pendiente de redacción.</span>
+                    <span data-lang="eu">Arrakasta kasuaren deskribapen hedatua idazteke dago.</span>
+                    <span data-lang="en">Extended description of the success story pending drafting.</span>
+                </div>
                 <div class="agenda-content">
                     <h4 data-lang="es">Caso de éxito</h4>
                     <h4 data-lang="eu">Arrakasta Kasua</h4>
@@ -709,7 +813,10 @@
                     <p data-lang="eu">Industrian teknologia kuantikoak erabiltzeko kasu errealak</p>
                     <p data-lang="en">Real use cases of quantum technologies in industry</p>
                     <div class="speakers-list">
-                        <div class="speaker-item">
+                        <div class="speaker-item"
+                             data-bio-es="Biografía de Román Orús pendiente de redacción."
+                             data-bio-eu="Román Orúsen biografia idazteke dago."
+                             data-bio-en="Román Orús's biography pending drafting.">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Román Orús</div>
@@ -724,6 +831,12 @@
             <div class="agenda-item session" data-session-id="9">
                 <div class="agenda-tag"><span data-lang="es">Sesión</span><span data-lang="eu">Saioa</span><span data-lang="en">Session</span></div>
                 <div class="agenda-time">13:30 - 14:00</div>
+                <!-- DESCRIPCIÓN EXTENDIDA (solo visible en el modal) -->
+                <div class="modal-extended-desc">
+                    <span data-lang="es">Descripción extendida del caso de éxito pendiente de redacción.</span>
+                    <span data-lang="eu">Arrakasta kasuaren deskribapen hedatua idazteke dago.</span>
+                    <span data-lang="en">Extended description of the success story pending drafting.</span>
+                </div>
                 <div class="agenda-content">
                     <h4 data-lang="es">Caso de éxito</h4>
                     <h4 data-lang="eu">Arrakasta Kasua</h4>
@@ -732,16 +845,20 @@
                     <p data-lang="eu">Industrian teknologia kuantikoak erabiltzeko kasu errealak</p>
                     <p data-lang="en">Real use cases of quantum technologies in industry</p>
                     <div class="speakers-list">
-                        <div class="speaker-item">
+                        <div class="speaker-item"
+                             data-bio-es="Biografía pendiente de confirmación."
+                             data-bio-eu="Biografia baieztatzeke dago."
+                             data-bio-en="Biography pending confirmation.">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Nombre del Ponente</div>
                                 <div class="speaker-role">Cargo · Organización</div>
                             </div>
                         </div>
-                    </div>
-                    <div class="speakers-list">
-                        <div class="speaker-item">
+                        <div class="speaker-item"
+                             data-bio-es="Biografía pendiente de confirmación."
+                             data-bio-eu="Biografia baieztatzeke dago."
+                             data-bio-en="Biography pending confirmation.">
                             <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Speaker BasQ" class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Nombre del Ponente</div>
@@ -756,6 +873,12 @@
             <div class="agenda-item visit" data-session-id="10">
                 <div class="agenda-tag"><span data-lang="es">Descanso + Visita</span><span data-lang="eu">Bisita</span><span data-lang="en">Visit</span></div>
                 <div class="agenda-time">14:00 - 18:30</div>
+                <!-- DESCRIPCIÓN EXTENDIDA (solo visible en el modal) -->
+                <div class="modal-extended-desc">
+                    <span data-lang="es">Descripción extendida de la visita técnica pendiente de redacción.</span>
+                    <span data-lang="eu">Bisita teknikoaren deskribapen hedatua idazteke dago.</span>
+                    <span data-lang="en">Extended description of the technical visit pending drafting.</span>
+                </div>
                 <div class="agenda-content">
                     <h4 data-lang="es">Comida y Networking + Visita Técnica</h4>
                     <h4 data-lang="eu">Bazkaria eta Networking + Bisita Teknikoa</h4>
@@ -1126,37 +1249,54 @@
             tagEl?.querySelectorAll('[data-lang]').forEach(el => { tagText[el.dataset.lang] = el.textContent; });
             const titles = { es: '', eu: '', en: '' };
             item.querySelectorAll('.agenda-content h4[data-lang]').forEach(el => { titles[el.dataset.lang] = el.textContent; });
+
+            // Summary descriptions (from agenda list <p data-lang>)
             const descs = { es: '', eu: '', en: '' };
             item.querySelectorAll('.agenda-content p[data-lang]').forEach(el => { descs[el.dataset.lang] = el.textContent; });
+
+            // Extended descriptions (from .modal-extended-desc — hidden in list, shown only in modal)
+            const extDescs = { es: '', eu: '', en: '' };
+            item.querySelectorAll('.modal-extended-desc [data-lang]').forEach(el => { extDescs[el.dataset.lang] = el.textContent; });
+
             const speakers = [];
             item.querySelectorAll('.speaker-item').forEach(sp => {
                 const img = sp.querySelector('img')?.src || '';
                 const name = sp.querySelector('.speaker-name')?.textContent || '';
                 const role = sp.querySelector('.speaker-role')?.textContent || '';
-                speakers.push({ img, name, role, bio: '' });
+                // Read per-language bios from data attributes
+                const bioEs = sp.dataset.bioEs || '';
+                const bioEu = sp.dataset.bioEu || '';
+                const bioEn = sp.dataset.bioEn || '';
+                speakers.push({ img, name, role, bioEs, bioEu, bioEn });
             });
-            agendaSessions[id] = { type, time, tagText, titles, descs, speakers };
+            agendaSessions[id] = { type, time, tagText, titles, descs, extDescs, speakers };
         });
 
         function openAgendaModal(id) {
             const s = agendaSessions[id];
             if (!s) return;
-            const currentLang = window.currentLang || 'es';
+            const lang = window.currentLang || 'es';
             const modal = document.getElementById('agendaModal');
             const tagEl = document.getElementById('agendaModalTag');
-            tagEl.textContent = s.tagText[currentLang] || s.tagText['es'];
+            tagEl.textContent = s.tagText[lang] || s.tagText['es'];
             tagEl.className = 'agenda-tag';
             const colorMap = { session: '#4dbdc9', break: '#e0a63a', visit: '#8f5fa3' };
             tagEl.style.background = colorMap[s.type] || '#4dbdc9';
             document.getElementById('agendaModalTime').textContent = s.time;
-            document.getElementById('agendaModalTitle').textContent = s.titles[currentLang] || s.titles['es'];
+            document.getElementById('agendaModalTitle').textContent = s.titles[lang] || s.titles['es'];
+
+            // Show extended description if available, otherwise fall back to summary
             const descEl = document.getElementById('agendaModalDesc');
-            const descText = s.descs[currentLang] || s.descs['es'] || '';
+            const descText = s.extDescs[lang] || s.extDescs['es'] || s.descs[lang] || s.descs['es'] || '';
             descEl.style.display = descText ? '' : 'none';
             descEl.textContent = descText;
+
             const speakersEl = document.getElementById('agendaModalSpeakers');
             speakersEl.innerHTML = '';
             s.speakers.forEach(sp => {
+                const bioKey = 'bio' + lang.charAt(0).toUpperCase() + lang.slice(1); // bioEs / bioEu / bioEn
+                const bioText = sp[bioKey] || sp.bioEs || '';
+                const isPending = !bioText || bioText.toLowerCase().includes('pendiente') || bioText.toLowerCase().includes('baieztatzeke') || bioText.toLowerCase().includes('pending');
                 const div = document.createElement('div');
                 div.className = 'agenda-modal-speaker';
                 div.innerHTML = `
@@ -1164,7 +1304,7 @@
                     <div class="agenda-modal-speaker-info">
                         <div class="agenda-modal-speaker-name">${sp.name}</div>
                         <div class="agenda-modal-speaker-role">${sp.role}</div>
-                        ${sp.bio ? `<div class="agenda-modal-speaker-bio">${sp.bio}</div>` : '<div class="agenda-modal-speaker-bio" style="color:var(--text-secondary);font-style:italic;font-size:0.85rem;">Biografía pendiente de confirmación</div>'}
+                        ${bioText ? `<div class="agenda-modal-speaker-bio${isPending ? ' pending' : ''}">${bioText}</div>` : ''}
                     </div>`;
                 speakersEl.appendChild(div);
             });
