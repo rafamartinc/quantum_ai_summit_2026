@@ -1042,14 +1042,7 @@
         
         <div style="text-align: center; max-width: 600px; margin: 0 auto;">
 
-            <!-- Noscript content for added SEO -->
-            <noscript><a href="https://www.eventbrite.es/e/quantum-x-ai-summit-tickets-1983523315632" rel="noopener noreferrer" target="_blank">Buy Tickets on Eventbrite</a></noscript>
-            
-            <button id="eventbrite-widget-modal-trigger-1983523315632" type="button" class="cta-button">
-                <span data-lang="es">Regístrate</span>
-                <span data-lang="eu">Eman izena</span>
-                <span data-lang="en">Sign up</span>
-            </button>
+            <div id="eventbrite-widget-container-1983523315632"></div>
 
             <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
 
@@ -1059,11 +1052,14 @@
                 };
 
                 window.EBWidgets.createWidget({
+                    // Required
                     widgetType: 'checkout',
                     eventId: '1983523315632',
-                    modal: true,
-                    modalTriggerElementId: 'eventbrite-widget-modal-trigger-1983523315632',
-                    onOrderComplete: exampleCallback
+                    iframeContainerId: 'eventbrite-widget-container-1983523315632',
+
+                    // Optional
+                    iframeContainerHeight: 425,  // Widget height in pixels. Defaults to a minimum of 425px if not provided
+                    onOrderComplete: exampleCallback  // Method called when an order has successfully completed
                 });
             </script>
 
