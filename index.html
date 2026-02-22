@@ -1060,16 +1060,30 @@
         <h2 class="section-title" data-lang="eu">Erregistroa</h2>
         <h2 class="section-title" data-lang="en">Registration</h2>
         
-        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+        <div style="text-align: center; width: 90%; margin: 0 auto;">
 
-            <div id="eventbrite-widget-container-1983523315632"></div>
+            <!-- Caja exterior blanca -->
+            <div style="
+                background: #ffffff;
+                border-radius: 15px;
+                height: 700px;
+                padding: 30px;
+                box-sizing: border-box;
+            ">
+                <!-- Contenedor interior del widget -->
+                <div id="eventbrite-widget-container-1983523315632" style="
+                    border-radius: 10px;
+                    overflow: hidden;
+                    height: 100%;
+                "></div>
+            </div>
 
             <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js" onload="(function(){
                 window.EBWidgets.createWidget({
                     widgetType: 'checkout',
                     eventId: '1983523315632',
                     iframeContainerId: 'eventbrite-widget-container-1983523315632',
-                    iframeContainerHeight: 425,
+                    iframeContainerHeight: 640,
                     onOrderComplete: function() { console.log('Order complete!'); }
                 });
             })()"></script>
