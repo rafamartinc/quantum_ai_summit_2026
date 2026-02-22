@@ -39,7 +39,7 @@
         body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text-primary); background: var(--bg-dark); line-height: 1.6; overflow-x: hidden; }
         h1, h2, h3, h4 { font-weight: 900; line-height: 1.2; color: var(--text-primary); }
         h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
-        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h2 { font-size: clamp(1.6rem, 3.2vw, 2.4rem); }
         h3 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; }
         
         
@@ -71,7 +71,7 @@
         .hero-content { max-width: 1400px; margin: 0 auto; padding: 4rem 2rem; text-align: center; position: relative; z-index: 1; }
         .hero h1 { margin-bottom: 1rem; text-shadow: 2px 2px 8px rgba(0,0,0,0.5); }
         .hero-tagline { font-size: clamp(1rem, 2vw, 1.4rem); font-weight: 300; margin-bottom: 1rem; color: rgba(255,255,255,0.9); }
-        .hero-date { font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 700; margin: 2rem 0; }
+        .hero-date { font-size: clamp(1.1rem, 2.2vw, 1.8rem); font-weight: 700; margin: 1.25rem 0; }
         .cta-button { display: inline-block; padding: 1rem 3rem; background: var(--text-primary); color: var(--bg-dark); text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.1rem; transition: all 0.3s; box-shadow: 0 4px 15px rgba(255,255,255,0.2); }
         .cta-button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,255,255,0.3); }
         
@@ -164,12 +164,14 @@
         /* Two-level footer logos */
         .footer-organizers { display: flex; flex-direction: column; align-items: center; gap: 0.9rem; margin-bottom: 2rem; }
         .footer-logos-primary { display: flex; justify-content: center; }
-        .footer-logos-primary img { height: 72px; width: auto; max-width: 260px; filter: brightness(0) invert(1); opacity: 0.95; transition: opacity 0.3s; }
+        .footer-logos-primary img { height: 108px; width: auto; max-width: 390px; filter: brightness(0) invert(1); opacity: 0.95; transition: opacity 0.3s; }
         .footer-logos-primary img:hover { opacity: 1; }
         .footer-logos-sep { width: 220px; height: 1px; background: rgba(255,255,255,0.18); margin: 0.15rem 0; }
         .footer-logos-secondary { display: flex; justify-content: center; align-items: center; gap: 3rem; flex-wrap: wrap; }
         .footer-logos-secondary img { height: 50px; width: auto; max-width: 140px; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.8; transition: opacity 0.3s; }
         .footer-logos-secondary img[src$=".svg"] { height: 50px; max-width: 140px; }
+        .footer-logos-secondary img[src*="gobierno-vasco"] { height: 85px; max-width: 218px; }
+        .footer-logos-secondary img[src*="mondragon"] { height: 60px; max-width: 168px; }
         .footer-logos-secondary img:hover { opacity: 1; }
         .footer-social { display: flex; justify-content: center; gap: 1.5rem; margin: 2rem 0; }
         .footer-social a { display: flex; align-items: center; justify-content: center; transition: opacity 0.3s; text-decoration: none; }
@@ -219,18 +221,18 @@
         .flag-icon { width: 20px; height: 14px; object-fit: cover; border-radius: 2px; }
         
         /* Hero venue */
-        .hero-venue { margin-top: 0.5rem; margin-bottom: 0; font-size: 1rem; opacity: 0.9; }
+        .hero-venue { margin-top: 0.4rem; margin-bottom: 0; font-size: 0.9rem; opacity: 0.9; }
         .hero-venue a { color: rgba(255,255,255,0.9); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); transition: all 0.3s; padding-bottom: 2px; display: inline-flex; align-items: center; gap: 0.4rem; }
         .hero-venue a:hover { border-bottom-color: rgba(255,255,255,0.8); opacity: 1; }
         .venue-pin-icon { width: 16px; height: 16px; opacity: 0.9; flex-shrink: 0; filter: brightness(0) invert(1); }
 
         /* Hero organizers */
-        .hero-organizers-block { margin: 2rem auto; }
+        .hero-organizers-block { margin: 1.25rem auto; }
         .hero-organized-by { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.6); margin-bottom: 1.25rem; font-weight: 500; }
         .hero-organizers-logos { display: flex; flex-direction: column; align-items: center; gap: 0.9rem; }
         /* Level 1 – SPRI (protagonista) */
         .hero-logos-primary { display: flex; justify-content: center; }
-        .hero-logos-primary img { height: 72px; width: auto; max-width: 260px; opacity: 0.95; transition: opacity 0.3s; }
+        .hero-logos-primary img { height: 108px; width: auto; max-width: 390px; opacity: 0.95; transition: opacity 0.3s; }
         .hero-logos-primary img:hover { opacity: 1; }
         /* Separator between levels */
         .hero-logos-sep { width: 220px; height: 1px; background: rgba(255,255,255,0.22); margin: 0.15rem 0; }
@@ -238,6 +240,8 @@
         .hero-logos-secondary { display: flex; justify-content: center; align-items: center; gap: 2.5rem; flex-wrap: wrap; }
         .hero-logos-secondary img { height: 50px; width: auto; max-width: 140px; opacity: 0.85; transition: opacity 0.3s; object-fit: contain; }
         .hero-logos-secondary img[src$=".svg"] { height: 50px; max-width: 140px; }
+        .hero-logos-secondary img[src*="gobierno-vasco"] { height: 85px; max-width: 218px; }
+        .hero-logos-secondary img[src*="mondragon"] { height: 60px; max-width: 168px; }
         .hero-logos-secondary img:hover { opacity: 1; }
 
         /* Hero CTA */
@@ -420,64 +424,64 @@
 
     <div class="benefits-full-section">
         <div class="benefits-inner">
-            <h2 class="section-title" data-lang="es">Beneficios Para los Asistentes</h2>
-            <h2 class="section-title" data-lang="eu">Parte-hartzaileen Onurak</h2>
-            <h2 class="section-title" data-lang="en">Benefits for Attendees</h2>
+            <h2 class="section-title" data-lang="es">¿Por qué asistir?</h2>
+            <h2 class="section-title" data-lang="eu">Zergatik etorri?</h2>
+            <h2 class="section-title" data-lang="en">Why attend?</h2>
             
             <div class="benefits-grid">
                 <div class="benefit-card">
                     <div class="benefit-icon"><img src="assets/icons/other/globe-duotone.svg" alt=""></div>
-                    <h3 data-lang="es">Networking Global</h3>
-                    <h3 data-lang="eu">Sare Globala</h3>
-                    <h3 data-lang="en">Global Networking</h3>
-                    <p data-lang="es">Conecta con líderes en computación cuántica, IA y tecnología aplicada provenientes de la industria, la academia y el sector público, con especial foco en las entidades del ecosistema vasco.</p>
-                    <p data-lang="eu">Konektatu konputazio kuantikoan, AA eta teknologi aplikatuan lider diren pertsonaiekin, industria, unibertsitate eta sektore publikotik datozenekin, bereziki Euskal ekosistemako erakundeetan arreta jarriz.</p>
-                    <p data-lang="en">Connect with leaders in quantum computing, AI and applied technology from industry, academia and the public sector, with a special focus on entities within the Basque ecosystem.</p>
+                    <h3 data-lang="es">Networking real</h3>
+                    <h3 data-lang="eu">Benetako networking-a</h3>
+                    <h3 data-lang="en">Real networking</h3>
+                    <p data-lang="es">Cruza ideas con gente de cuántica, IA y tecnología aplicada: industria, universidad y sector público, con especial peso del ecosistema vasco.</p>
+                    <p data-lang="eu">Partekatu ideiak kuantikatik, AAtik eta teknologia aplikatutik datozen pertsonekin: industria, unibertsitatea eta sektore publikoa, ekosistema baskoaren presentzia nagusiarekin.</p>
+                    <p data-lang="en">Exchange ideas with people from quantum, AI and applied tech: industry, academia and the public sector, with strong representation from the Basque ecosystem.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon"><img src="assets/icons/other/lightning-duotone.svg" alt=""></div>
-                    <h3 data-lang="es">Conocimiento Especializado</h3>
-                    <h3 data-lang="eu">Ezagutza Espezializatua</h3>
-                    <h3 data-lang="en">Specialized Knowledge</h3>
-                    <p data-lang="es">Asiste a sesiones sobre cómo Euskadi está construyendo un hub global de tecnologías cuánticas, de la mano de expertos de sectores de diversas industrias, para debatir qué problemas reales pueden resolverse hoy con cuántica + IA.</p>
-                    <p data-lang="eu">Partaide izan Euskadi teknologia kuantikoen hub global bat eraikitzen ari denari buruzko keynotetan, industria desberdinetako adituen eskutik, gaur egun kuantikoa + AArekin zein arazo erreali konpondu daitezkeen eztabaidatzeko.</p>
-                    <p data-lang="en">Attend sessions on how the Basque Country is building a global hub for quantum technologies, alongside experts from various industry sectors, to discuss what real-world problems can be solved today with quantum + AI.</p>
+                    <h3 data-lang="es">Conocimiento de primera mano</h3>
+                    <h3 data-lang="eu">Lehen eskuko ezagutza</h3>
+                    <h3 data-lang="en">Knowledge straight from the source</h3>
+                    <p data-lang="es">Sesiones con expertos que ya trabajan con cuántica + IA en industria real, no solo en laboratorio. Casos concretos, retos concretos.</p>
+                    <p data-lang="eu">Saio praktikoak laborategiaz haratago dagoen industriako aditu errealekiko, kuantika + AA erabiltzen ari direnekin. Kasu zehatzak, erronka zehatzak.</p>
+                    <p data-lang="en">Sessions with experts already applying quantum + AI in real industry settings, not just research labs. Concrete cases, concrete challenges.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon"><img src="assets/icons/other/handshake-duotone.svg" alt=""></div>
-                    <h3 data-lang="es">Colaboraciones Estratégicas</h3>
-                    <h3 data-lang="eu">Lankidetza Estrategikoak</h3>
-                    <h3 data-lang="en">Strategic Collaborations</h3>
-                    <p data-lang="es">El formato del evento — con sesiones de elevator pitches del ecosistema cuántico vasco, espacios de networking y una visita técnica — maximiza las oportunidades de crear alianzas concretas entre startups, corporaciones, centros de investigación e instituciones públicas.</p>
-                    <p data-lang="eu">Egunaren formatuak — Euskal ekosistema kuantikoko elevator pitch saioekin, networking guneekin eta bisita tekniko batekin — aukera maximizatzen ditu startupen, korporazioen, ikerketa-zentroen eta erakunde publikoen artean alianza zehatzak sortzeko.</p>
-                    <p data-lang="en">The event format — with elevator pitch sessions from the Basque quantum ecosystem, networking spaces and a technical visit — maximizes the opportunities to create concrete alliances between startups, corporations, research centers and public institutions.</p>
+                    <h3 data-lang="es">Contactos y alianzas</h3>
+                    <h3 data-lang="eu">Kontaktuak eta aliantzak</h3>
+                    <h3 data-lang="en">Contacts and alliances</h3>
+                    <p data-lang="es">Elevator pitches, espacios de networking y visita técnica: un formato pensado para que salgas con contactos reales, no solo tarjetas.</p>
+                    <p data-lang="eu">Elevator pitchak, networking guneak eta bisita teknikoa: kontaktu errealak ateratzeko pentsatutako formatua, ez bakarrik txartelak.</p>
+                    <p data-lang="en">Elevator pitches, networking spaces and a technical visit: a format designed so you leave with real connections, not just business cards.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon"><img src="assets/icons/other/money-wavy-duotone.svg" alt=""></div>
-                    <h3 data-lang="es">Oportunidades de Financiación</h3>
-                    <h3 data-lang="eu">Finantzaketa Aukerak</h3>
-                    <h3 data-lang="en">Funding Opportunities</h3>
-                    <p data-lang="es">Descubre los principales programas de apoyo a proyectos cuánticos y de IA, provenientes de fuentes regionales, nacionales y supranacionales, y conecta directamente con las instituciones que los gestionan.</p>
-                    <p data-lang="eu">Eskalatutako proiektu kuantiko eta AA proiektuetarako laguntza-programa nagusiak ezagutu, iturri eskualde, estatuko eta gainnazionaletatik datozenak, eta zuzenean konektatu horiek kudeatzen dituzten erakundeekin.</p>
-                    <p data-lang="en">Discover the main support programs for quantum and AI projects, coming from regional, national and supranational sources, and connect directly with the institutions that manage them.</p>
+                    <h3 data-lang="es">Financiación y apoyos</h3>
+                    <h3 data-lang="eu">Finantzaketa eta laguntzak</h3>
+                    <h3 data-lang="en">Funding and support</h3>
+                    <p data-lang="es">Conoce los programas de apoyo más relevantes —regionales, nacionales y europeos— y conecta directamente con quienes los gestionan.</p>
+                    <p data-lang="eu">Ezagutu laguntza-programa garrantzitsuenak —eskualdekoak, estatukoak eta europakoak— eta zuzenean konektatu horiek kudeatzen dituztenekin.</p>
+                    <p data-lang="en">Get to know the most relevant support programmes — regional, national and European — and connect directly with the people who run them.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon"><img src="assets/icons/other/scales-duotone.svg" alt=""></div>
-                    <h3 data-lang="es">Marco Regulatorio</h3>
-                    <h3 data-lang="eu">Arau Markoa</h3>
-                    <h3 data-lang="en">Regulatory Framework</h3>
-                    <p data-lang="es">El marco regulatorio para la IA y las tecnologías cuánticas evoluciona rápidamente en Europa. El summit aborda estándares emergentes, la criptografía post-cuántica como respuesta a la amenaza cuántica sobre la seguridad actual, y el papel de las políticas públicas.</p>
-                    <p data-lang="eu">AA eta teknologia kuantikoetarako araudi-esparrua azkar eboluzionatzen ari da Europan. Summitak estandar emergenteak jorratzen ditu, kriptografia post-kuantikoa mehatxu kuantikoari erantzun gisa segurtasunaren aurrean dagoen arriskuari, eta politika publikoen rola.</p>
-                    <p data-lang="en">The regulatory framework for AI and quantum technologies is evolving rapidly in Europe. The summit addresses emerging standards, post-quantum cryptography as a response to the quantum threat to current security, and the role of public policies.</p>
+                    <h3 data-lang="es">Contexto regulatorio</h3>
+                    <h3 data-lang="eu">Araudi-testuingurua</h3>
+                    <h3 data-lang="en">Regulatory context</h3>
+                    <p data-lang="es">La regulación de IA y cuántica avanza rápido en Europa. Abordamos criptografía post-cuántica, estándares emergentes y el papel de las políticas públicas.</p>
+                    <p data-lang="eu">IA eta kuantikaren erregulazioa azkar aurreratzen ari da Europan. Kriptografia post-kuantikoa, estandar berriak eta politika publikoen rola jorratzen ditugu.</p>
+                    <p data-lang="en">AI and quantum regulation is moving fast in Europe. We cover post-quantum cryptography, emerging standards and the role of public policy.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon"><img src="assets/icons/other/target-duotone.svg" alt=""></div>
-                    <h3 data-lang="es">Visibilidad Sectorial</h3>
-                    <h3 data-lang="eu">Sektoreko Ikusgarritasuna</h3>
-                    <h3 data-lang="en">Sector Visibility</h3>
-                    <p data-lang="es">El Quantum x AI Summit es la plataforma ideal para que organizaciones, startups y centros de investigación den visibilidad a sus proyectos ante un público cualificado, conectando con el ecosistema desde un escenario directo ante la comunidad cuántica vasca, europea y global.</p>
-                    <p data-lang="eu">Quantum x AI Summit da plataforma ideala erakunde, startup eta ikerketa-zentroentzat beren proiektuei ikusgarritasuna emateko publiko kualifikatu baten aurrean, ekosistemarekin konektatuz Euskal, Europako eta munduko komunitate kuantikoaren aurrean zuzeneko eszenatokitik.</p>
-                    <p data-lang="en">The Quantum x AI Summit is the ideal platform for organizations, startups and research centers to give visibility to their projects in front of a qualified audience, connecting with the ecosystem from a direct stage in front of the Basque, European and global quantum community.</p>
+                    <h3 data-lang="es">Visibilidad ante el sector</h3>
+                    <h3 data-lang="eu">Sektorearen aurreko ikusgarritasuna</h3>
+                    <h3 data-lang="en">Visibility in the sector</h3>
+                    <p data-lang="es">Un escenario directo ante la comunidad cuántica vasca, europea y global. Ideal para startups, centros de investigación y organizaciones que quieran hacerse notar.</p>
+                    <p data-lang="eu">Euskal, Europako eta munduko komunitate kuantikoaren aurreko eszenatoki zuzena. Ezagutzera eman nahi duten startup, ikerketa-zentro eta erakundeentzat aproposa.</p>
+                    <p data-lang="en">A direct stage in front of the Basque, European and global quantum community. Ideal for startups, research centres and organisations looking to make an impression.</p>
                 </div>
             </div>
         </div>
