@@ -410,13 +410,10 @@
 
             <div class="hero-cta">
                 <button class="cta-button disabled" disabled>
-                    <span data-lang="es">Regístrate en Eventbrite</span>
-                    <span data-lang="eu">Eman izena Eventbrite-n</span>
-                    <span data-lang="en">Register on Eventbrite</span>
+                    <span data-lang="es">Regístrate</span>
+                    <span data-lang="eu">Eman izena</span>
+                    <span data-lang="en">Sign up</span>
                 </button>
-                <p class="registration-notice" data-lang="es">La inscripción al evento se abrirá próximamente</p>
-                <p class="registration-notice" data-lang="eu">Ekitaldirako erregistroa laster irekiko da</p>
-                <p class="registration-notice" data-lang="en">Event registration will open soon</p>
             </div>
         </div>
     </section>
@@ -1044,14 +1041,32 @@
         <h2 class="section-title" data-lang="en">Registration</h2>
         
         <div style="text-align: center; max-width: 600px; margin: 0 auto;">
-            <button class="cta-button disabled" disabled>
-                <span data-lang="es">Regístrate en Eventbrite</span>
-                <span data-lang="eu">Eman izena Eventbrite-n</span>
-                <span data-lang="en">Register on Eventbrite</span>
+
+            <!-- Noscript content for added SEO -->
+            <noscript><a href="https://www.eventbrite.es/e/quantum-x-ai-summit-tickets-1983523315632" rel="noopener noreferrer" target="_blank">Buy Tickets on Eventbrite</a></noscript>
+            
+            <button id="eventbrite-widget-modal-trigger-1983523315632" type="button" class="cta-button">
+                <span data-lang="es">Regístrate</span>
+                <span data-lang="eu">Eman izena</span>
+                <span data-lang="en">Sign up</span>
             </button>
-            <p class="registration-notice" data-lang="es">La inscripción al evento se abrirá próximamente</p>
-            <p class="registration-notice" data-lang="eu">Ekitaldirako erregistroa laster irekiko da</p>
-            <p class="registration-notice" data-lang="en">Event registration will open soon</p>
+
+            <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
+
+            <script type="text/javascript">
+                var exampleCallback = function() {
+                    console.log('Order complete!');
+                };
+
+                window.EBWidgets.createWidget({
+                    widgetType: 'checkout',
+                    eventId: '1983523315632',
+                    modal: true,
+                    modalTriggerElementId: 'eventbrite-widget-modal-trigger-1983523315632',
+                    onOrderComplete: exampleCallback
+                });
+            </script>
+
             <p class="contact-email-notice">
                 <span data-lang="es">¿Tienes preguntas? Escríbenos a </span>
                 <span data-lang="eu">Galderak? Idatzi iezaguzu helbide honetara: </span>
