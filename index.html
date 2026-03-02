@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quantum x AI Summit 2026 | 25 de marzo | Donostia / San Sebastián</title>
-    <meta name="description" content="Evento de referencia sobre computación cuántica e inteligencia artificial. 25 de marzo de 2026 en Donostia / San Sebastián.">
+    <meta name="description"
+        content="Evento de referencia sobre computación cuántica e inteligencia artificial. 25 de marzo de 2026 en Donostia / San Sebastián.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Outfit:wght@400;600;800;900&display=swap"
+        rel="stylesheet">
 
     <!-- Standard favicon (most browsers will use this) -->
     <link rel="icon" href="assets/favicons/favicon.ico">
@@ -24,310 +28,1503 @@
     <link rel="icon" type="image/png" sizes="512x512" href="assets/favicons/android-chrome-512x512.png">
 
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --primary-dark: #5f82c1;
-            --primary-blue: #5f82c1;
-            --bg-dark: #5f82c1;
-            --bg-card: #1a1a1a;
-            --bg-card-hover: #222222;
-            --text-primary: #ffffff;
-            --text-secondary: #b0b0b0;
-            --border-color: #333333;
-            --accent-gradient: linear-gradient(135deg, #3d4c8f 0%, #4a5898 15%, #6d5f9e 30%, #8f5fa3 45%, #a86087 60%, #c4724f 75%, #e0a63a 90%, #4dbdc9 100%);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text-primary); background: var(--bg-dark); line-height: 1.6; overflow-x: hidden; }
-        h1, h2, h3, h4 { font-weight: 900; line-height: 1.2; color: var(--text-primary); }
-        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
-        h2 { font-size: clamp(1.6rem, 3.2vw, 2.4rem); }
-        h3 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; }
-        
-        
-        header { background: #292356; padding: 0; height: 70px; display: flex; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        nav { max-width: 1400px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; width: 100%; }
-        .nav-links { display: flex; gap: 2rem; list-style: none; flex: 1; justify-content: center; }
-        .nav-links a { text-decoration: none; color: #ffffff; font-weight: 500; transition: color 0.3s; }
-        .nav-links a:hover { color: rgba(255,255,255,0.7); }
-        .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-primary); }
-        .social-links { display: flex; gap: 1rem; align-items: center; }
-        .social-links a { color: var(--text-secondary); font-size: 1.3rem; transition: color 0.3s; text-decoration: none; }
-        .social-links a:hover { color: var(--primary-blue); }
-        
-        .hero { margin-top: 70px; min-height: 90vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; max-width: 100% !important; padding: 0 !important; width: 100%;
-            background: linear-gradient(135deg, 
-                rgba(61, 76, 143, 0.9) 0%, 
-                rgba(74, 88, 152, 0.9) 15%, 
-                rgba(109, 95, 158, 0.9) 30%, 
-                rgba(143, 95, 163, 0.9) 45%, 
-                rgba(168, 96, 135, 0.9) 60%, 
-                rgba(196, 114, 79, 0.9) 75%, 
-                rgba(224, 166, 58, 0.9) 90%, 
-                rgba(77, 189, 201, 0.9) 100%),
-            url('assets/images/hero-networking.jpg');
+
+        :root {
+            --primary-dark: #292356;
+            --primary-blue: #5f82c1;
+            --bg-dark: linear-gradient(135deg, #110e26 0%, #1f1b3d 100%);
+            --bg-card: rgba(255, 255, 255, 0.04);
+            --bg-card-hover: rgba(255, 255, 255, 0.08);
+            --text-primary: #ffffff;
+            --text-secondary: #cbd5e1;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --accent-gradient: linear-gradient(135deg, #3d4c8f 0%, #4a5898 15%, #6d5f9e 30%, #8f5fa3 45%, #a86087 60%, #c4724f 75%, #e0a63a 90%, #4dbdc9 100%);
+            --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text-primary);
+            background: var(--bg-dark);
+            background-attachment: fixed;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        h2 {
+            font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+        }
+
+
+        header {
+            background: rgba(41, 35, 86, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 0;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: var(--glass-border);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        .header-logo {
+            justify-self: start;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            justify-self: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: var(--primary-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-primary);
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .social-links a {
+            color: var(--text-secondary);
+            font-size: 1.3rem;
+            transition: color 0.3s, transform 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-blue);
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            margin-top: 70px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            max-width: 100% !important;
+            padding: 0 !important;
+            width: 100%;
+            background: linear-gradient(135deg,
+                    rgba(17, 14, 38, 0.85) 0%,
+                    rgba(31, 27, 61, 0.85) 25%,
+                    rgba(61, 76, 143, 0.8) 50%,
+                    rgba(143, 95, 163, 0.75) 75%,
+                    rgba(77, 189, 201, 0.8) 100%),
+                url('assets/images/hero-networking.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; }
-        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.05) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.08) 0%, transparent 50%); filter: blur(80px); }
-        .hero-content { max-width: 1400px; margin: 0 auto; padding: 4rem 2rem; text-align: center; position: relative; z-index: 1; }
-        .hero h1 { margin-bottom: 1rem; text-shadow: 2px 2px 8px rgba(0,0,0,0.5); }
-        .hero-tagline { font-size: clamp(1rem, 2vw, 1.4rem); font-weight: 300; margin-bottom: 1rem; color: rgba(255,255,255,0.9); }
-        .hero-date { font-size: clamp(1.1rem, 2.2vw, 1.8rem); font-weight: 700; margin: 1.25rem 0; }
-        .cta-button { display: inline-block; padding: 1rem 3rem; background: var(--text-primary); color: var(--bg-dark); text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.1rem; transition: all 0.3s; box-shadow: 0 4px 15px rgba(255,255,255,0.2); }
-        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,255,255,0.3); }
-        
-        section { padding: 5rem 2rem; max-width: 1400px; margin: 0 auto; }
-        .section-title { text-align: center; margin-bottom: 3rem; color: var(--text-primary); }
-        
-        .agenda-timeline { max-width: 1000px; margin: 3rem auto; }
-        .agenda-legend { display: flex; gap: 2rem; justify-content: center; margin-bottom: 2rem; flex-wrap: wrap; }
-        .legend-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--text-secondary); }
-        .legend-color { width: 20px; height: 20px; border-radius: 4px; }
-        .agenda-time { font-weight: 700; color: var(--primary-blue); min-width: 130px; font-size: 1.1rem; }
-        .agenda-content { flex: 1; }
-        .agenda-content h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
-        .agenda-content p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 0.8rem; }
-        .speakers-list { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1rem; }
-        .speaker-item { display: flex; gap: 1rem; align-items: center; }
-        .speaker-photo { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-blue); }
-        .speaker-info { flex: 1; }
-        .speaker-name { font-weight: 600; color: var(--text-primary); font-size: 0.95rem; }
-        .speaker-role { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.3; }
-        
-        .entities-section { background: var(--accent-gradient); margin: 0; padding: 2.5rem 2rem; max-width: 100% !important; }
-        .entities-section-inner { max-width: 1400px; margin: 0 auto; }
-        .entities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; align-items: center; justify-items: center; margin-top: 3rem; }
-        .entity-logo { background: #ffffff; border-radius: 10px; width: 100%; max-width: 220px; height: 120px; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 1rem; }
-        .entity-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
-        /* Entity name card (sin logo) */
-        .entity-name-card { background: #ffffff; border: 1px solid var(--border-color); border-radius: 10px; width: 100%; max-width: 220px; height: 120px; display: flex; align-items: center; justify-content: center; padding: 1rem; text-align: center; }
-        .entity-name-card span { color: var(--primary-dark); font-weight: 600; font-size: 1rem; line-height: 1.35; letter-spacing: 0.01em; }
-        .entities-note { text-align: center; margin-top: 2rem; color: #ffffff; font-style: italic; }
-        
-        .privacy-link { color: var(--primary-blue); text-decoration: none; cursor: pointer; border-bottom: 1px solid transparent; transition: border-color 0.3s; }
-        .privacy-link:hover { border-bottom-color: var(--primary-blue); }
-        
-        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); overflow: auto; }
-        .modal-content { background-color: var(--bg-card); margin: 3% auto; padding: 2.5rem; border: 1px solid var(--border-color); border-radius: 15px; width: 90%; max-width: 900px; max-height: 80vh; overflow-y: auto; position: relative; }
-        .modal-close { position: sticky; top: 0; float: right; font-size: 2rem; font-weight: bold; color: var(--text-secondary); cursor: pointer; background: var(--bg-dark); border: none; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
-        .modal-close:hover { color: var(--text-primary); background: var(--border-color); }
-        .modal-content h2 { margin-top: 0; margin-bottom: 1.5rem; }
-        .modal-content h3 { margin-top: 2rem; margin-bottom: 1rem; font-size: 1.3rem; }
-        .modal-content p { margin-bottom: 1rem; color: var(--text-secondary); line-height: 1.8; }
-        .modal-content ul { margin-left: 2rem; margin-bottom: 1rem; color: var(--text-secondary); }
-        
-        .funding-banner { background: #ffffff; border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; padding: 2.5rem 2rem; text-align: center; }
-        .funding-banner-title { font-size: 1rem; font-weight: 600; color: #333333; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
-        .funding-logo { display: flex; justify-content: center; align-items: center; }
-        .funding-logo img { max-width: 960px; width: 100%; height: auto; object-fit: contain; display: block; }
-        
-        footer { background: #292356; color: var(--text-secondary); padding: 3rem 2rem 1rem; border-top: 1px solid rgba(255,255,255,0.1); }
-        .footer-content { max-width: 1400px; margin: 0 auto; }
-        /* Two-level footer logos */
-        .footer-organizers { display: flex; flex-direction: column; align-items: center; gap: 0.9rem; margin-bottom: 2rem; }
-        .footer-logos-primary { display: flex; justify-content: center; }
-        .footer-logos-primary img { height: 108px; width: auto; max-width: 390px; filter: brightness(0) invert(1); opacity: 0.95; transition: opacity 0.3s; }
-        .footer-logos-primary img:hover { opacity: 1; }
-        .footer-logos-sep { width: 220px; height: 1px; background: rgba(255,255,255,0.18); margin: 0.15rem 0; }
-        .footer-logos-secondary { display: flex; justify-content: center; align-items: center; gap: 3rem; flex-wrap: wrap; }
-        .footer-logos-secondary img { height: 50px; width: auto; max-width: 140px; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.8; transition: opacity 0.3s; }
-        .footer-logos-secondary img[src$=".svg"] { height: 50px; max-width: 140px; }
-        .footer-logos-secondary img[src*="gobierno-vasco"] { height: 85px; max-width: 218px; }
-        .footer-logos-secondary img[src*="mondragon"] { height: 60px; max-width: 168px; }
-        .footer-logos-secondary img:hover { opacity: 1; }
-        .footer-social { display: flex; justify-content: center; gap: 1.5rem; margin: 2rem 0; }
-        .footer-social a { display: flex; align-items: center; justify-content: center; transition: opacity 0.3s; text-decoration: none; }
-        .footer-social a img { width: 28px; height: 28px; object-fit: contain; filter: brightness(0) invert(1); transition: opacity 0.3s; }
-        .footer-social a:hover img { opacity: 0.7; }
-        .footer-legal { margin-top: 1rem; font-size: 0.85rem; opacity: 0.7; }
-        
-        @media (max-width: 1024px) { .benefits-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 768px) {
-            .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #292356; flex-direction: column; padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
-            .nav-links.active { display: flex; }
-            .mobile-menu-btn { display: block; }
-            .social-links { display: none; }
-            .hero { min-height: 70vh; }
-            section { padding: 3rem 1rem; }
-            .topics-grid, .benefits-grid { grid-template-columns: 1fr; }
-            .agenda-item { flex-direction: column; gap: 1rem; }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
-            .footer-logos-secondary { gap: 1.5rem; }
-            .footer-logos-secondary img, .hero-logos-secondary img { max-width: 110px; }
-            .funding-banner { flex-direction: column; gap: 1.5rem; }
-            .modal-content { width: 95%; padding: 1.5rem; margin: 10% auto; }
+            background-attachment: fixed;
         }
-        
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        .fade-in { animation: fadeInUp 0.8s ease-out; }
-        html { scroll-behavior: smooth; }
-        [data-lang]:not(.active-lang) { display: none; }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 20% 50%, rgba(77, 189, 201, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(224, 166, 58, 0.1) 0%, transparent 50%);
+            filter: blur(60px);
+            animation: pulseFloat 10s infinite alternate;
+        }
+
+        @keyframes pulseFloat {
+            0% {
+                opacity: 0.6;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-tagline {
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            font-weight: 300;
+            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .hero-date {
+            font-size: clamp(1.1rem, 2.2vw, 1.8rem);
+            font-weight: 700;
+            margin: 1.25rem 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: var(--accent-gradient);
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(77, 189, 201, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 30px rgba(77, 189, 201, 0.6);
+        }
+
+        section {
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-primary);
+        }
+
+        .agenda-timeline {
+            max-width: 1000px;
+            margin: 3rem auto;
+        }
+
+        .agenda-legend {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+
+        .agenda-time {
+            font-weight: 700;
+            color: var(--primary-blue);
+            min-width: 130px;
+            font-size: 1.1rem;
+        }
+
+        .agenda-content {
+            flex: 1;
+        }
+
+        .agenda-content h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .agenda-content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .speakers-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .speaker-item {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .speaker-photo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-blue);
+        }
+
+        .speaker-info {
+            flex: 1;
+        }
+
+        .speaker-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        .speaker-role {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.3;
+        }
+
+        .entities-section {
+            background: var(--accent-gradient);
+            margin: 0;
+            padding: 2.5rem 2rem;
+            max-width: 100% !important;
+        }
+
+        .entities-section-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .entities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+            align-items: center;
+            justify-items: center;
+            margin-top: 3rem;
+            perspective: 1000px;
+        }
+
+        .entity-logo {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            width: 100%;
+            max-width: 220px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 1.5rem;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .entity-logo:hover {
+            transform: translateY(-8px) rotateX(5deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .entity-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .entity-logo:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Entity name card (sin logo) */
+        .entity-name-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 16px;
+            width: 100%;
+            max-width: 220px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .entity-name-card:hover {
+            transform: translateY(-8px) rotateX(5deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .entity-name-card span {
+            color: var(--primary-dark);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.1rem;
+            line-height: 1.35;
+            letter-spacing: 0.01em;
+        }
+
+        .entities-note {
+            text-align: center;
+            margin-top: 2rem;
+            color: #ffffff;
+            font-style: italic;
+        }
+
+        .privacy-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            cursor: pointer;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .privacy-link:hover {
+            border-bottom-color: var(--primary-blue);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+            overflow: auto;
+            perspective: 1000px;
+        }
+
+        .modal-content {
+            background: linear-gradient(145deg, rgba(36, 30, 78, 0.95) 0%, rgba(26, 22, 58, 0.98) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            margin: 3% auto;
+            padding: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            width: 90%;
+            max-width: 900px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+            transform-origin: top;
+            animation: modalFadeIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px) rotateX(-5deg);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+        }
+
+        .modal-close {
+            position: sticky;
+            top: 0;
+            float: right;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--text-secondary);
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .modal-close:hover {
+            color: var(--text-primary);
+            background: #e0a63a;
+            border-color: #e0a63a;
+            transform: rotate(90deg) scale(1.1);
+            box-shadow: 0 5px 15px rgba(224, 166, 58, 0.4);
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-content h3 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .modal-content p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .modal-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .funding-banner {
+            background: #ffffff;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .funding-banner-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333333;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .funding-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .funding-logo img {
+            max-width: 960px;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        footer {
+            background: linear-gradient(to top, #0b0914 0%, #171330 100%);
+            color: var(--text-secondary);
+            padding: 4rem 2rem 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Two-level footer logos */
+        .footer-organizers {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logos-primary {
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer-logos-primary img {
+            height: 108px;
+            width: auto;
+            max-width: 390px;
+            filter: brightness(0) invert(1);
+            opacity: 0.95;
+            transition: opacity 0.3s;
+        }
+
+        .footer-logos-primary img:hover {
+            opacity: 1;
+        }
+
+        .footer-logos-sep {
+            width: 220px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.18);
+            margin: 0.15rem 0;
+        }
+
+        .footer-logos-secondary {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-logos-secondary img {
+            height: 50px;
+            width: auto;
+            max-width: 140px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-logos-secondary img[src$=".svg"] {
+            height: 50px;
+            max-width: 140px;
+        }
+
+        .footer-logos-secondary img[src*="gobierno-vasco"] {
+            height: 85px;
+            max-width: 218px;
+        }
+
+        .footer-logos-secondary img[src*="mondragon"] {
+            height: 60px;
+            max-width: 168px;
+        }
+
+        .footer-logos-secondary img:hover {
+            opacity: 1;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s;
+            text-decoration: none;
+        }
+
+        .footer-social a img {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            transition: opacity 0.3s;
+        }
+
+        .footer-social a:hover img {
+            opacity: 0.7;
+        }
+
+        .footer-legal {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 1024px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #292356;
+                flex-direction: column;
+                padding: 1rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .social-links {
+                display: none;
+            }
+
+            .hero {
+                min-height: 70vh;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .topics-grid,
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .agenda-item {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .footer-logos-secondary {
+                gap: 1.5rem;
+            }
+
+            .footer-logos-secondary img,
+            .hero-logos-secondary img {
+                max-width: 110px;
+            }
+
+            .funding-banner {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .modal-content {
+                width: 95%;
+                padding: 1.5rem;
+                margin: 10% auto;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        [data-lang]:not(.active-lang) {
+            display: none;
+        }
 
         /* Header logo → text title */
-        .header-logo { flex-shrink: 0; }
-        .header-title { font-size: 1.1rem; font-weight: 700; color: #ffffff; white-space: nowrap; letter-spacing: -0.01em; }
+        .header-logo {
+            flex-shrink: 0;
+        }
+
+        .header-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            white-space: nowrap;
+            letter-spacing: -0.01em;
+        }
 
         /* Nav right group (lang + hamburger) */
-        .nav-right { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
+        .nav-right {
+            display: flex;
+            align-items: center;
+            justify-self: end;
+            gap: 1rem;
+        }
 
         /* Language selector dropdown */
-        .language-selector { position: relative; }
-        .lang-active-btn { display: flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.65rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.25); border-radius: 6px; cursor: pointer; color: #ffffff; font-size: 0.85rem; font-weight: 500; transition: background 0.2s; white-space: nowrap; }
-        .lang-active-btn:hover { background: rgba(255,255,255,0.2); }
-        .lang-chevron { font-size: 0.65rem; opacity: 0.8; }
-        .lang-dropdown { display: none; position: absolute; right: 0; top: calc(100% + 6px); background: #292356; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; overflow: hidden; min-width: 90px; box-shadow: 0 8px 20px rgba(0,0,0,0.3); z-index: 100; }
-        .lang-dropdown.open { display: block; }
-        .lang-option { display: flex; align-items: center; gap: 0.5rem; width: 100%; padding: 0.5rem 0.9rem; background: transparent; border: none; cursor: pointer; color: rgba(255,255,255,0.75); font-size: 0.85rem; font-weight: 500; transition: background 0.2s; }
-        .lang-option:hover { background: rgba(255,255,255,0.1); color: #ffffff; }
-        .lang-option.active { color: #ffffff; background: rgba(255,255,255,0.08); }
-        .flag-icon { width: 20px; height: 14px; object-fit: cover; border-radius: 2px; }
-        
+        /* Language selector text */
+        .language-selector {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 500;
+        }
+
+        .lang-option {
+            background: none;
+            border: none;
+            color: inherit;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            padding: 0.2rem;
+        }
+
+        .lang-option:hover {
+            color: #ffffff;
+        }
+
+        .lang-option.active {
+            color: #ffffff;
+            font-weight: 800;
+        }
+
+        .lang-sep {
+            font-size: 0.8rem;
+            opacity: 0.5;
+            user-select: none;
+        }
+
         /* Hero venue */
-        .hero-venue { margin-top: 0.4rem; margin-bottom: 0; font-size: 0.9rem; opacity: 0.9; }
-        .hero-venue a { color: rgba(255,255,255,0.9); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); transition: all 0.3s; padding-bottom: 2px; display: inline-flex; align-items: center; gap: 0.4rem; }
-        .hero-venue a:hover { border-bottom-color: rgba(255,255,255,0.8); opacity: 1; }
-        .venue-pin-icon { width: 16px; height: 16px; opacity: 0.9; flex-shrink: 0; filter: brightness(0) invert(1); }
+        .hero-venue {
+            margin-top: 0.4rem;
+            margin-bottom: 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .hero-venue a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s;
+            padding-bottom: 2px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .hero-venue a:hover {
+            border-bottom-color: rgba(255, 255, 255, 0.8);
+            opacity: 1;
+        }
+
+        .venue-pin-icon {
+            width: 16px;
+            height: 16px;
+            opacity: 0.9;
+            flex-shrink: 0;
+            filter: brightness(0) invert(1);
+        }
 
         /* Hero organizers */
-        .hero-organizers-block { margin: 1.25rem auto; }
-        .hero-organized-by { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.6); margin-bottom: 1.25rem; font-weight: 500; }
-        .hero-organizers-logos { display: flex; flex-direction: column; align-items: center; gap: 0.9rem; }
+        .hero-organizers-block {
+            margin: 1.25rem auto;
+        }
+
+        .hero-organized-by {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 1.25rem;
+            font-weight: 500;
+        }
+
+        .hero-organizers-logos {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.9rem;
+        }
+
         /* Level 1 – SPRI (protagonista) */
-        .hero-logos-primary { display: flex; justify-content: center; }
-        .hero-logos-primary img { height: 108px; width: auto; max-width: 390px; opacity: 0.95; transition: opacity 0.3s; }
-        .hero-logos-primary img:hover { opacity: 1; }
+        .hero-logos-primary {
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-logos-primary img {
+            height: 108px;
+            width: auto;
+            max-width: 390px;
+            opacity: 0.95;
+            transition: opacity 0.3s;
+        }
+
+        .hero-logos-primary img:hover {
+            opacity: 1;
+        }
+
         /* Separator between levels */
-        .hero-logos-sep { width: 220px; height: 1px; background: rgba(255,255,255,0.22); margin: 0.15rem 0; }
+        .hero-logos-sep {
+            width: 220px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.22);
+            margin: 0.15rem 0;
+        }
+
         /* Level 2 – the three secondary logos */
-        .hero-logos-secondary { display: flex; justify-content: center; align-items: center; gap: 2.5rem; flex-wrap: wrap; }
-        .hero-logos-secondary img { height: 50px; width: auto; max-width: 140px; opacity: 0.85; transition: opacity 0.3s; object-fit: contain; }
-        .hero-logos-secondary img[src$=".svg"] { height: 50px; max-width: 140px; }
-        .hero-logos-secondary img[src*="gobierno-vasco"] { height: 85px; max-width: 218px; }
-        .hero-logos-secondary img[src*="mondragon"] { height: 60px; max-width: 168px; }
-        .hero-logos-secondary img:hover { opacity: 1; }
+        .hero-logos-secondary {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-logos-secondary img {
+            height: 50px;
+            width: auto;
+            max-width: 140px;
+            opacity: 0.85;
+            transition: opacity 0.3s;
+            object-fit: contain;
+        }
+
+        .hero-logos-secondary img[src$=".svg"] {
+            height: 50px;
+            max-width: 140px;
+        }
+
+        .hero-logos-secondary img[src*="gobierno-vasco"] {
+            height: 85px;
+            max-width: 218px;
+        }
+
+        .hero-logos-secondary img[src*="mondragon"] {
+            height: 60px;
+            max-width: 168px;
+        }
+
+        .hero-logos-secondary img:hover {
+            opacity: 1;
+        }
 
         /* Hero CTA */
-        .hero-cta { margin-top: 2rem; }
-        
+        .hero-cta {
+            margin-top: 2rem;
+        }
+
         /* Botones disabled */
-        .cta-button.disabled { opacity: 0.6; cursor: not-allowed; background: rgba(255,255,255,0.4); }
-        .cta-button.disabled:hover { transform: none; box-shadow: 0 4px 15px rgba(255,255,255,0.2); background: rgba(255,255,255,0.4); }
-        .registration-notice { font-size: 0.9rem; font-style: italic; opacity: 0.8; margin-top: 1rem; color: rgba(255,255,255,0.85); }
-        .contact-email-notice { margin-top: 1.5rem; font-size: 0.95rem; color: #ffffff; }
-        .contact-email-link { color: rgba(255,255,255,0.85); text-decoration: none; font-weight: 600; transition: opacity 0.2s; border-bottom: 1px solid rgba(255,255,255,0.4); padding-bottom: 1px; }
-        .contact-email-link:hover { opacity: 0.8; }
-        
-        section.venue-section { max-width: 100%; margin: 0; padding: 0; }
+        .cta-button.disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .cta-button.disabled:hover {
+            transform: none;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .registration-notice {
+            font-size: 0.9rem;
+            font-style: italic;
+            opacity: 0.8;
+            margin-top: 1rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .contact-email-notice {
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            color: #ffffff;
+        }
+
+        .contact-email-link {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.2s;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+            padding-bottom: 1px;
+        }
+
+        .contact-email-link:hover {
+            opacity: 0.8;
+        }
+
+        section.venue-section {
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
 
         /* Reduce contact section top padding */
-        #contact { padding-top: 2.5rem; }
+        #contact {
+            padding-top: 2.5rem;
+        }
 
         /* Footer improved */
-        .footer-divider { height: 1px; background: var(--border-color); margin: 2rem auto; max-width: 800px; }
-        .footer-privacy { text-align: center; margin: 1.5rem 0; }
-        .footer-privacy .privacy-link { color: var(--primary-blue); text-decoration: none; font-weight: 500; transition: opacity 0.3s; }
-        .footer-privacy .privacy-link:hover { opacity: 0.8; text-decoration: underline; }
-        .footer-legal { margin: 1.5rem auto; max-width: 900px; text-align: center; line-height: 1.7; }
-        .footer-legal p { margin: 0.4rem 0; font-size: 0.85rem; }
-        .footer-legal strong { color: var(--text-primary); }
+        .footer-divider {
+            height: 1px;
+            background: var(--border-color);
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+
+        .footer-privacy {
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+
+        .footer-privacy .privacy-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .footer-privacy .privacy-link:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .footer-legal {
+            margin: 1.5rem auto;
+            max-width: 900px;
+            text-align: center;
+            line-height: 1.7;
+        }
+
+        .footer-legal p {
+            margin: 0.4rem 0;
+            font-size: 0.85rem;
+        }
+
+        .footer-legal strong {
+            color: var(--text-primary);
+        }
+
         /* Agenda item tags */
-        .agenda-item { display: flex; gap: 2rem; margin-bottom: 1.5rem; padding: 1.5rem; background: var(--bg-card); border-radius: 10px; border-left: 4px solid; transition: all 0.3s; position: relative; }
-        .agenda-item:hover { transform: translateX(5px); background: var(--bg-card-hover); }
-        .agenda-item.session { border-left-color: #4dbdc9; }
-        .agenda-item.break { border-left-color: #e0a63a; }
-        .agenda-item.visit { border-left-color: #8f5fa3; }
-        .agenda-tag { position: absolute; top: 0.75rem; right: 0.75rem; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.72rem; font-weight: 700; color: #ffffff; letter-spacing: 0.02em; text-transform: uppercase; }
-        .agenda-item.session .agenda-tag { background: #4dbdc9; }
-        .agenda-item.break .agenda-tag { background: #e0a63a; }
-        .agenda-item.visit .agenda-tag { background: #8f5fa3; }
+        .agenda-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding: 2.5rem 2rem;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-left: 6px solid;
+            transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+            position: relative;
+            box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+        }
+
+        .agenda-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.06), transparent 40%);
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .agenda-item:hover::before {
+            opacity: 1;
+        }
+
+        .agenda-item>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .agenda-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+            box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.6);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .agenda-item.session {
+            border-left-color: #4dbdc9;
+        }
+
+        .agenda-item.break {
+            border-left-color: #e0a63a;
+        }
+
+        .agenda-item.visit {
+            border-left-color: #8f5fa3;
+        }
+
+        .agenda-tag {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.2rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .agenda-item.session .agenda-tag {
+            background: linear-gradient(135deg, #4dbdc9 0%, #3d4c8f 100%);
+        }
+
+        .agenda-item.break .agenda-tag {
+            background: linear-gradient(135deg, #e0a63a 0%, #c4724f 100%);
+        }
+
+        .agenda-item.visit .agenda-tag {
+            background: linear-gradient(135deg, #8f5fa3 0%, #6d5f9e 100%);
+        }
 
         /* Reduce agenda section bottom padding */
-        #agenda { padding-bottom: 1rem; }
+        #agenda {
+            padding-bottom: 1rem;
+        }
 
         /* Extended descriptions — only visible inside modal, hidden in agenda list */
-        .modal-extended-desc { display: none; }
+        .modal-extended-desc {
+            display: none;
+        }
 
         /* Speaker bio inside modal */
-        .agenda-modal-speaker-bio { 
-            color: var(--text-secondary); 
-            font-size: 0.88rem; 
-            line-height: 1.65; 
+        .agenda-modal-speaker-bio {
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            line-height: 1.65;
             margin-top: 0.5rem;
             padding-top: 0.5rem;
-            border-top: 1px solid rgba(255,255,255,0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
-        .agenda-modal-speaker-bio.pending { 
-            font-style: italic; 
-            opacity: 0.55; 
+
+        .agenda-modal-speaker-bio.pending {
+            font-style: italic;
+            opacity: 0.55;
         }
 
         /* Agenda info button */
-        .agenda-info-btn { margin-top: 1rem; display: inline-flex; align-items: center; gap: 0.4rem; background: transparent; border: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.82rem; font-weight: 600; padding: 0.35rem 0.85rem; border-radius: 20px; cursor: pointer; transition: all 0.25s; letter-spacing: 0.03em; }
-        .agenda-info-btn:hover { border-color: var(--primary-blue); color: var(--primary-blue); background: rgba(77,189,201,0.08); }
-        .agenda-info-btn .agenda-info-icon { width: 14px; height: 14px; flex-shrink: 0; filter: brightness(0) invert(1); }
+        .agenda-info-btn {
+            margin-top: 1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.25s;
+            letter-spacing: 0.03em;
+        }
+
+        .agenda-info-btn:hover {
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+            background: rgba(77, 189, 201, 0.08);
+        }
+
+        .agenda-info-btn .agenda-info-icon {
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
+            filter: brightness(0) invert(1);
+        }
 
         /* Agenda session modal */
-        .agenda-modal .modal-content { max-width: 750px; }
-        .agenda-modal-header { margin-bottom: 1.5rem; }
-        .agenda-modal-header .agenda-tag { position: static; display: inline-block; margin-bottom: 0.75rem; }
-        .agenda-modal-time { color: var(--primary-blue); font-weight: 700; font-size: 1.05rem; margin-bottom: 0.4rem; }
-        .agenda-modal-title { font-size: 1.35rem; font-weight: 700; color: var(--text-primary); margin: 0; line-height: 1.3; }
-        .agenda-modal-desc { color: var(--text-secondary); line-height: 1.75; margin: 1.25rem 0 1.75rem; font-size: 0.97rem; }
-        .agenda-modal-speakers { display: flex; flex-direction: column; gap: 1.25rem; }
-        .agenda-modal-speaker { display: flex; gap: 1.25rem; align-items: flex-start; background: #292356; border-radius: 10px; padding: 1rem; }
-        .agenda-modal-speaker img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid var(--border-color); }
-        .agenda-modal-speaker-info { flex: 1; }
-        .agenda-modal-speaker-name { font-weight: 700; color: var(--text-primary); font-size: 1rem; margin-bottom: 0.2rem; }
-        .agenda-modal-speaker-role { color: var(--text-primary); font-size: 0.88rem; margin-bottom: 0.6rem; font-weight: 600; }
-        .agenda-modal-speaker-bio { color: var(--text-secondary); font-size: 0.88rem; line-height: 1.65; }
+        .agenda-modal .modal-content {
+            max-width: 750px;
+        }
+
+        .agenda-modal-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .agenda-modal-header .agenda-tag {
+            position: static;
+            display: inline-block;
+            margin-bottom: 1rem;
+            font-family: 'Outfit', sans-serif;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .agenda-modal-time {
+            color: #4dbdc9;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .agenda-modal-title {
+            font-size: 1.8rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin: 0;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        .agenda-modal-desc {
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin: 1.5rem 0 2rem;
+            font-size: 1rem;
+        }
+
+        .agenda-modal-speakers {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .agenda-modal-speaker {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .agenda-modal-speaker:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .agenda-modal-speaker img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+            border: 3px solid #4dbdc9;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .agenda-modal-speaker-info {
+            flex: 1;
+        }
+
+        .agenda-modal-speaker-name {
+            font-weight: 800;
+            font-family: 'Outfit', sans-serif;
+            color: var(--text-primary);
+            font-size: 1.15rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .agenda-modal-speaker-role {
+            color: #e0a63a;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .agenda-modal-speaker-bio {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
 
         /* Venue section */
-        .venue-section { background: #ffffff; padding: 0; max-width: 100% !important; margin: 0; }
-        .venue-inner { max-width: 1400px; margin: 0 auto; padding: 4rem 2rem; }
-        .venue-section .section-title { color: #1a1a1a; }
-        .venue-name { text-align: center; font-size: 1.5rem; font-weight: 700; color: #292356; margin-bottom: 0.5rem; }
-        .venue-address { text-align: center; margin-bottom: 2.5rem; }
-        .venue-address a { color: #5f82c1; text-decoration: none; font-size: 1rem; border-bottom: 1px solid rgba(95,130,193,0.4); padding-bottom: 2px; transition: border-color 0.2s; }
-        .venue-address a:hover { border-color: #5f82c1; }
-        .venue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; align-items: start; }
-        .venue-map-container { border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.12); aspect-ratio: 4/3; }
-        .venue-map-container iframe { width: 100%; height: 100%; border: 0; display: block; }
-        .venue-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-        .venue-photo { border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.12); aspect-ratio: 4/3; }
-        .venue-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
-        .venue-photo:hover img { transform: scale(1.04); }
-        @media (max-width: 768px) { .venue-grid { grid-template-columns: 1fr; } .venue-photos { grid-template-columns: 1fr 1fr; } }
+        .venue-section {
+            background: linear-gradient(to bottom, #ffffff 0%, #f1f5f9 100%);
+            padding: 0;
+            max-width: 100% !important;
+            margin: 0;
+            position: relative;
+        }
+
+        .venue-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .venue-section .section-title {
+            color: #0f172a;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 900;
+        }
+
+        .venue-name {
+            text-align: center;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #1e1b4b;
+            margin-bottom: 0.5rem;
+        }
+
+        .venue-address {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .venue-address a {
+            color: #3d4c8f;
+            text-decoration: none;
+            font-size: 1.1rem;
+            border-bottom: 2px solid rgba(61, 76, 143, 0.3);
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .venue-address a:hover {
+            border-color: #3d4c8f;
+            color: #292356;
+        }
+
+        .venue-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+            align-items: start;
+        }
+
+        .venue-map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            aspect-ratio: 4/3;
+            border: 4px solid #ffffff;
+            transition: transform 0.4s ease;
+        }
+
+        .venue-map-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .venue-map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        .venue-photos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .venue-photo {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            aspect-ratio: 4/3;
+            border: 4px solid #ffffff;
+            position: relative;
+        }
+
+        .venue-photo::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .venue-photo:hover::after {
+            opacity: 1;
+        }
+
+        .venue-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .venue-photo:hover img {
+            transform: scale(1.08);
+        }
+
+        @media (max-width: 768px) {
+            .venue-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .venue-photos {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .modal-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .modal-content::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .modal-content::-webkit-scrollbar-thumb {
+            background: rgba(77, 189, 201, 0.4);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .modal-content::-webkit-scrollbar-thumb:hover {
+            background: rgba(77, 189, 201, 0.7);
+        }
+
+        /* Canvas Particles */
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: -1;
+        }
     </style>
 </head>
+
 <body>
+    <canvas id="particles-canvas"></canvas>
     <header>
         <nav>
             <div class="header-logo">
                 <span class="header-title">Quantum x AI Summit</span>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#agenda" data-lang="es">Agenda</a><a href="#agenda" data-lang="eu">Agenda</a><a href="#agenda" data-lang="en">Agenda</a></li>
-                <li><a href="#entities" data-lang="es">Entidades</a><a href="#entities" data-lang="eu">Erakundeak</a><a href="#entities" data-lang="en">Entities</a></li>
-                <li><a href="#venue" data-lang="es">Sede</a><a href="#venue" data-lang="eu">Egoitza</a><a href="#venue" data-lang="en">Venue</a></li>
-                <li><a href="#registro" data-lang="es">Registro</a><a href="#registro" data-lang="eu">Erregistroa</a><a href="#registro" data-lang="en">Registration</a></li>
+                <li><a href="#agenda" data-lang="es">Agenda</a><a href="#agenda" data-lang="eu">Agenda</a><a
+                        href="#agenda" data-lang="en">Agenda</a></li>
+                <li><a href="#entities" data-lang="es">Entidades participantes</a><a href="#entities"
+                        data-lang="eu">Erakunde parte-hartzaileak</a><a href="#entities" data-lang="en">Entities</a>
+                </li>
+                <li><a href="#venue" data-lang="es">Ubicación</a><a href="#venue" data-lang="eu">Kokapena</a><a
+                        href="#venue" data-lang="en">Ubication</a></li>
+                <li><a href="#registro" data-lang="es">Registro</a><a href="#registro" data-lang="eu">Erregistroa</a><a
+                        href="#registro" data-lang="en">Registration</a></li>
             </ul>
             <div class="nav-right">
                 <div class="language-selector">
-                    <button class="lang-active-btn" onclick="toggleLangDropdown()" id="langActiveBtn">
-                        <img src="assets/icons/flags/es.svg" alt="" class="flag-icon" id="activeFlagImg">
-                        <span id="activeLangLabel">ES</span>
-                        <span class="lang-chevron">▾</span>
-                    </button>
-                    <div class="lang-dropdown" id="langDropdown">
-                        <button onclick="selectLang('es')" id="lang-es" class="lang-option active">
-                            <img src="assets/icons/flags/es.svg" alt="" class="flag-icon"> ES
-                        </button>
-                        <button onclick="selectLang('eu')" id="lang-eu" class="lang-option">
-                            <img src="assets/icons/flags/es-pv.svg" alt="" class="flag-icon"> EU
-                        </button>
-                        <button onclick="selectLang('en')" id="lang-en" class="lang-option">
-                            <img src="assets/icons/flags/gb.svg" alt="" class="flag-icon"> EN
-                        </button>
-                    </div>
+                    <button onclick="selectLang('es')" id="lang-es" class="lang-option active">CAST</button>
+                    <span class="lang-sep">|</span>
+                    <button onclick="selectLang('eu')" id="lang-eu" class="lang-option">EUS</button>
+                    <span class="lang-sep">|</span>
+                    <button onclick="selectLang('en')" id="lang-en" class="lang-option">ENG</button>
                 </div>
                 <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
             </div>
@@ -338,11 +1535,11 @@
         <div class="hero-content fade-in">
             <h1>Quantum x AI Summit</h1>
             <p class="hero-tagline" data-lang="es">Donde convergen las tecnologías del mañana</p>
-            <p class="hero-tagline" data-lang="eu">Biharko teknologiak elkartzean</p>
+            <p class="hero-tagline" data-lang="eu">Etorkizuneko teknologiak batzen diren lekua</p>
             <p class="hero-tagline" data-lang="en">Where Tomorrow's Technologies Converge</p>
 
             <p class="hero-date" data-lang="es">Donostia / San Sebastián · 25 de marzo de 2026</p>
-            <p class="hero-date" data-lang="eu">Donostia / San Sebastián · 2026ko martxoaren 25a</p>
+            <p class="hero-date" data-lang="eu">Donostia / San Sebastián · 2026ko martxoak 25</p>
             <p class="hero-date" data-lang="en">Donostia / San Sebastián · March 25, 2026</p>
 
             <p class="hero-venue">
@@ -357,7 +1554,7 @@
             <div class="hero-organizers-block">
                 <p class="hero-organized-by">
                     <span data-lang="es">Un evento de</span>
-                    <span data-lang="eu">Honen ekimena</span>
+                    <span data-lang="eu">Antolatzailea:</span>
                     <span data-lang="en">An event by</span>
                 </p>
                 <div class="hero-organizers-logos">
@@ -387,25 +1584,21 @@
         <h2 class="section-title" data-lang="es">Agenda del evento</h2>
         <h2 class="section-title" data-lang="eu">Ekitaldiaren agenda</h2>
         <h2 class="section-title" data-lang="en">Event agenda</h2>
-        
-        <p style="text-align: center; color: #ffffff; margin-bottom: 1rem;" data-lang="es">25 de marzo de 2026 · <em>Agenda tentativa, pendiente de confirmación</em></p>
-        <p style="text-align: center; color: #ffffff; margin-bottom: 1rem;" data-lang="eu">2026ko martxoaren 25a · <em>Behin-behineko agenda, baieztatzeke</em></p>
-        <p style="text-align: center; color: #ffffff; margin-bottom: 1rem;" data-lang="en">March 25, 2026 · <em>Tentative agenda, subject to confirmation</em></p>
 
-        
         <div class="agenda-timeline">
             <div class="agenda-item break" data-session-id="1">
-                <div class="agenda-tag"><span data-lang="es">Descanso</span><span data-lang="eu">Atsedena</span><span data-lang="en">Break</span></div>
+                <div class="agenda-tag"><span data-lang="es">Apertura</span><span data-lang="eu">Irekiera</span><span
+                        data-lang="en">Opening</span></div>
                 <div class="agenda-time">09:00 - 09:30</div>
                 <div class="agenda-content">
                     <h4 data-lang="es">Registro y café de bienvenida</h4>
-                    <h4 data-lang="eu">Izen-ematea eta ongi etorri kafea</h4>
+                    <h4 data-lang="eu">Izen-ematea eta ongietorri-kafea</h4>
                     <h4 data-lang="en">Registration and welcome coffee</h4>
                 </div>
             </div>
 
             <div class="agenda-item session" data-session-id="2">
-                <div class="agenda-tag"><span data-lang="es">Sesión</span><span data-lang="eu">Saioa</span><span data-lang="en">Session</span></div>
+                <div class="agenda-tag">10 min</div>
                 <div class="agenda-time">09:30 - 09:40</div>
                 <!-- DESCRIPCIÓN EXTENDIDA (solo visible en el modal) -->
                 <div class="modal-extended-desc">
@@ -419,59 +1612,78 @@
                     <h4 data-lang="en">Institutional opening</h4>
                     <div class="speakers-list">
                         <div class="speaker-item"
-                             data-bio-es="Eli García es la Directora de Transformación Digital en Eusko Jaurlaritza - Gobierno Vasco, donde guía a las organizaciones en la mejora de sus procesos digitales y en el fomento de las relaciones entre marketing y ventas. Desde 2010 ejerce como profesora en Mondragon Unibertsitatea, compartiendo su experiencia en marketing digital basado en datos y en la adopción de tecnología. Eli posee diversas certificaciones, entre ellas ITIL Foundations y Citrix XenApp 5.0, lo que demuestra su compromiso con el aprendizaje continuo en el sector tecnológico. Anteriormente trabajó como Consultora Tecnológica en HP y participó en experiencias previas que contribuyeron a su amplio conocimiento en estrategia digital y coordinación de eventos."
-                             data-bio-eu="Eli García Eusko Jaurlaritza - Gobernu Baskoko Transformazio Digitaleko Zuzendaria da, non erakundeak beren prozesu digitalak hobetzen eta marketinaren eta salmenten arteko harremanak sustatzen gidatzen dituen. 2010etik Mondragon Unibertsitatean irakasle lan egin du, datuetan oinarritutako marketin digitalean eta teknologiaren adopzioan duen esperientzia partekatuz. Eli-k hainbat ziurtagiri ditu, besteak beste ITIL Foundations eta Citrix XenApp 5.0, sektore teknologikoan etengabeko ikaskuntzarekiko duen konpromisoa erakutsiz. Aurretik, HP-n Teknologia Kontsultore gisa lan egin zuen eta estrategia digitalean eta ekitaldien koordinazioan duen ezagutza zabala lagundu zuten esperientzia goiztiarrak izan zituen."
-                             data-bio-en="Eli Garcia is the Director of Digital Transformation at Eusko Jaurlaritza - Gobierno Vasco, where they guide organizations in improving their digital processes and fostering relationships between marketing and sales. They have served as a professor at Mondragon Unibertsitatea since 2010, sharing their expertise in data-driven digital marketing and technology adoption. Eli holds several certifications, including ITIL Foundations and Citrix's XenApp 5.0, demonstrating their commitment to lifelong learning in the tech sector. Previously, they worked as a Technology Consultant at HP and were involved in earlier experiences that contributed to their extensive knowledge in digital strategy and event coordination.">
+                            data-bio-es="Eli García es la Directora de Transformación Digital en Eusko Jaurlaritza - Gobierno Vasco, donde guía a las organizaciones en la mejora de sus procesos digitales y en el fomento de las relaciones entre marketing y ventas. Desde 2010 ejerce como profesora en Mondragon Unibertsitatea, compartiendo su experiencia en marketing digital basado en datos y en la adopción de tecnología. Eli posee diversas certificaciones, entre ellas ITIL Foundations y Citrix XenApp 5.0, lo que demuestra su compromiso con el aprendizaje continuo en el sector tecnológico. Anteriormente trabajó como Consultora Tecnológica en HP y participó en experiencias previas que contribuyeron a su amplio conocimiento en estrategia digital y coordinación de eventos."
+                            data-bio-eu="Eli García Eusko Jaurlaritza - Gobernu Baskoko Transformazio Digitaleko Zuzendaria da, eta erakundeak prozesu digitalak hobetzen eta marketin nahiz salmenten arteko harremanak sustatzen gidatzea da haren zeregina. 2010etik Mondragon Unibertsitatean irakasle dihardu, datuetan oinarritutako marketin digitalean eta teknologiaren ezarpenean duen esperientzia partekatuz. Elik hainbat ziurtagiri ditu (besteak beste, ITIL Foundations eta Citrix XenApp 5.0), sektore teknologikoan etengabeko ikaskuntzarekin duen konpromisoa erakusten dutenak. Aurretik, HPn Teknologia-Aholkulari gisa lan egin zuen, eta aldez aurreko esperientziei esker, estrategia digitalean eta ekitaldien koordinazioan ezagutza zabala lortu du."
+                            data-bio-en="Eli Garcia is the Director of Digital Transformation at Eusko Jaurlaritza - Gobierno Vasco, where they guide organizations in improving their digital processes and fostering relationships between marketing and sales. They have served as a professor at Mondragon Unibertsitatea since 2010, sharing their expertise in data-driven digital marketing and technology adoption. Eli holds several certifications, including ITIL Foundations and Citrix's XenApp 5.0, demonstrating their commitment to lifelong learning in the tech sector. Previously, they worked as a Technology Consultant at HP and were involved in earlier experiences that contributed to their extensive knowledge in digital strategy and event coordination.">
                             <img src="assets/images/speakers/eli-garcia.jpg" alt="Eli García" class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Eli García</div>
                                 <div class="speaker-role">
-                                    <span data-lang="es">Directora de Transformación Digital · Eusko Jaurlaritza – Gobierno Vasco</span>
-                                    <span data-lang="eu">Eraldaketa Digitaleko Zuzendaria · Eusko Jaurlaritza – Gobierno Vasco</span>
-                                    <span data-lang="en">Director of Digital Transformation · Eusko Jaurlaritza – Basque Government</span>
+                                    <span data-lang="es">Directora de Transformación Digital · Eusko Jaurlaritza –
+                                        Gobierno Vasco</span>
+                                    <span data-lang="eu">Eraldaketa Digitaleko Zuzendaria · Eusko Jaurlaritza – Gobierno
+                                        Vasco</span>
+                                    <span data-lang="en">Director of Digital Transformation · Eusko Jaurlaritza – Basque
+                                        Government</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><img src="assets/icons/other/info-duotone.svg" alt="" class="agenda-info-icon"> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
+                    <button class="agenda-info-btn"
+                        onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><img
+                            src="assets/icons/other/info-duotone.svg" alt="" class="agenda-info-icon"> <span
+                            data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span
+                            data-lang="en">More info</span></button>
                 </div>
             </div>
 
             <div class="agenda-item session" data-session-id="3">
-                <div class="agenda-tag"><span data-lang="es">Sesión</span><span data-lang="eu">Saioa</span><span data-lang="en">Session</span></div>
+                <div class="agenda-tag">30 min</div>
                 <div class="agenda-time">09:40 - 10:10</div>
                 <!-- DESCRIPCIÓN EXTENDIDA (solo visible en el modal) -->
                 <div class="modal-extended-desc">
-                    <span data-lang="es">Presentación de la Estrategia BasQ, iniciativa impulsada para posicionar a Euskadi como un referente internacional en Tecnologías Cuánticas. Se presentarán los pilares estratégicos del programa, así como los principales hitos alcanzados y las líneas de actuación previstas a corto y medio plazo.</span>
-                    <span data-lang="eu">BasQ Estrategiaren aurkezpena, Euskadi Teknologia Kuantikoen arloan nazioarteko erreferente gisa kokatzeko bultzatutako ekimena. Programaren oinarri estrategikoak aurkeztuko dira, baita lortutako mugarri nagusiak eta epe labur eta ertainera aurreikusitako jarduera-ildoak ere.</span>
-                    <span data-lang="en">Presentation of the BasQ Strategy, an initiative launched to position the Basque Country as an international benchmark in Quantum Technologies. The strategic pillars of the program will be presented, along with the main milestones achieved and the action lines planned for the short and medium term.</span>
+                    <span data-lang="es">Presentación de la Estrategia BasQ, iniciativa impulsada para posicionar a
+                        Euskadi como un referente internacional en Tecnologías Cuánticas. Se presentarán los pilares
+                        estratégicos del programa, así como los principales hitos alcanzados y las líneas de actuación
+                        previstas a corto y medio plazo.</span>
+                    <span data-lang="eu">BasQ Estrategiaren aurkezpena; Euskadi teknologia kuantikoen arloan nazioarteko
+                        erreferente gisa kokatzeko bultzatutako ekimena da. Programaren zutabe estrategikoak aurkeztuko
+                        dira bertan, baita lortutako mugarri nagusiak eta epe labur zein ertainera aurreikusitako
+                        jarduera-ildoak ere.</span>
+                    <span data-lang="en">Presentation of the BasQ Strategy, an initiative launched to position the
+                        Basque Country as an international benchmark in Quantum Technologies. The strategic pillars of
+                        the program will be presented, along with the main milestones achieved and the action lines
+                        planned for the short and medium term.</span>
                 </div>
                 <div class="agenda-content">
-                    <h4 data-lang="es">Keynote: Presentación de la Estrategia BasQ</h4>
-                    <h4 data-lang="eu">Keynote: BasQ Estrategiaren Aurkezpena</h4>
+                    <h4 data-lang="es">Keynote: Presentación de la estrategia BasQ</h4>
+                    <h4 data-lang="eu">Keynote: BasQ estrategiaren aurkezpena</h4>
                     <h4 data-lang="en">Keynote: Presentation of the BasQ Strategy</h4>
                     <div class="speakers-list">
-                        <div class="speaker-item"
-                             data-bio-es=""
-                             data-bio-eu=""
-                             data-bio-en="">
-                            <img src="assets/images/speakers/ander-barreiro.png" alt="Ander Barreiro" class="speaker-photo">
+                        <div class="speaker-item" data-bio-es="" data-bio-eu="" data-bio-en="">
+                            <img src="assets/images/speakers/ander-barreiro.png" alt="Ander Barreiro"
+                                class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Ander Barreiro</div>
                                 <div class="speaker-role">
-                                    <span data-lang="es">Responsable de Proyectos Estratégicos · Euskampus Fundazioa</span>
+                                    <span data-lang="es">Responsable de Proyectos Estratégicos · Euskampus
+                                        Fundazioa</span>
                                     <span data-lang="eu">Proiektu Estrategikoen Arduraduna · Euskampus Fundazioa</span>
                                     <span data-lang="en">Head of Strategic Projects · Euskampus Fundazioa</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><img src="assets/icons/other/info-duotone.svg" alt="" class="agenda-info-icon"> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
+                    <button class="agenda-info-btn"
+                        onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><img
+                            src="assets/icons/other/info-duotone.svg" alt="" class="agenda-info-icon"> <span
+                            data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span
+                            data-lang="en">More info</span></button>
                 </div>
             </div>
 
             <div class="agenda-item session" data-session-id="4">
-                <div class="agenda-tag"><span data-lang="es">Sesión</span><span data-lang="eu">Saioa</span><span data-lang="en">Session</span></div>
+                <div class="agenda-tag">30 min</div>
                 <div class="agenda-time">10:10 - 10:40</div>
                 <!-- DESCRIPCIÓN EXTENDIDA (solo visible en el modal) -->
                 <div class="modal-extended-desc">
@@ -484,11 +1696,9 @@
                     <h4 data-lang="eu">Keynote: BasQ’s IBM Quantum System Two </h4>
                     <h4 data-lang="en">Keynote: BasQ’s IBM Quantum System Two </h4>
                     <div class="speakers-list">
-                        <div class="speaker-item"
-                             data-bio-es=""
-                             data-bio-eu=""
-                             data-bio-en="">
-                            <img src="assets/images/speakers/raul-otaolea.PNG" alt="Raul Otaolea Mendazona" class="speaker-photo">
+                        <div class="speaker-item" data-bio-es="" data-bio-eu="" data-bio-en="">
+                            <img src="assets/images/speakers/raul-otaolea.PNG" alt="Raul Otaolea Mendazona"
+                                class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Raul Otaolea Mendazona</div>
                                 <div class="speaker-role">
@@ -499,12 +1709,16 @@
                             </div>
                         </div>
                     </div>
-                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><img src="assets/icons/other/info-duotone.svg" alt="" class="agenda-info-icon"> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
+                    <button class="agenda-info-btn"
+                        onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><img
+                            src="assets/icons/other/info-duotone.svg" alt="" class="agenda-info-icon"> <span
+                            data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span
+                            data-lang="en">More info</span></button>
                 </div>
             </div>
 
             <div class="agenda-item session" data-session-id="5">
-                <div class="agenda-tag"><span data-lang="es">Sesión</span><span data-lang="eu">Saioa</span><span data-lang="en">Session</span></div>
+                <div class="agenda-tag">50 min</div>
                 <div class="agenda-time">10:40 - 11:30</div>
                 <!-- DESCRIPCIÓN EXTENDIDA (solo visible en el modal) -->
                 <div class="modal-extended-desc">
@@ -516,57 +1730,59 @@
                     <h4 data-lang="es">Mesa redonda</h4>
                     <h4 data-lang="eu">Mahai ingurua</h4>
                     <h4 data-lang="en">Panel discussion</h4>
-                    <p data-lang="es">¿Qué problemas reales de la industria pueden resolverse mejor con cuántica + IA?</p>
-                    <p data-lang="eu">Industriako ze arazo erreal konpon daitezke hobeto kuantika + AA-rekin?</p>
+                    <p data-lang="es">¿Qué problemas reales de la industria pueden resolverse mejor con cuántica + IA?
+                    </p>
+                    <p data-lang="eu">Kuantika eta AA erabiliz, industriako zein arazo erreal konpon daitezke hobeto?
+                    </p>
                     <p data-lang="en">What real industry problems can be better solved with quantum + AI?</p>
                     <div class="speakers-list">
-                        <div class="speaker-item"
-                             data-bio-es=""
-                             data-bio-eu=""
-                             data-bio-en="">
-                            <img src="assets/images/speakers/david-morcuende.jpg" alt="David Morcuende" class="speaker-photo">
+                        <div class="speaker-item" data-bio-es="" data-bio-eu="" data-bio-en="">
+                            <img src="assets/images/speakers/david-morcuende.jpg" alt="David Morcuende"
+                                class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">David Morcuende (Moderador)</div>
-                                <div class="speaker-role">Network Manager · European Quantum Industry Consortium (QuIC)</div>
+                                <div class="speaker-role">Network Manager · European Quantum Industry Consortium (QuIC)
+                                </div>
                             </div>
                         </div>
-                        <div class="speaker-item"
-                             data-bio-es=""
-                             data-bio-eu=""
-                             data-bio-en="">
-                            <img src="assets/images/speakers/irene-lopez.jpg" alt="Irene López de Vallejo" class="speaker-photo">
+                        <div class="speaker-item" data-bio-es="" data-bio-eu="" data-bio-en="">
+                            <img src="assets/images/speakers/irene-lopez.jpg" alt="Irene López de Vallejo"
+                                class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Irene López de Vallejo</div>
                                 <div class="speaker-role">Head of Business Development · Tecnalia</div>
                             </div>
                         </div>
-                        <div class="speaker-item"
-                             data-bio-es=""
-                             data-bio-eu=""
-                             data-bio-en="">
-                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Ricardo Enríquez" class="speaker-photo">
+                        <div class="speaker-item" data-bio-es="" data-bio-eu="" data-bio-en="">
+                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Ricardo Enríquez"
+                                class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Ricardo Enríquez</div>
                                 <div class="speaker-role">Head of Quantum Technologies · Repsol</div>
                             </div>
                         </div>
                     </div>
-                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><img src="assets/icons/other/info-duotone.svg" alt="" class="agenda-info-icon"> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
+                    <button class="agenda-info-btn"
+                        onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><img
+                            src="assets/icons/other/info-duotone.svg" alt="" class="agenda-info-icon"> <span
+                            data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span
+                            data-lang="en">More info</span></button>
                 </div>
             </div>
 
             <div class="agenda-item break" data-session-id="6">
-                <div class="agenda-tag"><span data-lang="es">Descanso</span><span data-lang="eu">Atsedena</span><span data-lang="en">Break</span></div>
+                <div class="agenda-tag"><span data-lang="es">Descanso</span><span data-lang="eu">Atsedena</span><span
+                        data-lang="en">Break</span></div>
                 <div class="agenda-time">11:30 - 12:00</div>
                 <div class="agenda-content">
                     <h4 data-lang="es">Café y networking</h4>
-                    <h4 data-lang="eu">Kafea eta networking</h4>
+                    <h4 data-lang="eu">Kafea eta networking-a</h4>
                     <h4 data-lang="en">Coffee and networking</h4>
                 </div>
             </div>
 
             <div class="agenda-item session" data-session-id="7">
-                <div class="agenda-tag"><span data-lang="es">Sesión</span><span data-lang="eu">Saioa</span><span data-lang="en">Session</span></div>
+                <div class="agenda-tag">60 min</div>
                 <div class="agenda-time">12:00 - 13:00</div>
                 <!-- DESCRIPCIÓN EXTENDIDA (solo visible en el modal) -->
                 <div class="modal-extended-desc">
@@ -579,34 +1795,34 @@
                     <h4 data-lang="eu">Elevator pitches</h4>
                     <h4 data-lang="en">Elevator pitches</h4>
                     <p data-lang="es">El ecosistema cuántico vasco presenta sus innovaciones</p>
-                    <p data-lang="eu">Euskal ekosistema kuantikoak bere berrikuntzak aurkezten ditu</p>
+                    <p data-lang="eu">Euskal ekosistema kuantikoak bere berrikuntzen berri emango du</p>
                     <p data-lang="en">The Basque quantum ecosystem presents its innovations</p>
                     <div class="speakers-list">
                         <div class="speaker-item"
-                             data-bio-es="Iraitz Montalbán, CTO de Falcondale, lleva varias décadas dedicado a la adopción de Inteligencia Artificial y Transformación Tecnológica. Habiendo trabajado tanto en el ámbito de la consultoría, gran empresa y startup de base tecnológica, cuenta con el conocimiento y experiencia necesarias para la adopción de tecnologías disruptivas con impacto. Actualmente, en Falcondale, su rol se centra en la definición estratégica a nivel de producto de cómo la tecnología cuántica puede combinarse con las técnicas tradicionales y resolver los retos que la analítica convencional por sí sola no es capaz de resolver."
-                             data-bio-eu="Iraitz Montalbán, Falcondaleko CTOa, hainbat hamarkadatan aritu da Adimen Artifizialaren eta Eraldaketa Teknologikoaren adopzioan. Aholkularitzan, enpresa handietan eta oinarri teknologikoko startup-etan lan egin ondoren, inpaktu handiko teknologia disruptiboak ezartzeko beharrezko ezagutza eta esperientzia ditu. Gaur egun, Falcondalen, bere eginkizuna produktu-mailako definizio estrategikoan oinarritzen da, teknologia kuantikoa teknika tradizionalekin nola uztartu eta analitika konbentzionalak bakarrik konpondu ezin dituen erronkei nola aurre egin zehazteko."
-                             data-bio-en="Iraitz Montalbán, CTO of Falcondale, has spent several decades dedicated to the adoption of Artificial Intelligence and Technological Transformation. Having worked across consulting, large corporations, and technology-based startups, he brings the knowledge and experience required to successfully adopt disruptive technologies with real impact. Currently, at Falcondale, his role focuses on the strategic product-level definition of how quantum technology can be combined with traditional techniques to address challenges that conventional analytics alone cannot solve.">
-                            <img src="assets/images/speakers/iraitz-montalban.png" alt="Iraitz Montalbán" class="speaker-photo">
+                            data-bio-es="Iraitz Montalbán, CTO de Falcondale, lleva varias décadas dedicado a la adopción de Inteligencia Artificial y Transformación Tecnológica. Habiendo trabajado tanto en el ámbito de la consultoría, gran empresa y startup de base tecnológica, cuenta con el conocimiento y experiencia necesarias para la adopción de tecnologías disruptivas con impacto. Actualmente, en Falcondale, su rol se centra en la definición estratégica a nivel de producto de cómo la tecnología cuántica puede combinarse con las técnicas tradicionales y resolver los retos que la analítica convencional por sí sola no es capaz de resolver."
+                            data-bio-eu="Iraitz Montalbán, Falcondale-ko CTOa, hainbat hamarkadatan aritu da Adimen Artifiziala eta Eraldaketa Teknologikoa ezartzen. Aholkularitzan, enpresa handietan eta oinarri teknologikoko startup-etan lan egin du, eta, horri esker, inpaktu handiko teknologia disruptiboak ezartzeko beharrezkoak diren ezagutza eta esperientzia bildu ditu. Gaur egun, Falcondale-n, haren zeregina produktu-mailako definizio estrategikoa egitea da, teknologia kuantikoa teknika tradizionalekin nola uztartu eta analitika konbentzionalak bakarrik konpondu ezin dituen erronkei nola aurre egin zehazteko."
+                            data-bio-en="Iraitz Montalbán, CTO of Falcondale, has spent several decades dedicated to the adoption of Artificial Intelligence and Technological Transformation. Having worked across consulting, large corporations, and technology-based startups, he brings the knowledge and experience required to successfully adopt disruptive technologies with real impact. Currently, at Falcondale, his role focuses on the strategic product-level definition of how quantum technology can be combined with traditional techniques to address challenges that conventional analytics alone cannot solve.">
+                            <img src="assets/images/speakers/iraitz-montalban.png" alt="Iraitz Montalbán"
+                                class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Iraitz Montalbán</div>
                                 <div class="speaker-role">CTO · Falcondale</div>
                             </div>
                         </div>
                         <div class="speaker-item"
-                             data-bio-es="Javier González Conde es CEO y cofundador de Quantum Mads, una startup con base en Bilbao centrada en llevar la computación cuántica (y técnicas “quantum-inspired”) a problemas reales de optimización, predicción y simulación en organizaciones. Formado en Matemáticas y Física, orientó su carrera hacia la computación cuántica y realizó el doctorado en el centro NQUIRE de la Universidad del País Vasco (UPV/EHU), trabajando en el diseño de algoritmos cuánticos. En entrevistas y apariciones públicas ha subrayado la ambición de impulsar un ecosistema cuántico en Euskadi y posicionar a Bilbao como un referente europeo industrial en este ámbito."
-                             data-bio-eu="Javier González Conde Quantum Mads enpresako CEO eta sortzailekidea da; Bilbon egoitza duen startup bat da, eta konputazio kuantikoa eta quantum-inspired teknikak erakundeetako optimizazio, aurreikuspen eta simulazio arazo errealetara eramatea du helburu. Matematikan eta Fisikan trebatua, bere ibilbidea konputazio kuantikoaren alorrera bideratu zuen eta doktoretza egin zuen Euskal Herriko Unibertsitateko NQUIRE zentroan, algoritmo kuantikoen diseinuan lanean. Elkarrizketetan eta agerraldi publikoetan azpimarratu du Euskadin ekosistema kuantiko bat bultzatzeko eta Bilbo arlo honetan Europako erreferente industrial gisa kokatzeko asmoa."
-                             data-bio-en="Javier González Conde is CEO and co-founder of Quantum Mads, a Bilbao-based startup focused on bringing quantum computing and quantum-inspired techniques to real-world optimization, prediction, and simulation challenges within organizations. With a background in Mathematics and Physics, he directed his career toward quantum computing and completed his PhD at the NQUIRE center of the University of the Basque Country, where he worked on the design of quantum algorithms. In interviews and public appearances, he has emphasized the ambition to foster a quantum ecosystem in the Basque Country and position Bilbao as a European industrial benchmark in this field.">
-                            <img src="assets/images/speakers/javier-gonzalez-conde.jpg" alt="Javier Gonzalez Conde" class="speaker-photo">
+                            data-bio-es="Javier González Conde es CEO y cofundador de Quantum Mads, una startup con base en Bilbao centrada en llevar la computación cuántica (y técnicas “quantum-inspired”) a problemas reales de optimización, predicción y simulación en organizaciones. Formado en Matemáticas y Física, orientó su carrera hacia la computación cuántica y realizó el doctorado en el centro NQUIRE de la Universidad del País Vasco (UPV/EHU), trabajando en el diseño de algoritmos cuánticos. En entrevistas y apariciones públicas ha subrayado la ambición de impulsar un ecosistema cuántico en Euskadi y posicionar a Bilbao como un referente europeo industrial en este ámbito."
+                            data-bio-eu="Javier González Conde Quantum Mads enpresaren CEOa eta sortzailekidea da. Bilbon egoitza duen startup horrek konputazio kuantikoa (eta horretan oinarritutako quantum-inspired teknikak) erakundeetako optimizazio-, aurreikuspen- zein simulazio-arazo errealak konpontzen laguntzeko erabiltzen du. Matematikan eta Fisikan lizentziatua, bere ibilbidea konputazio kuantikoaren alorrera bideratu zuen, eta doktoretza egin zuen Euskal Herriko Unibertsitateko (UPV/EHU) NQUIRE zentroan, algoritmo kuantikoak diseinatzen. Elkarrizketa eta agerraldi publikoetan behin baino gehiagotan azpimarratu du Euskadin ekosistema kuantikoa bultzatzeko eta Bilbo arlo horretan Europako erreferente industrial gisa kokatzeko asmo handia duela."
+                            data-bio-en="Javier González Conde is CEO and co-founder of Quantum Mads, a Bilbao-based startup focused on bringing quantum computing and quantum-inspired techniques to real-world optimization, prediction, and simulation challenges within organizations. With a background in Mathematics and Physics, he directed his career toward quantum computing and completed his PhD at the NQUIRE center of the University of the Basque Country, where he worked on the design of quantum algorithms. In interviews and public appearances, he has emphasized the ambition to foster a quantum ecosystem in the Basque Country and position Bilbao as a European industrial benchmark in this field.">
+                            <img src="assets/images/speakers/javier-gonzalez-conde.jpg" alt="Javier Gonzalez Conde"
+                                class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Javier González Conde</div>
                                 <div class="speaker-role">CEO · Quantum Mads</div>
                             </div>
                         </div>
-                        <div class="speaker-item"
-                             data-bio-es=""
-                             data-bio-eu=""
-                             data-bio-en="">
-                            <img src="assets/images/speakers/jorge-de-la-herran-1.jpg" alt="Jorge de la Herrán y Crespo" class="speaker-photo">
+                        <div class="speaker-item" data-bio-es="" data-bio-eu="" data-bio-en="">
+                            <img src="assets/images/speakers/jorge-de-la-herran-1.jpg" alt="Jorge de la Herrán y Crespo"
+                                class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Jorge de la Herrán y Crespo</div>
                                 <div class="speaker-role">
@@ -616,33 +1832,33 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="speaker-item"
-                             data-bio-es=""
-                             data-bio-eu=""
-                             data-bio-en="">
-                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Antonio Peris" class="speaker-photo">
+                        <div class="speaker-item" data-bio-es="" data-bio-eu="" data-bio-en="">
+                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Antonio Peris"
+                                class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Antonio Peris</div>
                                 <div class="speaker-role">Quantum Innovation Leader · QCentroid</div>
                             </div>
                         </div>
-                        <div class="speaker-item"
-                             data-bio-es=""
-                             data-bio-eu=""
-                             data-bio-en="">
-                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Álvaro Nodar" class="speaker-photo">
+                        <div class="speaker-item" data-bio-es="" data-bio-eu="" data-bio-en="">
+                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Álvaro Nodar"
+                                class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Álvaro Nodar</div>
                                 <div class="speaker-role">Technical Lead · Global Data Quantum</div>
                             </div>
                         </div>
                     </div>
-                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><img src="assets/icons/other/info-duotone.svg" alt="" class="agenda-info-icon"> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
+                    <button class="agenda-info-btn"
+                        onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><img
+                            src="assets/icons/other/info-duotone.svg" alt="" class="agenda-info-icon"> <span
+                            data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span
+                            data-lang="en">More info</span></button>
                 </div>
             </div>
 
             <div class="agenda-item session" data-session-id="8">
-                <div class="agenda-tag"><span data-lang="es">Sesión</span><span data-lang="eu">Saioa</span><span data-lang="en">Session</span></div>
+                <div class="agenda-tag">30 min</div>
                 <div class="agenda-time">13:00 - 13:30</div>
                 <!-- DESCRIPCIÓN EXTENDIDA (solo visible en el modal) -->
                 <div class="modal-extended-desc">
@@ -652,29 +1868,31 @@
                 </div>
                 <div class="agenda-content">
                     <h4 data-lang="es">Caso de éxito</h4>
-                    <h4 data-lang="eu">Arrakasta kasua</h4>
+                    <h4 data-lang="eu">Erabilera kasu arrakastatsua</h4>
                     <h4 data-lang="en">Success story</h4>
                     <p data-lang="es">Casos reales de uso de las tecnologías cuánticas en industria</p>
                     <p data-lang="eu">Industrian teknologia kuantikoak erabiltzeko kasu errealak</p>
                     <p data-lang="en">Real use cases of quantum technologies in industry</p>
                     <div class="speakers-list">
-                        <div class="speaker-item"
-                             data-bio-es=""
-                             data-bio-eu=""
-                             data-bio-en="">
-                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Román Orús" class="speaker-photo">
+                        <div class="speaker-item" data-bio-es="" data-bio-eu="" data-bio-en="">
+                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Román Orús"
+                                class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Román Orús</div>
                                 <div class="speaker-role">Co-Founder & CSO · Multiverse Computing</div>
                             </div>
                         </div>
                     </div>
-                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><img src="assets/icons/other/info-duotone.svg" alt="" class="agenda-info-icon"> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
+                    <button class="agenda-info-btn"
+                        onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><img
+                            src="assets/icons/other/info-duotone.svg" alt="" class="agenda-info-icon"> <span
+                            data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span
+                            data-lang="en">More info</span></button>
                 </div>
             </div>
 
             <div class="agenda-item session" data-session-id="9">
-                <div class="agenda-tag"><span data-lang="es">Sesión</span><span data-lang="eu">Saioa</span><span data-lang="en">Session</span></div>
+                <div class="agenda-tag">30 min</div>
                 <div class="agenda-time">13:30 - 14:00</div>
                 <!-- DESCRIPCIÓN EXTENDIDA (solo visible en el modal) -->
                 <div class="modal-extended-desc">
@@ -684,24 +1902,33 @@
                 </div>
                 <div class="agenda-content">
                     <h4 data-lang="es">Caso de éxito</h4>
-                    <h4 data-lang="eu">Arrakasta kasua</h4>
+                    <h4 data-lang="eu">Erabilera kasu arrakastatsua</h4>
                     <h4 data-lang="en">Success Story</h4>
-                    <p data-lang="es">Digital Annealer: Tecnología quantum-inspired para cerrar la brecha entre la computación cuántica y las aplicaciones industriales</p>
-                    <p data-lang="eu">Digital Annealer: quantum-inspired teknologia, konputazio kuantikoaren eta aplikazio industrialen arteko arrakala ixteko</p>
-                    <p data-lang="en">Digital Annealer: Quantum Inspired Technology for Closing the Gap Between Quantum Computing and Industrial Applications</p>
+                    <p data-lang="es">Digital Annealer: Tecnología quantum-inspired para cerrar la brecha entre la
+                        computación cuántica y las aplicaciones industriales</p>
+                    <p data-lang="eu">Digital Annealer: konputazio kuantikoaren eta aplikazio industrialen arteko
+                        etenaldia gainditzeko quantum-inspired teknologia</p>
+                    <p data-lang="en">Digital Annealer: Quantum Inspired Technology for Closing the Gap Between Quantum
+                        Computing and Industrial Applications</p>
                     <div class="speakers-list">
-                        <div class="speaker-item"
-                             data-bio-es=""
-                             data-bio-eu=""
-                             data-bio-en="">
-                            <img src="assets/images/speakers/almudena-justo.jpg" alt="Almudena Justo Martínez" class="speaker-photo">
+                        <div class="speaker-item" data-bio-es="" data-bio-eu="" data-bio-en="">
+                            <img src="assets/images/speakers/almudena-justo.jpg" alt="Almudena Justo Martínez"
+                                class="speaker-photo">
                             <div class="speaker-info">
                                 <div class="speaker-name">Almudena Justo Martínez</div>
-                                <div class="speaker-role"><span data-lang="es">Directora del Centro Internacional de Cuántica Fsas · Fsas Technologies</span><span data-lang="eu">Fsas Nazioarteko Zentro Kuantikoaren Zuzendaria · Fsas Technologies</span><span data-lang="en">Director of the Fsas International Quantum Center · Fsas Technologies</span></div>
+                                <div class="speaker-role"><span data-lang="es">Directora del Centro Internacional de
+                                        Cuántica Fsas · Fsas Technologies</span><span data-lang="eu">Fsas Nazioarteko
+                                        Zentro Kuantikoaren Zuzendaria · Fsas Technologies</span><span
+                                        data-lang="en">Director of the Fsas International Quantum Center · Fsas
+                                        Technologies</span></div>
                             </div>
                         </div>
                     </div>
-                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><img src="assets/icons/other/info-duotone.svg" alt="" class="agenda-info-icon"> <span data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span data-lang="en">More info</span></button>
+                    <button class="agenda-info-btn"
+                        onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)"><img
+                            src="assets/icons/other/info-duotone.svg" alt="" class="agenda-info-icon"> <span
+                            data-lang="es">Más información</span><span data-lang="eu">Informazio gehiago</span><span
+                            data-lang="en">More info</span></button>
                 </div>
             </div>
         </div>
@@ -712,7 +1939,7 @@
             <h2 class="section-title" data-lang="es">Entidades participantes</h2>
             <h2 class="section-title" data-lang="eu">Erakunde parte-hartzaileak</h2>
             <h2 class="section-title" data-lang="en">Participating entities</h2>
-            
+
             <div class="entities-grid">
                 <div class="entity-logo">
                     <img src="assets/images/logos/spri-digitala-logo-color.png" alt="SPRI Enpresa Digitala">
@@ -763,24 +1990,22 @@
                     <span>Global Data Quantum</span>
                 </div>
             </div>
-            
-            <p class="entities-note" data-lang="es">Se confirmarán más entidades próximamente</p>
-            <p class="entities-note" data-lang="eu">Erakunde gehiago berresten joango dira laster</p>
-            <p class="entities-note" data-lang="en">More entities to be confirmed soon</p>
+
         </div>
     </section>
 
     <section class="venue-section" id="venue">
         <div class="venue-inner">
-            <h2 class="section-title" data-lang="es">Sede del evento</h2>
-            <h2 class="section-title" data-lang="eu">Ekitaldiaren egoitza</h2>
-            <h2 class="section-title" data-lang="en">Event venue</h2>
+            <h2 class="section-title" data-lang="es">Ubicación del evento</h2>
+            <h2 class="section-title" data-lang="eu">Ekitaldiaren kokapena</h2>
+            <h2 class="section-title" data-lang="en">Event ubication</h2>
 
             <p class="venue-name">NH Collection San Sebastián Aránzazu</p>
             <p class="venue-address">
                 <a href="https://maps.app.goo.gl/a4SyRxYCniDf835H6" target="_blank" rel="noopener">
                     <span data-lang="es">📍 Calle Zubieta 2, 20007 Donostia / San Sebastián — Ver en Google Maps</span>
-                    <span data-lang="eu">📍 Zubieta kalea 2, 20007 Donostia / San Sebastián — Ikusi Google Maps-en</span>
+                    <span data-lang="eu">📍 Zubieta kalea 2, 20007 Donostia / San Sebastián — Ikusi Google
+                        Maps-en</span>
                     <span data-lang="en">📍 Calle Zubieta 2, 20007 Donostia / San Sebastián — View on Google Maps</span>
                 </a>
             </p>
@@ -789,24 +2014,26 @@
                 <div class="venue-map-container">
                     <iframe
                         src="https://maps.google.com/maps?q=NH+Collection+San+Sebastian+Aranzazu,+Zubieta+2,+Donostia-San+Sebastian&hl=es&output=embed&z=16"
-                        allowfullscreen
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
+                        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                         title="NH Collection San Sebastián Aránzazu">
                     </iframe>
                 </div>
                 <div class="venue-photos">
                     <div class="venue-photo">
-                        <img src="assets/images/venue/nh-fachada.webp" alt="NH Collection San Sebastián Aránzazu — Fachada">
+                        <img src="assets/images/venue/nh-fachada.webp"
+                            alt="NH Collection San Sebastián Aránzazu — Fachada">
                     </div>
                     <div class="venue-photo">
-                        <img src="assets/images/venue/nh-auditorio.jpg" alt="NH Collection San Sebastián Aránzazu — Auditorio">
+                        <img src="assets/images/venue/nh-auditorio.jpg"
+                            alt="NH Collection San Sebastián Aránzazu — Auditorio">
                     </div>
                     <div class="venue-photo">
-                        <img src="assets/images/venue/nh-entrada.avif" alt="NH Collection San Sebastián Aránzazu — Entrada">
+                        <img src="assets/images/venue/nh-entrada.avif"
+                            alt="NH Collection San Sebastián Aránzazu — Entrada">
                     </div>
                     <div class="venue-photo">
-                        <img src="assets/images/venue/nh-entorno.avif" alt="NH Collection San Sebastián Aránzazu — Entorno">
+                        <img src="assets/images/venue/nh-entorno.avif"
+                            alt="NH Collection San Sebastián Aránzazu — Entorno">
                     </div>
                 </div>
             </div>
@@ -817,7 +2044,7 @@
         <h2 class="section-title" data-lang="es">Registro</h2>
         <h2 class="section-title" data-lang="eu">Erregistroa</h2>
         <h2 class="section-title" data-lang="en">Registration</h2>
-        
+
         <div style="text-align: center; width: 90%; margin: 0 auto;">
 
             <!-- Caja exterior blanca -->
@@ -847,9 +2074,15 @@
             })()"></script>
 
             <p style="margin-top: 0.85rem; font-size: 0.88rem; color: rgba(255,255,255,0.65);">
-                <span data-lang="es">¿Problemas con el widget de inscripción? <a href="https://www.eventbrite.es/e/quantum-x-ai-summit-tickets-1983523315632" target="_blank" rel="noopener" class="contact-email-link">Regístrate en Eventbrite</a></span>
-                <span data-lang="eu">Erregistro widgetarekin arazoak? <a href="https://www.eventbrite.es/e/quantum-x-ai-summit-tickets-1983523315632" target="_blank" rel="noopener" class="contact-email-link">Eman izena Eventbrite-n</a></span>
-                <span data-lang="en">Issues with the registration widget? <a href="https://www.eventbrite.es/e/quantum-x-ai-summit-tickets-1983523315632" target="_blank" rel="noopener" class="contact-email-link">Register on Eventbrite</a></span>
+                <span data-lang="es">¿Problemas con el widget de inscripción? <a
+                        href="https://www.eventbrite.es/e/quantum-x-ai-summit-tickets-1983523315632" target="_blank"
+                        rel="noopener" class="contact-email-link">Regístrate en Eventbrite</a></span>
+                <span data-lang="eu">Izen-ematea egiteko widget-arekin arazorik baduzu <a
+                        href="https://www.eventbrite.es/e/quantum-x-ai-summit-tickets-1983523315632" target="_blank"
+                        rel="noopener" class="contact-email-link">eman izena Eventbrite-n</a></span>
+                <span data-lang="en">Issues with the registration widget? <a
+                        href="https://www.eventbrite.es/e/quantum-x-ai-summit-tickets-1983523315632" target="_blank"
+                        rel="noopener" class="contact-email-link">Register on Eventbrite</a></span>
             </p>
 
             <p class="contact-email-notice">
@@ -879,73 +2112,149 @@
         <div class="modal-content">
             <button class="modal-close" onclick="closePrivacyModal()">&times;</button>
             <h2>Política de Privacidad</h2>
-            
-            <p>Conforme a la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD), y al Reglamento (UE) 2016/679, del Parlamento Europeo y del Consejo, de 27 de abril ("Reglamento General de Protección de Datos" o "RGPD"), esta Política de Privacidad se aplica a los tratamientos de datos de carácter personal en relación con los datos de los usuarios/as (personas físicas) recabados en cualquiera de las secciones del sitio web.</p>
 
-            <p>Si no está usted de acuerdo con los términos de esta Política, no acceda ni utilice los Servicios. Esta Política de privacidad no es aplicable a ningún otro producto, servicio o actividad de terceros.</p>
+            <p>Conforme a la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los
+                derechos digitales (LOPDGDD), y al Reglamento (UE) 2016/679, del Parlamento Europeo y del Consejo, de 27
+                de abril ("Reglamento General de Protección de Datos" o "RGPD"), esta Política de Privacidad se aplica a
+                los tratamientos de datos de carácter personal en relación con los datos de los usuarios/as (personas
+                físicas) recabados en cualquiera de las secciones del sitio web.</p>
+
+            <p>Si no está usted de acuerdo con los términos de esta Política, no acceda ni utilice los Servicios. Esta
+                Política de privacidad no es aplicable a ningún otro producto, servicio o actividad de terceros.</p>
 
             <h3>RESPONSABLE DEL TRATAMIENTO DE SUS DATOS</h3>
-            <p>La entidad que conforma Enpresa Digitala y que es corresponsable en el tratamiento de datos personales es:</p>
+            <p>La entidad que conforma Enpresa Digitala y que es corresponsable en el tratamiento de datos personales
+                es:</p>
             <ul>
-                <li>Mondragon Goi Eskola Politeknikoa Jose María Arizmendiarrieta S.Coop. CIF F20560991. Loramendi 4, 20500 Arrasate/Mondragon. Registro Universidades Centros y Títulos del Ministerio de Educación n.º 601 · <a href="mailto:infogaraia@mondragon.edu" style="color: var(--primary-blue)" target="_blank">infogaraia@mondragon.edu</a> · +34 943793700</li>
+                <li>Mondragon Goi Eskola Politeknikoa Jose María Arizmendiarrieta S.Coop. CIF F20560991. Loramendi 4,
+                    20500 Arrasate/Mondragon. Registro Universidades Centros y Títulos del Ministerio de Educación n.º
+                    601 · <a href="mailto:infogaraia@mondragon.edu" style="color: var(--primary-blue)"
+                        target="_blank">infogaraia@mondragon.edu</a> · +34 943793700</li>
             </ul>
 
             <h3>FINALIDADES DEL TRATAMIENTO DE DATOS</h3>
-            <p>Sus datos personales se utilizarán por la entidad Mondragon Goi Eskola Politeknikoa con la finalidad genérica de la gestión y administración de eventos a través de la web y el envío de información sobre Enpresa Digitala. Y específicamente para:</p>
+            <p>Sus datos personales se utilizarán por la entidad Mondragon Goi Eskola Politeknikoa con la finalidad
+                genérica de la gestión y administración de eventos a través de la web y el envío de información sobre
+                Enpresa Digitala. Y específicamente para:</p>
             <ul>
                 <li>Gestionar y administrar los servicios e información puestos a disposición a través de la web.</li>
                 <li>Difundir las acciones realizadas.</li>
                 <li>Gestionar y administrar los cursos, eventos, talleres, formaciones, etc.</li>
-                <li>Comunicar con los usuarios/as en respuesta a solicitudes, inscripciones, comentarios y preguntas.</li>
+                <li>Comunicar con los usuarios/as en respuesta a solicitudes, inscripciones, comentarios y preguntas.
+                </li>
                 <li>Envío de comunicaciones sobre el catálogo formativo y demás información de la iniciativa.</li>
             </ul>
-            <p>No trataremos sus datos personales para ninguna otra finalidad más allá de las descritas anteriormente salvo que venga impuesto por ley o exista algún requerimiento judicial.</p>
-            <p>Las solicitudes de información que nos haga llegar requieren que el interesado nos facilite de forma voluntaria los datos necesarios para poder atenderle o prestarle los Servicios. La obligatoriedad o necesidad de facilitarnos esos datos se señalará con un asterisco (*) en los formularios o secciones correspondientes a cada servicio.</p>
-            <p>No obstante, el interesado puede libremente negarse a facilitarnos esos datos o, posteriormente, revocar el consentimiento previamente otorgado para tratar sus datos, si bien esa negativa implicará la imposibilidad de que podamos atender su petición o prestarle el servicio que se trate.</p>
-            <p>Enpresa Digitala entiende que, al facilitarnos esos datos, el interesado garantiza y se hace responsable de la veracidad, actualidad y exactitud de los mismos y que acepta y consiente expresamente en su tratamiento para las finalidades antes descritas.</p>
+            <p>No trataremos sus datos personales para ninguna otra finalidad más allá de las descritas anteriormente
+                salvo que venga impuesto por ley o exista algún requerimiento judicial.</p>
+            <p>Las solicitudes de información que nos haga llegar requieren que el interesado nos facilite de forma
+                voluntaria los datos necesarios para poder atenderle o prestarle los Servicios. La obligatoriedad o
+                necesidad de facilitarnos esos datos se señalará con un asterisco (*) en los formularios o secciones
+                correspondientes a cada servicio.</p>
+            <p>No obstante, el interesado puede libremente negarse a facilitarnos esos datos o, posteriormente, revocar
+                el consentimiento previamente otorgado para tratar sus datos, si bien esa negativa implicará la
+                imposibilidad de que podamos atender su petición o prestarle el servicio que se trate.</p>
+            <p>Enpresa Digitala entiende que, al facilitarnos esos datos, el interesado garantiza y se hace responsable
+                de la veracidad, actualidad y exactitud de los mismos y que acepta y consiente expresamente en su
+                tratamiento para las finalidades antes descritas.</p>
 
 
             <h3>DURACIÓN DEL TRATAMIENTO DE DATOS</h3>
-            <p>La entidad conservará y tratará los datos personales recabados desde el momento que el usuario/a presta su consentimiento hasta que solicite ser dado de baja o retire su consentimiento para el tratamiento de datos.</p>
+            <p>La entidad conservará y tratará los datos personales recabados desde el momento que el usuario/a presta
+                su consentimiento hasta que solicite ser dado de baja o retire su consentimiento para el tratamiento de
+                datos.</p>
             <p>En el caso de datos de administración y facturación se conservarán según la normativa de referencia.</p>
 
             <h3>TOMA DE DECISONES AUTOMATIZADAS Y ELABORACIÓN DE PERFILES</h3>
-            <p>El tratamiento de datos personales no conlleva la toma de decisiones automatizadas ni la elaboración de perfiles de los usuarios.</p>
+            <p>El tratamiento de datos personales no conlleva la toma de decisiones automatizadas ni la elaboración de
+                perfiles de los usuarios.</p>
 
             <h3>LEGITIMACIÓN DEL TRATAMIENTO DE LOS DATOS</h3>
-            <p>La base legal para el tratamiento de los datos es la legitimación basada en el consentimiento del interesado prestado para las finalidades anteriormente descritas, que se solicitará en el momento de:</p>
+            <p>La base legal para el tratamiento de los datos es la legitimación basada en el consentimiento del
+                interesado prestado para las finalidades anteriormente descritas, que se solicitará en el momento de:
+            </p>
             <ul>
                 <li>proceder a tratar sus datos</li>
                 <li>la inclusión de sus datos en nuestros formularios</li>
             </ul>
-            <p>El alta en la web como las solicitudes de información que nos haga llegar requieren que el interesado nos facilite de forma voluntaria los datos necesarios para poder atenderle o prestarle los Servicios. No obstante, el interesado puede libremente negarse a facilitarnos esos datos o, posteriormente, revocar el consentimiento previamente otorgado para tratar sus datos, si bien esa negativa implicará la imposibilidad de que podamos atender su petición o continuar con el registro en nuestra plataforma.</p>
-            <p>Igualmente, podremos tratar sus datos en base a la relación contractual existente a la hora de la formalización de las inscripciones en lo referente a los servicios puestos a disposición en la web (formación online, inscripciones, matrículas, etc.)</p>
-            <p>Enpresa Digitala entiende que, al facilitarnos esos datos, el interesado garantiza y se hace responsable de la veracidad, actualidad y exactitud de los mismos y que acepta y consiente expresamente en su tratamiento para las finalidades antes descritas.</p>
-            <p>La entidad podrá enviar comunicaciones sobre los servicios, cursos, talleres, etc únicamente relacionados con Enpresa Digitala durante la vigencia de la relación con la misma e incluso una vez extinguida ésta a través de correo electrónico o medios de comunicación electrónica equivalentes.</p>
-            <p>Posibilidad de retirar el consentimiento: El usuario/a tiene derecho a retirar el consentimiento en cualquier momento, sin que ello afecte a la licitud del tratamiento basado en el consentimiento previo a su retirada. Asimismo, el usuario/a podrá oponerse en cualquier momento a la recepción de cualquier comunicación electrónica realizada por la entidad relacionada con la iniciativa Enpresa Digitala.</p>
+            <p>El alta en la web como las solicitudes de información que nos haga llegar requieren que el interesado nos
+                facilite de forma voluntaria los datos necesarios para poder atenderle o prestarle los Servicios. No
+                obstante, el interesado puede libremente negarse a facilitarnos esos datos o, posteriormente, revocar el
+                consentimiento previamente otorgado para tratar sus datos, si bien esa negativa implicará la
+                imposibilidad de que podamos atender su petición o continuar con el registro en nuestra plataforma.</p>
+            <p>Igualmente, podremos tratar sus datos en base a la relación contractual existente a la hora de la
+                formalización de las inscripciones en lo referente a los servicios puestos a disposición en la web
+                (formación online, inscripciones, matrículas, etc.)</p>
+            <p>Enpresa Digitala entiende que, al facilitarnos esos datos, el interesado garantiza y se hace responsable
+                de la veracidad, actualidad y exactitud de los mismos y que acepta y consiente expresamente en su
+                tratamiento para las finalidades antes descritas.</p>
+            <p>La entidad podrá enviar comunicaciones sobre los servicios, cursos, talleres, etc únicamente relacionados
+                con Enpresa Digitala durante la vigencia de la relación con la misma e incluso una vez extinguida ésta a
+                través de correo electrónico o medios de comunicación electrónica equivalentes.</p>
+            <p>Posibilidad de retirar el consentimiento: El usuario/a tiene derecho a retirar el consentimiento en
+                cualquier momento, sin que ello afecte a la licitud del tratamiento basado en el consentimiento previo a
+                su retirada. Asimismo, el usuario/a podrá oponerse en cualquier momento a la recepción de cualquier
+                comunicación electrónica realizada por la entidad relacionada con la iniciativa Enpresa Digitala.</p>
 
             <h3>DESTINATARIOS DE CESIONES O TRANSFERENCIAS</h3>
-            <p>Sus datos personales podrán ser cedidos a SPRI - Agencia Vasca de Desarrollo Empresarial (CIF Q4800789B), así como a Entangle Technology Hub (G24878407), con la única finalidad de la gestión y administración de la web, evento e inscripciones.</p>
-            <p>La entidad que conforma Enpresa Digitala no cederá sus datos personales a terceros salvo que estén obligados legalmente a ello (Hacienda Foral, Administración de Justicia, etc.) o usted nos lo haya autorizado expresamente.</p>
-            <p>Asimismo, la entidad que conforma Enpresa Digitala puede utilizar diferentes servicios o proveedores de tecnología considerados a tenor de la normativa de protección de datos como encargados de tratamiento firmando con ellos los correspondientes contratos exigidos por la normativa de referencia.</p>
+            <p>Sus datos personales podrán ser cedidos a SPRI - Agencia Vasca de Desarrollo Empresarial (CIF Q4800789B),
+                así como a Entangle Technology Hub (G24878407), con la única finalidad de la gestión y administración de
+                la web, evento e inscripciones.</p>
+            <p>La entidad que conforma Enpresa Digitala no cederá sus datos personales a terceros salvo que estén
+                obligados legalmente a ello (Hacienda Foral, Administración de Justicia, etc.) o usted nos lo haya
+                autorizado expresamente.</p>
+            <p>Asimismo, la entidad que conforma Enpresa Digitala puede utilizar diferentes servicios o proveedores de
+                tecnología considerados a tenor de la normativa de protección de datos como encargados de tratamiento
+                firmando con ellos los correspondientes contratos exigidos por la normativa de referencia.</p>
 
             <h3>REDES SOCIALES</h3>
-            <p>Enpresa Digitala dispone de distintas redes sociales (Facebook, Twitter, etc) para la difusión de contenidos relacionados con Enpresa Digitala así como para facilitar a los usuarios una vía de contacto. Enpresa Digitala es responsable del tratamiento de los datos de sus seguidores y contactos en las redes sociales. No obstante, en la medida en que el tratamiento de los datos personales se efectúa en el marco de las redes sociales cuyos proveedores imponen unas reglas de funcionamiento, las obligaciones de Enpresa Digitala se limitarán a aquellos aspectos en los que tiene libertad para actuar. En ningún caso Enpresa Digitala extraerá los datos de las redes sociales, realizará perfiles de sus usuarios o recabará datos personales adicionales relativos a gustos, aficiones o modo de utilización de las redes sociales, sin el consentimiento expreso de los afectados.</p>
+            <p>Enpresa Digitala dispone de distintas redes sociales (Facebook, Twitter, etc) para la difusión de
+                contenidos relacionados con Enpresa Digitala así como para facilitar a los usuarios una vía de contacto.
+                Enpresa Digitala es responsable del tratamiento de los datos de sus seguidores y contactos en las redes
+                sociales. No obstante, en la medida en que el tratamiento de los datos personales se efectúa en el marco
+                de las redes sociales cuyos proveedores imponen unas reglas de funcionamiento, las obligaciones de
+                Enpresa Digitala se limitarán a aquellos aspectos en los que tiene libertad para actuar. En ningún caso
+                Enpresa Digitala extraerá los datos de las redes sociales, realizará perfiles de sus usuarios o recabará
+                datos personales adicionales relativos a gustos, aficiones o modo de utilización de las redes sociales,
+                sin el consentimiento expreso de los afectados.</p>
 
             <h3>DERECHOS DE LAS PERSONAS INTERESADAS</h3>
-            <p>Cualquier persona tiene derecho a obtener confirmación sobre si en Enpresa Digitala se tratan datos personales que le conciernan, o no. En particular, usted puede ejercer ante Enpresa Digitala los siguientes derechos:</p>
+            <p>Cualquier persona tiene derecho a obtener confirmación sobre si en Enpresa Digitala se tratan datos
+                personales que le conciernan, o no. En particular, usted puede ejercer ante Enpresa Digitala los
+                siguientes derechos:</p>
             <ul>
-                <li>Derecho de acceso: permite al interesado conocer y obtener información sobre sus datos de carácter personal sometidos a tratamiento.</li>
-                <li>Derecho de rectificación: permite corregir errores, modificar los datos que resulten ser inexactos o incompletos y garantizar la certeza de la información objeto del tratamiento.</li>
-                <li>Derecho de supresión: permite solicitar la eliminación de los datos objeto de tratamiento cuando ya no sean necesarios.</li>
-                <li>Derecho de oposición: derecho del interesado a que no se lleve a cabo el tratamiento de sus datos de carácter personal o se cese en el mismo, salvo motivos legítimos o para el ejercicio o defensa de posibles reclamaciones, en cuyo caso los mantendremos bloqueados durante el plazo correspondiente mientras persistan las obligaciones legales.</li>
-                <li>Derecho de oposición al envío de publicidad: Los interesados podrán oponerse al envío de comunicaciones. En ese caso puede revocar en cualquier momento su consentimiento a recibir estas notificaciones utilizando el mecanismo implementado al efecto en las mismas, o bien, escribiendo directamente a la dirección estipulada para ello por cada entidad que participa en Enpresa Digitala.</li>
-                <li>Limitación del tratamiento: En determinadas circunstancias, los interesados podrán solicitar la limitación del tratamiento de sus datos, en cuyo caso únicamente se conservarán para el ejercicio o defensa de reclamaciones.</li>
-                <li>Portabilidad de los datos: las personas interesadas pueden solicitar recibir los datos que le incumban y que nos haya facilitado o que –siempre que técnicamente sea posible– se los enviemos a otro responsable de tratamiento de su elección, en un formato estructurado de uso común y lectura mecánica.</li>
-                <li>Derecho a no ser objeto de decisiones individuales automatizadas (incluida la elaboración de perfiles): derecho a no ser objeto de una decisión basada en el tratamiento automatizado que produzca efectos o afecte significativamente.</li>
+                <li>Derecho de acceso: permite al interesado conocer y obtener información sobre sus datos de carácter
+                    personal sometidos a tratamiento.</li>
+                <li>Derecho de rectificación: permite corregir errores, modificar los datos que resulten ser inexactos o
+                    incompletos y garantizar la certeza de la información objeto del tratamiento.</li>
+                <li>Derecho de supresión: permite solicitar la eliminación de los datos objeto de tratamiento cuando ya
+                    no sean necesarios.</li>
+                <li>Derecho de oposición: derecho del interesado a que no se lleve a cabo el tratamiento de sus datos de
+                    carácter personal o se cese en el mismo, salvo motivos legítimos o para el ejercicio o defensa de
+                    posibles reclamaciones, en cuyo caso los mantendremos bloqueados durante el plazo correspondiente
+                    mientras persistan las obligaciones legales.</li>
+                <li>Derecho de oposición al envío de publicidad: Los interesados podrán oponerse al envío de
+                    comunicaciones. En ese caso puede revocar en cualquier momento su consentimiento a recibir estas
+                    notificaciones utilizando el mecanismo implementado al efecto en las mismas, o bien, escribiendo
+                    directamente a la dirección estipulada para ello por cada entidad que participa en Enpresa Digitala.
+                </li>
+                <li>Limitación del tratamiento: En determinadas circunstancias, los interesados podrán solicitar la
+                    limitación del tratamiento de sus datos, en cuyo caso únicamente se conservarán para el ejercicio o
+                    defensa de reclamaciones.</li>
+                <li>Portabilidad de los datos: las personas interesadas pueden solicitar recibir los datos que le
+                    incumban y que nos haya facilitado o que –siempre que técnicamente sea posible– se los enviemos a
+                    otro responsable de tratamiento de su elección, en un formato estructurado de uso común y lectura
+                    mecánica.</li>
+                <li>Derecho a no ser objeto de decisiones individuales automatizadas (incluida la elaboración de
+                    perfiles): derecho a no ser objeto de una decisión basada en el tratamiento automatizado que
+                    produzca efectos o afecte significativamente.</li>
             </ul>
-            <p>Si desea ejercer alguno de los derechos expuestos, puede remitir una comunicación a la dirección establecida por la entidad que conforma Enpresa Digitala.</p>
-            <p>En relación con la posibilidad de reclamar ante la Autoridad de Control, Enpresa Digitala le informa igualmente del derecho que le asiste de presentar una reclamación ante la Autoridad Vasca de Protección de Datos  (<a href="https://www.avpd.euskadi.eus" style="color: var(--primary-blue)" target="_blank">www.avpd.euskadi.eus</a>) si considera que el tratamiento no se ajusta a la normativa vigente.</p>
+            <p>Si desea ejercer alguno de los derechos expuestos, puede remitir una comunicación a la dirección
+                establecida por la entidad que conforma Enpresa Digitala.</p>
+            <p>En relación con la posibilidad de reclamar ante la Autoridad de Control, Enpresa Digitala le informa
+                igualmente del derecho que le asiste de presentar una reclamación ante la Autoridad Vasca de Protección
+                de Datos (<a href="https://www.avpd.euskadi.eus" style="color: var(--primary-blue)"
+                    target="_blank">www.avpd.euskadi.eus</a>) si considera que el tratamiento no se ajusta a la
+                normativa vigente.</p>
 
             <h3>TÉRMINOS Y CONDICIONES DE USO Y COMPRA</h3>
             <ul>
@@ -959,7 +2268,7 @@
     <div class="funding-banner">
         <p class="funding-banner-title">
             <span data-lang="es">Iniciativa financiada por</span>
-            <span data-lang="eu">Finantzatutako ekimena</span>
+            <span data-lang="eu">Ekitaldi finantzatua</span>
             <span data-lang="en">Initiative funded by</span>
         </p>
         <div class="funding-logo">
@@ -980,24 +2289,25 @@
                     <img src="assets/images/logos/entangle-logo-white.png" alt="Entangle Tech Hub">
                 </div>
             </div>
-            
+
             <div class="footer-divider"></div>
-            
+
             <div class="footer-privacy">
                 <a href="#" onclick="openPrivacyModal(); return false;" class="privacy-link">
-                    <span data-lang="es">Política de Privacidad</span>
-                    <span data-lang="eu">Pribatutasun Politika</span>
-                    <span data-lang="en">Privacy Policy</span>
+                    <span data-lang="es">Política de privacidad</span>
+                    <span data-lang="eu">Pribatutasun politika</span>
+                    <span data-lang="en">Privacy policy</span>
                 </a>
             </div>
-            
+
             <div class="footer-divider"></div>
-            
+
             <div class="footer-legal">
                 <p><strong>© 2026 Entangle Technology Hub</strong></p>
-            
+
                 <div class="footer-social">
-                    <a href="https://www.linkedin.com/company/entangle-tech-hub" target="_blank" rel="noopener" title="LinkedIn">
+                    <a href="https://www.linkedin.com/company/entangle-tech-hub" target="_blank" rel="noopener"
+                        title="LinkedIn">
                         <img src="assets/icons/social/linkedin-logo.svg" alt="LinkedIn">
                     </a>
                     <a href="https://instagram.com/entangletechhub" target="_blank" rel="noopener" title="Instagram">
@@ -1011,8 +2321,10 @@
                     </a>
                 </div>
 
-                <p data-lang="es">Asociación sin ánimo de lucro dedicada a impulsar la innovación y transferencia tecnológica</p>
-                <p data-lang="eu">Berrikuntza eta teknologia-transferentzia bultzatzera bideratutako irabazi-asmorik gabeko elkartea</p>
+                <p data-lang="es">Asociación sin ánimo de lucro dedicada a impulsar la innovación y transferencia
+                    tecnológica</p>
+                <p data-lang="eu">Berrikuntza eta teknologia-transferentzia bultzatzera bideratutako irabazi-asmorik
+                    gabeko elkartea</p>
                 <p data-lang="en">Non-profit association dedicated to driving innovation and technology transfer</p>
                 <p>Número Nacional: 632384 | CIF: G24878407</p>
             </div>
@@ -1022,12 +2334,6 @@
     <script>
         let currentLang = 'es';
 
-        const langMeta = {
-            es: { label: 'ES', flag: 'assets/icons/flags/es.svg' },
-            eu: { label: 'EU', flag: 'assets/icons/flags/es-pv.svg' },
-            en: { label: 'EN', flag: 'assets/icons/flags/gb.svg' }
-        };
-
         function changeLanguage(lang) {
             currentLang = lang;
             localStorage.setItem('preferredLanguage', lang);
@@ -1036,12 +2342,6 @@
             document.querySelectorAll('.lang-option').forEach(btn => btn.classList.remove('active'));
             const activeOpt = document.getElementById('lang-' + lang);
             if (activeOpt) activeOpt.classList.add('active');
-
-            // Update the active button display
-            const meta = langMeta[lang];
-            document.getElementById('activeLangLabel').textContent = meta.label;
-            document.getElementById('activeFlagImg').src = meta.flag;
-            document.getElementById('activeFlagImg').alt = meta.label;
 
             // Show/hide elements by language
             document.querySelectorAll('[data-lang]').forEach(el => {
@@ -1057,15 +2357,6 @@
 
         function selectLang(lang) {
             changeLanguage(lang);
-            closeLangDropdown();
-        }
-
-        function toggleLangDropdown() {
-            document.getElementById('langDropdown').classList.toggle('open');
-        }
-
-        function closeLangDropdown() {
-            document.getElementById('langDropdown').classList.remove('open');
         }
 
         function detectLanguage() {
@@ -1180,20 +2471,111 @@
 
         window.addEventListener('DOMContentLoaded', detectLanguage);
 
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             const privacyModal = document.getElementById('privacyModal');
             const agendaModal = document.getElementById('agendaModal');
             if (event.target === privacyModal) privacyModal.style.display = 'none';
             if (event.target === agendaModal) agendaModal.style.display = 'none';
         }
 
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') {
                 document.getElementById('privacyModal').style.display = 'none';
                 document.getElementById('agendaModal').style.display = 'none';
             }
         });
 
+        // Interactive agenda cards glow
+        document.querySelectorAll('.agenda-item').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+
+        // Canvas Particles
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initParticles();
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = Math.random() * 0.5 - 0.25;
+                this.speedY = Math.random() * 0.5 - 0.25;
+                this.baseOpacity = Math.random() * 0.4 + 0.1;
+                this.targetX = this.x;
+                this.targetY = this.y;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.x > canvas.width) this.x = 0;
+                else if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0;
+                else if (this.y < 0) this.y = canvas.height;
+
+                // Mouse interaction repulsion/dancing
+                const dx = mouseX - this.x;
+                const dy = mouseY - this.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < 150) {
+                    const forceDirectionX = dx / distance;
+                    const forceDirectionY = dy / distance;
+                    const force = (150 - distance) / 150;
+                    this.x -= forceDirectionX * force * 1.5;
+                    this.y -= forceDirectionY * force * 1.5;
+                }
+            }
+            draw() {
+                ctx.fillStyle = `rgba(77, 189, 201, ${this.baseOpacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            const numberOfParticles = Math.min(window.innerWidth / 12, 120);
+            for (let i = 0; i < numberOfParticles; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+            }
+            requestAnimationFrame(animateParticles);
+        }
+
+        resizeCanvas();
+        animateParticles();
     </script>
 </body>
+
 </html>
