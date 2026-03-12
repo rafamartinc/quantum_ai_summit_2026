@@ -2058,14 +2058,38 @@
                 padding: 30px;
                 box-sizing: border-box;
             ">
-                <!-- Contenedor interior del widget -->
+                <!-- Contenedor interior del widget
                 <div id="eventbrite-widget-container-1983523315632" style="
                     border-radius: 10px;
                     overflow: hidden;
                     height: 100%;
-                "></div>
+                "></div> -->
+
+                <!-- Placeholder registro próximamente -->
+                <div style="
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                ">
+                    <div style="text-align: center;">
+                        <p style="
+                            font-family: 'Outfit', sans-serif;
+                            font-size: 1.5rem;
+                            font-weight: 700;
+                            color: #110e26;
+                            margin: 0 0 0.5rem 0;
+                            line-height: 1.3;
+                        ">
+                            <span data-lang="es">El registro abrirá próximamente</span>
+                            <span data-lang="eu">Erregistroa laster irekiko da</span>
+                            <span data-lang="en">Registration opens soon</span>
+                        </p>
+                    </div>
+                </div>
             </div>
 
+            <!-- Script Eventbrite (activar cuando se abra el registro)
             <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js" onload="(function(){
                 window.EBWidgets.createWidget({
                     widgetType: 'checkout',
@@ -2075,6 +2099,7 @@
                     onOrderComplete: function() { console.log('Order complete!'); }
                 });
             })()"></script>
+            -->
 
             <p style="margin-top: 0.85rem; font-size: 0.88rem; color: rgba(255,255,255,0.65);">
                 <span data-lang="es">¿Problemas con el widget de inscripción? <a
