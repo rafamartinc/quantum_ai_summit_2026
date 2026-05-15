@@ -1714,8 +1714,46 @@
             </div>
 
             <div class="agenda-item session" data-session-id="5">
-                <div class="agenda-tag">50 min</div>
-                <div class="agenda-time">10:40 - 11:30</div>
+                <div class="agenda-tag">20 min</div>
+                <div class="agenda-time">10:40 - 11:00</div>
+                <!-- DESCRIPCIÓN EXTENDIDA (solo visible en el modal) -->
+                <div class="modal-extended-desc">
+                    <span data-lang="es"></span>
+                    <span data-lang="eu"></span>
+                    <span data-lang="en"></span>
+                </div>
+                <div class="agenda-content">
+                    <h4 data-lang="es">Keynote: Mondragon Unibertsitatea</h4>
+                    <h4 data-lang="eu">Keynote: Mondragon Unibertsitatea</h4>
+                    <h4 data-lang="en">Keynote: Mondragon Unibertsitatea</h4>
+                    <div class="speakers-list">
+                        <div class="speaker-item"
+                            data-bio-es=""
+                            data-bio-eu=""
+                            data-bio-en="">
+                            <img src="assets/images/speakers/placeholder-speaker.jpg" alt="Unai Aseguinolaza" class="speaker-photo">
+                            <div class="speaker-info">
+                                <div class="speaker-name">Unai Aseguinolaza</div>
+                                <div class="speaker-role">
+                                    <span data-lang="es">Mondragon Unibertsitatea</span>
+                                    <span data-lang="eu">Mondragon Unibertsitatea</span>
+                                    <span data-lang="en">Mondragon Unibertsitatea</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="agenda-info-btn" onclick="openAgendaModal(this.closest('[data-session-id]').dataset.sessionId)">
+                        <img src="assets/icons/other/info-duotone.svg" alt="" class="agenda-info-icon"> 
+                        <span data-lang="es">Más información</span>
+                        <span data-lang="eu">Informazio gehiago</span>
+                        <span data-lang="en">More info</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="agenda-item session" data-session-id="6">
+                <div class="agenda-tag">30 min</div>
+                <div class="agenda-time">11:00 - 11:30</div>
                 <!-- DESCRIPCIÓN EXTENDIDA (solo visible en el modal) -->
                 <div class="modal-extended-desc">
                     <span data-lang="es">Mesa redonda centrada en el estado actual de las tecnologías cuánticas y su convergencia con la inteligencia artificial. Los participantes debatirán sobre el nivel de madurez del sector, las principales capacidades tecnológicas disponibles hoy en día y los retos existentes para su adopción industrial. Además, se abordarán casos de uso reales y potenciales aplicaciones en ámbitos como optimización, simulación, análisis de datos, energía, industria y toma de decisiones avanzadas.</span>
@@ -1796,7 +1834,7 @@
                 </div>
             </div>
 
-            <div class="agenda-item break" data-session-id="6">
+            <div class="agenda-item break" data-session-id="7">
                 <div class="agenda-tag">
                     <span data-lang="es">Descanso</span>
                     <span data-lang="eu">Atsedenaldia</span>
